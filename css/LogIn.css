@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #d6fcf7;
+    color: #222;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-container {
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.09);
+    padding: 40px 32px 32px 32px;
+    min-width: 340px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  
+  .masar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+  
+  .login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  .login-form h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #00b6b6;
+    text-align: center;
+  }
+  
+  .login-form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #222;
+  }
+  
+  .login-form input {
+    padding: 12px;
+    border: 2px solid #00b6b6;
+    border-radius: 18px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .login-form input:focus {
+    border-color: #222;
+  }
+  
+  .login-btn {
+    background: #00b6b6;
+    color: #fff;
+    border: none;
+    border-radius: 18px;
+    padding: 14px 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+  }
+  
+  .login-btn:hover {
+    background: #009e9e;
+  }
+  
+  .login-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    font-size: 0.95rem;
+  }
+  
+  .login-links a {
+    color: #00b6b6;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .login-links a:hover {
+    color: #222;
+  }
