@@ -1,0 +1,26 @@
+{
+  "en": {
+    "logoTitle": "Masar <i class=\"fa-solid fa-arrow-up-right\"></i><span style=\"color:#00b6b6;\">&#8599;</span>",
+    "logoSubtitle": "From vision to destination",
+    "mainTitle": "Grow better<br>with Masar!",
+    "mainDesc": "Towards the future, where every step is calculated with care and precise guidance.<br>Together, we'll build the path that will lead you to your goals.",
+    "loginBtn": "Login",
+    "signupBtn": "Sign up",
+    "language": "language",
+    "fields": "Fields",
+    "customerSupport": "Customer support",
+    "aboutUs": "About us"
+  },
+  "ar": {
+    "logoTitle": "مسار <i class=\"fa-solid fa-arrow-up-right\"></i><span style=\"color:#00b6b6;\">&#8599;</span>",
+    "logoSubtitle": "من الرؤية إلى الوجهة",
+    "mainTitle": "ننمو معًا<br>مع مسار!",
+    "mainDesc": "نحو المستقبل، حيث يتم حساب كل خطوة بعناية وإرشاد دقيق.<br>سنبني معًا الطريق الذي سيقودك إلى أهدافك.",
+    "loginBtn": "تسجيل الدخول",
+    "signupBtn": "إنشاء حساب",
+    "language": "اللغة",
+    "fields": "المجالات",
+    "customerSupport": "دعم العملاء",
+    "aboutUs": "معلومات عنا"
+  }
+} 

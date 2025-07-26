@@ -2,39 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Masar - From vision to destination</title>
+  <title id="page-title">Masar - From vision to destination</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <!-- You can use Google Fonts for a modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
   <header>
     <div class="logo">
-      <span class="masar-logo">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle">From vision to destination</div>
+      <span class="masar-logo" id="logo-title">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logo-subtitle">From vision to destination</div>
     </div>
     <nav>
-      <div class="nav-item"><i class="fa-solid fa-language"></i> English <i class="fa-solid fa-chevron-down"></i></div>
-      <div class="nav-item"><i class="fa-solid fa-desktop"></i> Fields <i class="fa-solid fa-chevron-down"></i></div>
-      <div class="nav-item"><i class="fa-solid fa-user-group"></i> Customer support</div>
-      <div class="nav-item"><b>!</b> About us</div>
+      <div class="nav-item dropdown" id="lang-dropdown">
+        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" data-lang="en">English</div>
+          <div class="dropdown-item" data-lang="ar">Arabic</div>
+        </div>
+      </div>
+      <div class="nav-item dropdown" id="fields-dropdown">
+        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item">Frontend</div>
+          <div class="dropdown-item">Backend</div>
+          <div class="dropdown-item">Data Science</div>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group"></i> <span>Customer support</span></div>
+      <div class="nav-item" id="nav-about-us"><b>!</b> <span>About us</span></div>
       <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
     </nav>
   </header>
   <main>
     <section class="left">
-      <h1>Grow better<br>with Masar!</h1>
-      <p>
+      <h1 id="main-title">Grow better<br>with Masar!</h1>
+      <p id="main-desc">
         Towards the future, where every step is calculated with care and precise guidance.<br>
         Together, we'll build the path that will lead you to your goals.
       </p>
       <div class="buttons">
-        <button class="login" onclick="window.location.href='LogIn.html'">Login</button>
-        <button class="guest" onclick="window.location.href='SignUp.html'">Sign up</button>
+        <button class="login" id="login-btn" onclick="window.location.href='LogIn.html'">Login</button>
+        <button class="guest" id="signup-btn" onclick="window.location.href='SignUp.html'">Sign up</button>
       </div>
     </section>
     <section class="right">
@@ -59,5 +72,82 @@
       <img class="laptop" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="laptop">
     </section>
   </main>
+  <script>
+    // Dropdown functionality and language switching with JSON
+    document.addEventListener('DOMContentLoaded', function() {
+      let translations = {};
+      let currentLang = 'en';
+
+      // Fetch translations
+      fetch('../json/home language.json')
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          setLanguage(currentLang);
+        });
+
+      // Dropdown logic
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const chevron = dropdown.querySelector('.fa-chevron-down');
+        dropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
+              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+            }
+          });
+          dropdown.classList.toggle('active');
+          if (chevron) chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+        // Dropdown item click
+        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Language switching
+            if (item.dataset.lang) {
+              currentLang = item.dataset.lang;
+              setLanguage(currentLang);
+            }
+            dropdown.classList.remove('active');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          });
+        });
+      });
+      document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const chevron = dropdown.querySelector('.fa-chevron-down');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        });
+      });
+
+      // Set language from translations
+      function setLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        document.documentElement.lang = lang;
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        // Title
+        document.title = lang === 'ar' ? 'مسار - من الرؤية إلى الوجهة' : 'Masar - From vision to destination';
+        // Header
+        document.getElementById('logo-title').innerHTML = t.logoTitle;
+        document.getElementById('logo-subtitle').textContent = t.logoSubtitle;
+        // Main
+        document.getElementById('main-title').innerHTML = t.mainTitle;
+        document.getElementById('main-desc').innerHTML = t.mainDesc;
+        document.getElementById('login-btn').textContent = t.loginBtn;
+        document.getElementById('signup-btn').textContent = t.signupBtn;
+        // Nav
+        document.getElementById('nav-language').textContent = t.language;
+        document.getElementById('nav-fields').textContent = t.fields;
+        document.querySelector('#nav-customer-support span').textContent = t.customerSupport;
+        document.querySelector('#nav-about-us span').textContent = t.aboutUs;
+      }
+    });
+  </script>
 </body>
 </html>
