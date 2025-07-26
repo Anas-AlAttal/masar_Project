@@ -7,9 +7,22 @@
     "loginBtn": "Login",
     "signupBtn": "Sign up",
     "language": "language",
+    "english": "English",
+    "arabic": "Arabic",
     "fields": "Fields",
     "customerSupport": "Customer support",
-    "aboutUs": "About us"
+    "aboutUs": "About us",
+    "footerQuickLinks": "Quick Links",
+    "footerSupport": "Support",
+    "footerHelpCenter": "Help Center",
+    "footerPrivacyPolicy": "Privacy Policy",
+    "footerTermsOfService": "Terms of Service",
+    "footerCopyright": "© 2024 Masar. All rights reserved.",
+    "footerHome": "Home",
+    "footerRoadmap": "Roadmap",
+    "footerContact": "Contact",
+    "footerLogoTitle": "Masar <i class=\"fa-solid fa-arrow-up-right\"></i><span style=\"color:#00b6b6;\">&#8599;</span>",
+    "footerLogoSubtitle": "From vision to destination"
   },
   "ar": {
     "logoTitle": "مسار <i class=\"fa-solid fa-arrow-up-right\"></i><span style=\"color:#00b6b6;\">&#8599;</span>",
@@ -19,8 +32,21 @@
     "loginBtn": "تسجيل الدخول",
     "signupBtn": "إنشاء حساب",
     "language": "اللغة",
+    "english": "الانجليزية",
+    "arabic": "العربية",
     "fields": "المجالات",
     "customerSupport": "دعم العملاء",
-    "aboutUs": "معلومات عنا"
+    "aboutUs": "معلومات عنا",
+    "footerQuickLinks": "روابط سريعة",
+    "footerSupport": "الدعم",
+    "footerHelpCenter": "مركز المساعدة",
+    "footerPrivacyPolicy": "سياسة الخصوصية",
+    "footerTermsOfService": "الشروط والأحكام",
+    "footerCopyright": "© 2024 مسار. جميع الحقوق محفوظة.",
+    "footerHome": "الرئيسية",
+    "footerRoadmap": "خريطة الطريق",
+    "footerContact": "اتصل بنا",
+    "footerLogoTitle": "مسار <i class=\"fa-solid fa-arrow-up-right\"></i><span style=\"color:#00b6b6;\">&#8599;</span>",
+    "footerLogoSubtitle": "من الرؤية إلى الوجهة"
   }
 } 

@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background: #d6fcf7;
+  background: #f0f8ff;
   color: #222;
 }
 
@@ -11,6 +11,7 @@ header {
   align-items: flex-start;
   padding: 24px 40px 0 40px;
   background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo {
@@ -47,105 +48,127 @@ nav {
   display: flex;
   align-items: center;
   gap: 6px;
+  transition: color 0.2s;
+}
+
+.nav-item:hover {
+  color: #00b6b6;
 }
 
 .roadmap-title {
   text-align: center;
-  margin: 30px 0 10px 0;
+  margin: 40px 0 20px 0;
 }
 
 .roadmap-title span {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  background: #fff;
-  border: 4px solid #222;
-  border-radius: 40px;
-  padding: 8px 40px;
+  background: linear-gradient(135deg, #00b6b6, #1ed6b6);
+  color: white;
+  border-radius: 50px;
+  padding: 15px 40px;
   display: inline-block;
   letter-spacing: 1px;
+  box-shadow: 0 4px 20px rgba(0,182,182,0.3);
 }
 
-.roadmap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 30px;
-  margin: 0 20px 40px 20px;
+.roadmap-container {
   position: relative;
+  width: 1200px;
+  height: 700px;
+  margin: 0 auto 40px auto;
+  background: linear-gradient(135deg, #f8fdff, #f0f8ff);
+  border-radius: 20px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid #e0f0ff;
 }
 
-.branch {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 180px;
+.roadmap-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
 .node {
   background: #fff;
-  border: 3px solid #222;
-  outline: 2px solid #00b6b6;
-  border-radius: 30px;
-  padding: 10px 28px;
-  margin: 10px 0;
-  font-size: 1.3rem;
-  font-weight: 700;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #333;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   text-align: center;
-  min-width: 120px;
+  min-width: 100px;
   position: absolute;
   cursor: pointer;
-  transition: box-shadow 0.2s, border-color 0.2s, outline-color 0.2s;
-  outline-offset: 2px;
+  transition: all 0.3s ease;
   z-index: 2;
   user-select: none;
   appearance: none;
   -webkit-appearance: none;
-  border-style: solid;
+  color: #333;
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
-.node:hover, .node:focus {
+.node:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
   border-color: #00b6b6;
-  outline-color: #222;
-  box-shadow: 0 4px 16px rgba(0,182,182,0.18);
+  background: #f8fffe;
 }
 
 .node:active {
+  transform: translateY(0);
   background: #f0f0f0;
 }
 
 .node.main-node {
-  font-size: 1.7rem;
-  border-width: 5px;
-  outline-width: 3px;
-  padding: 18px 48px;
-  font-weight: 900;
-  letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  border-width: 3px;
+  border-color: #00b6b6;
+  padding: 20px 40px;
+  background: linear-gradient(135deg, #00b6b6, #1ed6b6);
+  color: white;
+  box-shadow: 0 6px 25px rgba(0,182,182,0.3);
+  min-width: 200px;
+}
+
+.node.main-node:hover {
+  background: linear-gradient(135deg, #1ed6b6, #00b6b6);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0,182,182,0.4);
 }
 
 button.node {
-  border: 3px solid #222;
+  border: 2px solid #333;
   background: #fff;
-  color: #222;
+  color: #333;
   font-family: 'Montserrat', Arial, sans-serif;
-  outline: 2px solid #00b6b6;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: box-shadow 0.2s, border-color 0.2s, outline-color 0.2s;
+  transition: all 0.3s ease;
   user-select: none;
   appearance: none;
   -webkit-appearance: none;
   text-align: center;
-  font-weight: 700;
-  border-radius: 30px;
-  min-width: 120px;
+  font-weight: 600;
+  border-radius: 25px;
+  min-width: 100px;
   position: absolute;
   z-index: 2;
+  padding: 12px 24px;
+  font-size: 1.1rem;
 }
 
 button.node:focus {
-  outline: 2px solid #222;
+  outline: none;
+  border-color: #00b6b6;
+  box-shadow: 0 0 0 3px rgba(0,182,182,0.2);
 }
 
 button.node:active {
@@ -161,27 +184,106 @@ button.node:active {
   gap: 10px;
 }
 
-@media (max-width: 1100px) {
-  .roadmap {
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
+@media (max-width: 1200px) {
+  .roadmap-container {
+    width: 95vw;
+    height: 600px;
   }
-  .branch {
-    min-width: 0;
-    width: 100%;
-    align-items: center;
-  }
-}
-
-@media (max-width: 700px) {
   .roadmap-title span {
     font-size: 2rem;
-    padding: 6px 10px;
+    padding: 12px 30px;
   }
   .node {
     font-size: 1rem;
-    padding: 8px 10px;
+    padding: 10px 20px;
     min-width: 80px;
+  }
+  .node.main-node {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    min-width: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  .roadmap-container {
+    width: 100vw;
+    height: 500px;
+    border-radius: 0;
+  }
+  .roadmap-title span {
+    font-size: 1.5rem;
+    padding: 10px 20px;
+  }
+  .node {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    min-width: 70px;
+  }
+  .node.main-node {
+    font-size: 1.1rem;
+    padding: 12px 24px;
+    min-width: 140px;
+  }
+}
+
+/* Footer Styles */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #00b6b6;
+  margin-bottom: 16px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #00b6b6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  color: #888;
+}
+
+/* Footer Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  footer {
+    margin-top: 40px;
   }
 }

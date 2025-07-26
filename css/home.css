@@ -17,6 +17,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    cursor: pointer;
   }
   
   .masar-logo {
@@ -26,6 +27,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
+    cursor: pointer;
   }
   
   .subtitle {
@@ -220,3 +222,64 @@ body {
       width: 90vw;
     }
   }
+
+/* Footer Styles */
+footer {
+  background: #222;
+  color: #fff;
+  padding: 40px 20px 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+  color: #00b6b6;
+  margin-bottom: 16px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #00b6b6;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+  color: #888;
+}
+
+/* Footer Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  footer {
+    margin-top: 40px;
+  }
+}

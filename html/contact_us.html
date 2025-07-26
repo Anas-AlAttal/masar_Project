@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Contact Us - Masar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/contact_us.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+    </div>
+    <nav>
+      <div class="nav-item dropdown" id="lang-dropdown">
+        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+        </div>
+      </div>
+      <div class="nav-item dropdown" id="fields-dropdown">
+        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item">Frontend</div>
+          <div class="dropdown-item">Backend</div>
+          <div class="dropdown-item">Data Science</div>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group"></i> <span id="nav-customer-support-text">Customer support</span></div>
+      <div class="nav-item" id="nav-about-us"><b>!</b> <span id="nav-about-us-text">About us</span></div>
+      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </nav>
+  </header>
+
+  <main class="contact-container">
+    <div class="contact-header">
+      <h1 id="main-title">Get in Touch</h1>
+      <p id="main-description">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+    </div>
+
+    <div class="contact-content">
+      <div class="contact-form-section">
+        <div class="form-container">
+          <h2 id="form-title">Send us a Message</h2>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name" id="form-full-name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email" id="form-email">Email Address *</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="subject" id="form-subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="" id="form-select-subject">Select a subject</option>
+                <option value="general" id="form-general-inquiry">General Inquiry</option>
+                <option value="support" id="form-technical-support">Technical Support</option>
+                <option value="partnership" id="form-partnership">Partnership</option>
+                <option value="feedback" id="form-feedback">Feedback</option>
+                <option value="other" id="form-other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="message" id="form-message">Message *</label>
+              <textarea id="message" name="message" rows="6" required id="form-message-placeholder" placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="form-submit-button">
+              <i class="fa-solid fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="contact-info-section">
+        <div class="info-container">
+          <h2 id="contact-info-title">Contact Information</h2>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3 id="contact-email">Email</h3>
+              <p>info@masar.com</p>
+              <p>support@masar.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3 id="contact-phone">Phone</h3>
+              <p>+1 (555) 123-4567</p>
+              <p>+1 (555) 987-6543</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="contact-details">
+              <h3 id="contact-address">Address</h3>
+              <p>123 Innovation Street</p>
+              <p>Tech District, City</p>
+              <p>Country, 12345</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <div class="contact-details">
+              <h3 id="contact-business-hours">Business Hours</h3>
+              <p id="contact-monday-friday">Monday - Friday: 9:00 AM - 6:00 PM</p>
+              <p id="contact-saturday">Saturday: 10:00 AM - 4:00 PM</p>
+              <p id="contact-sunday">Sunday: Closed</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <h3 id="social-follow-us">Follow Us</h3>
+            <div class="social-icons">
+              <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-section">
+      <h2 id="map-title">Find Us</h2>
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6767.599834004009!2d36.022465!3d31.993439!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b66df729926c7%3A0x80a62dc05cbc89e0!2sAlBalqa&#39;a%20Applied%20University%20-%20Faculty%20of%20Engineering%20Technology%20-%20Polytechnic!5e0!3m2!1sen!2sus!4v1753564611454!5m2!1sen!2sus"
+          width="100%" 
+          height="400" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 id="footer-logo-title">Masar</h3>
+        <p id="footer-logo-subtitle">From vision to destination</p>
+      </div>
+      <div class="footer-section">
+        <h4 id="footer-quick-links">Quick Links</h4>
+        <ul>
+          <li><a href="home.html" id="footer-home">Home</a></li>
+          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 id="footer-support">Support</h4>
+        <ul>
+          <li><a href="#" id="footer-help-center">Help Center</a></li>
+          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
+          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Language switching and translation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      let translations = {};
+      let currentLang = 'en';
+
+      // Fetch translations
+      fetch('../json/contact_us.json')
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          setLanguage(currentLang);
+        })
+        .catch(error => {
+          console.error('Error loading translations:', error);
+        });
+
+      // Dropdown functionality
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const chevron = dropdown.querySelector('.fa-chevron-down');
+        dropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
+              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+            }
+          });
+          
+          this.classList.toggle('active');
+          if (chevron) {
+            chevron.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+        });
+
+        // Dropdown item click
+        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Language switching
+            if (item.dataset.lang) {
+              currentLang = item.dataset.lang;
+              setLanguage(currentLang);
+            }
+            dropdown.classList.remove('active');
+            const chevron = dropdown.querySelector('.fa-chevron-down');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          });
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const chevron = dropdown.querySelector('.fa-chevron-down');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        });
+      });
+
+      // Set language from translations
+      function setLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        
+        // Set document direction and language
+        document.documentElement.lang = lang;
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        
+        // Page title
+        document.getElementById('page-title').textContent = t.pageTitle;
+        
+        // Header
+        document.getElementById('logo-title').innerHTML = t.logoTitle;
+        document.getElementById('logo-subtitle').textContent = t.logoSubtitle;
+        document.getElementById('nav-language').textContent = t.language;
+        document.getElementById('dropdown-item-english').textContent = t.english;
+        document.getElementById('dropdown-item-arabic').textContent = t.arabic;
+        document.getElementById('nav-fields').textContent = t.fields;
+        document.getElementById('nav-customer-support-text').textContent = t.customerSupport;
+        document.getElementById('nav-about-us-text').textContent = t.aboutUs;
+        
+        // Main content
+        document.getElementById('main-title').textContent = t.mainTitle;
+        document.getElementById('main-description').textContent = t.mainDescription;
+        
+        // Form
+        document.getElementById('form-title').textContent = t.formTitle;
+        document.getElementById('form-full-name').textContent = t.formFullName;
+        document.getElementById('form-email').textContent = t.formEmail;
+        document.getElementById('form-subject').textContent = t.formSubject;
+        document.getElementById('form-message').textContent = t.formMessage;
+        document.getElementById('form-select-subject').textContent = t.formSelectSubject;
+        document.getElementById('form-general-inquiry').textContent = t.formGeneralInquiry;
+        document.getElementById('form-technical-support').textContent = t.formTechnicalSupport;
+        document.getElementById('form-partnership').textContent = t.formPartnership;
+        document.getElementById('form-feedback').textContent = t.formFeedback;
+        document.getElementById('form-other').textContent = t.formOther;
+        document.getElementById('message').placeholder = t.formMessagePlaceholder;
+        document.getElementById('form-submit-button').innerHTML = '<i class="fa-solid fa-paper-plane"></i> ' + t.formSubmitButton;
+        
+        // Contact information
+        document.getElementById('contact-info-title').textContent = t.contactInfoTitle;
+        document.getElementById('contact-email').textContent = t.contactEmail;
+        document.getElementById('contact-phone').textContent = t.contactPhone;
+        document.getElementById('contact-address').textContent = t.contactAddress;
+        document.getElementById('contact-business-hours').textContent = t.contactBusinessHours;
+        document.getElementById('contact-monday-friday').textContent = t.contactMondayFriday;
+        document.getElementById('contact-saturday').textContent = t.contactSaturday;
+        document.getElementById('contact-sunday').textContent = t.contactSunday;
+        document.getElementById('social-follow-us').textContent = t.socialFollowUs;
+        
+        // Map
+        document.getElementById('map-title').textContent = t.mapTitle;
+        
+        // Footer
+        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
+        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle;
+        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks;
+        document.getElementById('footer-support').textContent = t.footerSupport;
+        document.getElementById('footer-home').textContent = t.footerHome;
+        document.getElementById('footer-roadmap').textContent = t.footerRoadmap;
+        document.getElementById('footer-contact').textContent = t.footerContact;
+        document.getElementById('footer-help-center').textContent = t.footerHelpCenter;
+        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy;
+        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService;
+        document.getElementById('footer-copyright').textContent = t.footerCopyright;
+      }
+
+      // Form submission handling
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData);
+        
+        // Show success message in current language
+        const successMessage = translations[currentLang]?.formSuccessMessage || 'Thank you for your message! We\'ll get back to you soon.';
+        alert(successMessage);
+        
+        // Reset form
+        this.reset();
+      });
+    });
+  </script>
+</body>
+</html>

@@ -23,32 +23,83 @@
     </div>
     <div class="roadmap-container">
       <svg class="roadmap-svg" width="1200" height="700">
-        <!-- Main branches from center -->
-        <line x1="600" y1="60" x2="200" y2="150" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="60" x2="400" y2="150" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="60" x2="600" y2="150" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="60" x2="800" y2="150" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="60" x2="1000" y2="150" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="60" x2="120" y2="150" stroke="#00b6b6" stroke-width="3"/>
-        <!-- Add more lines for sub-branches as needed -->
-        <!-- Example: VCS to VCS Hosting -->
-        <line x1="200" y1="150" x2="200" y2="230" stroke="#00b6b6" stroke-width="2"/>
-        <!-- ...continue for all connections in your image... -->
+        <!-- Main branches from center to primary nodes -->
+        <line x1="600" y1="80" x2="150" y2="180" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="80" x2="350" y2="180" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="80" x2="550" y2="180" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="80" x2="750" y2="180" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="80" x2="950" y2="180" stroke="#00b6b6" stroke-width="3"/>
+        
+        <!-- Secondary connections -->
+        <line x1="150" y1="220" x2="150" y2="280" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="350" y1="220" x2="450" y2="280" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="550" y1="220" x2="650" y2="280" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="750" y1="220" x2="850" y2="280" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="950" y1="220" x2="950" y2="280" stroke="#00b6b6" stroke-width="2"/>
+        
+        <!-- Framework connections -->
+        <line x1="650" y1="320" x2="600" y2="380" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="850" y1="320" x2="600" y2="380" stroke="#00b6b6" stroke-width="2"/>
+        
+        <!-- Testing and Deployment connections -->
+        <line x1="600" y1="420" x2="750" y2="480" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="750" y1="520" x2="950" y2="580" stroke="#00b6b6" stroke-width="2"/>
       </svg>
-      <!-- Center node -->
-      <button class="node main-node" style="left:570px;top:30px;">Frontend Developer</button>
-      <!-- First row of nodes -->
-      <button class="node" style="left:90px;top:130px;">Internet</button>
-      <button class="node" style="left:370px;top:130px;">JavaScript</button>
-      <button class="node" style="left:570px;top:130px;">CSS</button>
-      <button class="node" style="left:770px;top:130px;">Internet</button>
-      <button class="node" style="left:970px;top:130px;">HTML</button>
-      <button class="node" style="left:200px;top:130px;">VCS</button>
-      <button class="node" style="left:970px;top:230px;">Build Tools</button>
-      <!-- Second row (example) -->
-      <button class="node" style="left:200px;top:230px;">VCS Hosting</button>
-      <!-- Continue adding all nodes and adjust their positions to match the image -->
+      
+      <!-- Center main node -->
+      <button class="node main-node" style="left:500px;top:40px;">Frontend Developer</button>
+      
+      <!-- Primary branch nodes -->
+      <button class="node" style="left:100px;top:160px;">Package Managers</button>
+      <button class="node" style="left:300px;top:160px;">HTML</button>
+      <button class="node" style="left:500px;top:160px;">CSS</button>
+      <button class="node" style="left:700px;top:160px;">JavaScript</button>
+      <button class="node" style="left:900px;top:160px;">Version Control</button>
+      
+      <!-- Secondary branch nodes -->
+      <button class="node" style="left:100px;top:260px;">npm / yarn</button>
+      <button class="node" style="left:400px;top:260px;">Accessibility</button>
+      <button class="node" style="left:600px;top:260px;">Responsive Design</button>
+      <button class="node" style="left:800px;top:260px;">ES6+</button>
+      <button class="node" style="left:900px;top:260px;">GitHub</button>
+      
+      <!-- Framework node -->
+      <button class="node" style="left:550px;top:360px;">Frameworks<br>(React, Vue, Angular)</button>
+      
+      <!-- Testing node -->
+      <button class="node" style="left:700px;top:460px;">Testing</button>
+      
+      <!-- Deployment node -->
+      <button class="node" style="left:900px;top:560px;">Deployment</button>
     </div>
   </main>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Masar</h3>
+        <p>From vision to destination</p>
+      </div>
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="RoadMap.html">Roadmap</a></li>
+          <li><a href="contact_us.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Masar. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
