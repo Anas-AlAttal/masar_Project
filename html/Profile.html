@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title id="page-title">Profile - Masar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/Profile.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+    </div>
+    <nav>
+      <div class="nav-item dropdown" id="lang-dropdown">
+        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+        </div>
+      </div>
+      <div class="nav-item dropdown" id="fields-dropdown">
+        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item">Frontend</div>
+          <div class="dropdown-item">Backend</div>
+          <div class="dropdown-item">Data Science</div>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
+      <div class="nav-item" id="nav-about-us"><b>!</b> <span>About us</span></div>
+      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </nav>
+  </header>
+  <main>
+    <section class="profile-section">
+      <div class="profile-card">
+        <div class="profile-avatar">
+          <img src="https://www.gravatar.com/avatar/?d=mp" alt="User Avatar" id="profile-avatar-img">
+        </div>
+        <form class="profile-form">
+          <div class="profile-field">
+            <label for="profile-name" id="profile-name-label">Name</label>
+            <input type="text" id="profile-name" value="John Doe">
+          </div>
+          <div class="profile-field">
+            <label for="profile-email" id="profile-email-label">Email</label>
+            <input type="email" id="profile-email" value="john.doe@email.com">
+          </div>
+          <div class="profile-field">
+            <label for="profile-password" id="profile-password-label">Password</label>
+            <input type="password" id="profile-password" value="">
+          </div>
+          <button type="submit" class="save-btn" id="profile-save-btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 id="footer-logo-title">Masar</h3>
+        <p id="footer-logo-subtitle">From vision to destination</p>
+      </div>
+      <div class="footer-section">
+        <h4 id="footer-quick-links">Quick Links</h4>
+        <ul>
+          <li><a href="home.html" id="footer-home">Home</a></li>
+          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 id="footer-support">Support</h4>
+        <ul>
+          <li><a href="#" id="footer-help-center">Help Center</a></li>
+          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
+          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+    </div>
+  </footer>
+  <script>
+    // Dropdown functionality and language switching with JSON
+    document.addEventListener('DOMContentLoaded', function() {
+      let translations = {};
+      let currentLang = 'en';
+
+      // Fetch translations
+      fetch('../json/home language.json')
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          setLanguage(currentLang);
+        });
+
+      // Dropdown logic
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const chevron = dropdown.querySelector('.fa-chevron-down');
+        dropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
+              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+            }
+          });
+          dropdown.classList.toggle('active');
+          if (chevron) chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+        // Dropdown item click
+        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Language switching
+            if (item.dataset.lang) {
+              currentLang = item.dataset.lang;
+              setLanguage(currentLang);
+            }
+            dropdown.classList.remove('active');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          });
+        });
+      });
+      document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const chevron = dropdown.querySelector('.fa-chevron-down');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        });
+      });
+
+      // Set language from translations
+      function setLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        document.documentElement.lang = lang;
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        // Title
+        document.title = lang === 'ar' ? 'مسار - من الرؤية إلى الوجهة' : 'Masar - From vision to destination';
+        // Header
+        document.getElementById('logo-title').innerHTML = t.logoTitle;
+        document.getElementById('logo-subtitle').textContent = t.logoSubtitle;
+        // Nav
+        document.getElementById('nav-language').textContent = t.language;
+        document.getElementById('dropdown-item-english').textContent = t.english;
+        document.getElementById('dropdown-item-arabic').textContent = t.arabic;
+        document.getElementById('nav-fields').textContent = t.fields;
+        document.querySelector('#nav-customer-support span').textContent = t.customerSupport;
+        document.querySelector('#nav-about-us span').textContent = t.aboutUs;
+        // Footer
+        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks;
+        document.getElementById('footer-support').textContent = t.footerSupport;
+        document.getElementById('footer-help-center').textContent = t.footerHelpCenter;
+        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy;
+        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService;
+        document.getElementById('footer-copyright').textContent = t.footerCopyright;
+        document.getElementById('footer-home').textContent = t.footerHome;
+        document.getElementById('footer-roadmap').textContent = t.footerRoadmap;
+        document.getElementById('footer-contact').textContent = t.footerContact;
+        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
+        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle;
+      }
+    });
+  </script>
+</body>
+</html> 

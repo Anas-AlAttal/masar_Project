@@ -2,104 +2,338 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Frontend Developer Roadmap - Masar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title">Frontend Developer Roadmap - Masar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <!-- Google Fonts for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/RoadMap.css">
 </head>
 <body>
   <header>
     <div class="logo">
-      <span class="masar-logo">Masar <span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle">From vision to destination</div>
+      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
     </div>
     <nav>
-      <div class="nav-item"><span>&#128187;</span> Fields <span>&#9660;</span></div>
-      <div class="nav-item"><span>&#128269;</span></div>
+      <div class="nav-item dropdown" id="lang-dropdown">
+        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+        </div>
+      </div>
+      <div class="nav-item dropdown" id="fields-dropdown">
+        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item">Frontend</div>
+          <div class="dropdown-item">Backend</div>
+          <div class="dropdown-item">Data Science</div>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group"></i> <span id="nav-customer-support-text">Customer support</span></div>
+      <div class="nav-item" id="nav-about-us"><b>!</b> <span id="nav-about-us-text">About us</span></div>
+      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
     </nav>
   </header>
-  <main>
-    <div class="roadmap-title">
-      <span>Frontend Developer</span>
+
+  <main class="roadmap-main">
+    <div class="roadmap-header">
+      <h1 id="roadmap-title">Frontend Developer Roadmap</h1>
+      <p id="roadmap-description">A comprehensive guide to becoming a modern frontend developer. Follow this roadmap to master the essential skills and technologies.</p>
     </div>
+
     <div class="roadmap-container">
-      <svg class="roadmap-svg" width="1200" height="700">
+      <svg class="roadmap-svg" width="1200" height="800">
         <!-- Main branches from center to primary nodes -->
-        <line x1="600" y1="80" x2="150" y2="180" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="80" x2="350" y2="180" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="80" x2="550" y2="180" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="80" x2="750" y2="180" stroke="#00b6b6" stroke-width="3"/>
-        <line x1="600" y1="80" x2="950" y2="180" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="100" x2="150" y2="200" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="100" x2="350" y2="200" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="100" x2="550" y2="200" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="100" x2="750" y2="200" stroke="#00b6b6" stroke-width="3"/>
+        <line x1="600" y1="100" x2="950" y2="200" stroke="#00b6b6" stroke-width="3"/>
         
         <!-- Secondary connections -->
-        <line x1="150" y1="220" x2="150" y2="280" stroke="#00b6b6" stroke-width="2"/>
-        <line x1="350" y1="220" x2="450" y2="280" stroke="#00b6b6" stroke-width="2"/>
-        <line x1="550" y1="220" x2="650" y2="280" stroke="#00b6b6" stroke-width="2"/>
-        <line x1="750" y1="220" x2="850" y2="280" stroke="#00b6b6" stroke-width="2"/>
-        <line x1="950" y1="220" x2="950" y2="280" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="150" y1="240" x2="150" y2="300" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="350" y1="240" x2="450" y2="300" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="550" y1="240" x2="650" y2="300" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="750" y1="240" x2="850" y2="300" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="950" y1="240" x2="950" y2="300" stroke="#00b6b6" stroke-width="2"/>
         
         <!-- Framework connections -->
-        <line x1="650" y1="320" x2="600" y2="380" stroke="#00b6b6" stroke-width="2"/>
-        <line x1="850" y1="320" x2="600" y2="380" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="650" y1="340" x2="600" y2="400" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="850" y1="340" x2="600" y2="400" stroke="#00b6b6" stroke-width="2"/>
         
         <!-- Testing and Deployment connections -->
-        <line x1="600" y1="420" x2="750" y2="480" stroke="#00b6b6" stroke-width="2"/>
-        <line x1="750" y1="520" x2="950" y2="580" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="600" y1="440" x2="750" y2="500" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="750" y1="540" x2="950" y2="600" stroke="#00b6b6" stroke-width="2"/>
+        
+        <!-- Advanced connections -->
+        <line x1="950" y1="640" x2="750" y2="700" stroke="#00b6b6" stroke-width="2"/>
+        <line x1="750" y1="740" x2="600" y2="780" stroke="#00b6b6" stroke-width="2"/>
       </svg>
       
       <!-- Center main node -->
-      <button class="node main-node" style="left:500px;top:40px;">Frontend Developer</button>
+      <button class="node main-node" style="left:500px;top:60px;" id="main-node">Frontend Developer</button>
       
       <!-- Primary branch nodes -->
-      <button class="node" style="left:100px;top:160px;">Package Managers</button>
-      <button class="node" style="left:300px;top:160px;">HTML</button>
-      <button class="node" style="left:500px;top:160px;">CSS</button>
-      <button class="node" style="left:700px;top:160px;">JavaScript</button>
-      <button class="node" style="left:900px;top:160px;">Version Control</button>
+      <button class="node" style="left:100px;top:180px;" id="package-managers">Package Managers</button>
+      <button class="node" style="left:300px;top:180px;" id="html-fundamentals">HTML</button>
+      <button class="node" style="left:500px;top:180px;" id="css-fundamentals">CSS</button>
+      <button class="node" style="left:700px;top:180px;" id="javascript-fundamentals">JavaScript</button>
+      <button class="node" style="left:900px;top:180px;" id="version-control">Version Control</button>
       
       <!-- Secondary branch nodes -->
-      <button class="node" style="left:100px;top:260px;">npm / yarn</button>
-      <button class="node" style="left:400px;top:260px;">Accessibility</button>
-      <button class="node" style="left:600px;top:260px;">Responsive Design</button>
-      <button class="node" style="left:800px;top:260px;">ES6+</button>
-      <button class="node" style="left:900px;top:260px;">GitHub</button>
+      <button class="node" style="left:100px;top:280px;" id="npm-yarn">npm / yarn</button>
+      <button class="node" style="left:400px;top:280px;" id="accessibility">Accessibility</button>
+      <button class="node" style="left:600px;top:280px;" id="responsive-design">Responsive Design</button>
+      <button class="node" style="left:800px;top:280px;" id="es6-features">ES6+ Features</button>
+      <button class="node" style="left:900px;top:280px;" id="git-github">Git & GitHub</button>
       
       <!-- Framework node -->
-      <button class="node" style="left:550px;top:360px;">Frameworks<br>(React, Vue, Angular)</button>
+      <button class="node" style="left:550px;top:380px;" id="frameworks">Frameworks<br>(React, Vue, Angular)</button>
       
       <!-- Testing node -->
-      <button class="node" style="left:700px;top:460px;">Testing</button>
+      <button class="node" style="left:700px;top:480px;" id="testing">Testing</button>
       
       <!-- Deployment node -->
-      <button class="node" style="left:900px;top:560px;">Deployment</button>
+      <button class="node" style="left:900px;top:580px;" id="deployment">Deployment</button>
+      
+      <!-- Advanced nodes -->
+      <button class="node" style="left:900px;top:680px;" id="performance">Performance</button>
+      <button class="node" style="left:700px;top:720px;" id="security">Security</button>
+      <button class="node" style="left:550px;top:760px;" id="advanced-concepts">Advanced Concepts</button>
+    </div>
+
+    <!-- Detailed content sections -->
+    <div class="roadmap-content">
+      <div class="content-section" id="package-managers-content">
+        <h2>Package Managers</h2>
+        <p>Learn how to manage dependencies and packages in your projects.</p>
+        <ul>
+          <li>npm (Node Package Manager)</li>
+          <li>yarn</li>
+          <li>pnpm</li>
+          <li>Package.json configuration</li>
+          <li>Dependency management</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="html-fundamentals-content">
+        <h2>HTML Fundamentals</h2>
+        <p>Master the structure and semantics of web pages.</p>
+        <ul>
+          <li>HTML5 elements and structure</li>
+          <li>Semantic HTML</li>
+          <li>Forms and validation</li>
+          <li>SEO best practices</li>
+          <li>Accessibility basics</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="css-fundamentals-content">
+        <h2>CSS Fundamentals</h2>
+        <p>Learn styling and layout techniques for modern web design.</p>
+        <ul>
+          <li>CSS selectors and properties</li>
+          <li>Box model and layout</li>
+          <li>Flexbox and Grid</li>
+          <li>CSS animations and transitions</li>
+          <li>CSS preprocessors (Sass, Less)</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="javascript-fundamentals-content">
+        <h2>JavaScript Fundamentals</h2>
+        <p>Master the core concepts of JavaScript programming.</p>
+        <ul>
+          <li>Variables, functions, and scope</li>
+          <li>Objects and arrays</li>
+          <li>DOM manipulation</li>
+          <li>Event handling</li>
+          <li>Asynchronous programming</li>
+        </ul>
+      </div>
+
+      <div class="content-section" id="version-control-content">
+        <h2>Version Control</h2>
+        <p>Learn to track changes and collaborate with other developers.</p>
+        <ul>
+          <li>Git basics and commands</li>
+          <li>Branching and merging</li>
+          <li>GitHub workflow</li>
+          <li>Pull requests and code review</li>
+          <li>Conflict resolution</li>
+        </ul>
+      </div>
     </div>
   </main>
-  
+
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3>Masar</h3>
-        <p>From vision to destination</p>
+        <h3 id="footer-logo-title">Masar</h3>
+        <p id="footer-logo-subtitle">From vision to destination</p>
       </div>
       <div class="footer-section">
-        <h4>Quick Links</h4>
+        <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
-          <li><a href="home.html">Home</a></li>
-          <li><a href="RoadMap.html">Roadmap</a></li>
-          <li><a href="contact_us.html">Contact</a></li>
+          <li><a href="home.html" id="footer-home">Home</a></li>
+          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Support</h4>
+        <h4 id="footer-support">Support</h4>
         <ul>
-          <li><a href="#">Help Center</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#" id="footer-help-center">Help Center</a></li>
+          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
+          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2024 Masar. All rights reserved.</p>
+      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    // Language switching and translation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      let translations = {};
+      let currentLang = 'en';
+
+      // Fetch translations
+      fetch('../json/roadmap.json')
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          setLanguage(currentLang);
+        })
+        .catch(error => {
+          console.error('Error loading translations:', error);
+          // Fallback to home translations if roadmap.json doesn't exist
+          fetch('../json/home language.json')
+            .then(response => response.json())
+            .then(data => {
+              translations = data;
+              setLanguage(currentLang);
+            });
+        });
+
+      // Dropdown functionality
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const chevron = dropdown.querySelector('.fa-chevron-down');
+        dropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
+              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+            }
+          });
+          
+          this.classList.toggle('active');
+          if (chevron) {
+            chevron.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+        });
+
+        // Dropdown item click
+        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Language switching
+            if (item.dataset.lang) {
+              currentLang = item.dataset.lang;
+              setLanguage(currentLang);
+            }
+            dropdown.classList.remove('active');
+            const chevron = dropdown.querySelector('.fa-chevron-down');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          });
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const chevron = dropdown.querySelector('.fa-chevron-down');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        });
+      });
+
+      // Node click functionality
+      const nodes = document.querySelectorAll('.node');
+      nodes.forEach(node => {
+        node.addEventListener('click', function() {
+          const nodeId = this.id;
+          showNodeContent(nodeId);
+        });
+      });
+
+      // Set language from translations
+      function setLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        
+        // Set document direction and language
+        document.documentElement.lang = lang;
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        
+        // Page title
+        document.getElementById('page-title').textContent = t.pageTitle || 'Frontend Developer Roadmap - Masar';
+        
+        // Header
+        document.getElementById('logo-title').innerHTML = t.logoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
+        document.getElementById('logo-subtitle').textContent = t.logoSubtitle || 'From vision to destination';
+        document.getElementById('nav-language').textContent = t.language || 'language';
+        document.getElementById('dropdown-item-english').textContent = t.english || 'English';
+        document.getElementById('dropdown-item-arabic').textContent = t.arabic || 'Arabic';
+        document.getElementById('nav-fields').textContent = t.fields || 'Fields';
+        document.getElementById('nav-customer-support-text').textContent = t.customerSupport || 'Customer support';
+        document.getElementById('nav-about-us-text').textContent = t.aboutUs || 'About us';
+        
+        // Main content
+        document.getElementById('roadmap-title').textContent = t.roadmapTitle || 'Frontend Developer Roadmap';
+        document.getElementById('roadmap-description').textContent = t.roadmapDescription || 'A comprehensive guide to becoming a modern frontend developer.';
+        
+        // Footer
+        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
+        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle || 'From vision to destination';
+        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks || 'Quick Links';
+        document.getElementById('footer-support').textContent = t.footerSupport || 'Support';
+        document.getElementById('footer-home').textContent = t.footerHome || 'Home';
+        document.getElementById('footer-roadmap').textContent = t.footerRoadmap || 'Roadmap';
+        document.getElementById('footer-contact').textContent = t.footerContact || 'Contact';
+        document.getElementById('footer-help-center').textContent = t.footerHelpCenter || 'Help Center';
+        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy || 'Privacy Policy';
+        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService || 'Terms of Service';
+        document.getElementById('footer-copyright').textContent = t.footerCopyright || '© 2024 Masar. All rights reserved.';
+      }
+
+      // Show node content
+      function showNodeContent(nodeId) {
+        // Hide all content sections
+        const contentSections = document.querySelectorAll('.content-section');
+        contentSections.forEach(section => {
+          section.style.display = 'none';
+        });
+
+        // Show the selected content section
+        const selectedContent = document.getElementById(nodeId + '-content');
+        if (selectedContent) {
+          selectedContent.style.display = 'block';
+          selectedContent.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  </script>
 </body>
 </html>
