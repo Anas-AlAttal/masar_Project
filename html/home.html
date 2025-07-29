@@ -28,14 +28,15 @@
       <div class="nav-item dropdown" id="fields-dropdown">
         <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
-          <div class="dropdown-item">Frontend</div>
+          <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item">Backend</div>
           <div class="dropdown-item">Data Science</div>
         </div>
       </div>
       <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
-      <div class="nav-item" id="nav-about-us"><b>!</b> <span>About us</span></div>
+      <div class="nav-item" id="nav-about-us"><i class="fa-solid fa-info-circle" onclick="window.location.href='about_us.html'"></i> <span onclick="window.location.href='about_us.html'">About us</span></div>
       <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <span id="user-name" style="display:none; font-weight:600; color:#00b6b6; margin-left:20px;"></span>
     </nav>
   </header>
   <main>
@@ -45,7 +46,7 @@
         Towards the future, where every step is calculated with care and precise guidance.<br>
         Together, we'll build the path that will lead you to your goals.
       </p>
-      <div class="buttons">
+      <div class="buttons" id="auth-buttons">
         <button class="login" id="login-btn" onclick="window.location.href='LogIn.html'">Login</button>
         <button class="guest" id="signup-btn" onclick="window.location.href='SignUp.html'">Sign up</button>
       </div>
@@ -83,6 +84,7 @@
         <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
+          <li><a href="about_us.html" id="footer-about">About Us</a></li>
           <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
@@ -188,9 +190,25 @@
         document.getElementById('footer-home').textContent = t.footerHome;
         document.getElementById('footer-roadmap').textContent = t.footerRoadmap;
         document.getElementById('footer-contact').textContent = t.footerContact;
+        document.getElementById('footer-about').textContent = t.footerAbout;
         document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
         document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle;
        
+      }
+    });
+
+    // User sign-in simulation
+    // Set these variables based on your authentication logic
+    var isSignedIn = false; // Change to true to simulate signed-in state
+    var userName = "John Doe"; // Replace with actual user name
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Show user name and hide auth buttons if signed in
+      if (isSignedIn) {
+        document.getElementById('user-name').textContent = 'Welcome, ' + userName;
+        document.getElementById('user-name').style.display = 'inline-block';
+        var authBtns = document.getElementById('auth-buttons');
+        if (authBtns) authBtns.style.display = 'none';
       }
     });
   </script>

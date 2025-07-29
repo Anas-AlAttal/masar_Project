@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FrontEnd Developer Roadmap - Masar</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="../css/roadmap2.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+    </div>
+    <nav>
+      <div class="nav-item dropdown" id="lang-dropdown">
+        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+        </div>
+      </div>
+      <div class="nav-item dropdown" id="fields-dropdown">
+        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <div class="dropdown-menu">
+          <div class="dropdown-item">Frontend</div>
+          <div class="dropdown-item">Backend</div>
+          <div class="dropdown-item">Data Science</div>
+        </div>
+      </div>
+      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
+      <div class="nav-item" id="nav-about-us"><i class="fa-solid fa-info-circle" onclick="window.location.href='about_us.html'"></i> <span onclick="window.location.href='about_us.html'">About us</span></div>
+      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </nav>
+  </header>
+
+  <main class="roadmap-main">
+    <!-- Roadmap Header -->
+    <section class="roadmap-header">
+      <div class="container">
+        <h1 id="roadmap-title">FrontEnd Developer</h1>
+        <p id="roadmap-subtitle">Master the art of creating beautiful, interactive web experiences</p>
+      </div>
+    </section>
+
+    <!-- Roadmap Content -->
+    <section class="roadmap-content">
+      <div class="container">
+        <div class="roadmap-container">
+          <!-- Level 1 -->
+          <div class="level level-1">
+            <h2 class="level-title">Level 1 - Foundation</h2>
+            <div class="nodes-container">
+              <div class="node level-1-node" data-tooltip="HyperText Markup Language - The backbone of web pages">
+                <i class="fa-brands fa-html5"></i>
+                <span>HTML</span>
+              </div>
+              <div class="node level-1-node" data-tooltip="Cascading Style Sheets - Styling and layout">
+                <i class="fa-brands fa-css3-alt"></i>
+                <span>CSS</span>
+              </div>
+              <div class="node level-1-node" data-tooltip="Creating websites that work on all devices">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>Responsive Design</span>
+              </div>
+              <div class="node level-1-node" data-tooltip="Version control and collaboration">
+                <i class="fa-brands fa-github"></i>
+                <span>Git & GitHub Basics</span>
+              </div>
+              <div class="node level-1-node" data-tooltip="Programming fundamentals for web">
+                <i class="fa-brands fa-js"></i>
+                <span>JavaScript Basics</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Level 2 -->
+          <div class="level level-2">
+            <h2 class="level-title">Level 2 - Core Skills</h2>
+            <div class="nodes-container">
+              <div class="node level-2-node" data-tooltip="Advanced JavaScript and DOM manipulation">
+                <i class="fa-solid fa-code"></i>
+                <span>JavaScript & DOM</span>
+              </div>
+              <div class="node level-2-node" data-tooltip="Manipulating webpage elements dynamically">
+                <i class="fa-solid fa-window-maximize"></i>
+                <span>DOM Manipulation</span>
+              </div>
+              <div class="node level-2-node" data-tooltip="Handling user interactions and form data">
+                <i class="fa-solid fa-keyboard"></i>
+                <span>Events & Forms</span>
+              </div>
+              <div class="node level-2-node" data-tooltip="Connecting to external data sources">
+                <i class="fa-solid fa-cloud"></i>
+                <span>API & Fetch</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Level 3 -->
+          <div class="level level-3">
+            <h2 class="level-title">Level 3 - Frameworks</h2>
+            <div class="nodes-container">
+              <div class="node level-3-node" data-tooltip="Managing project dependencies and libraries">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <span>Project Libraries</span>
+              </div>
+              <div class="node level-3-node" data-tooltip="Structuring and organizing your projects">
+                <i class="fa-solid fa-folder-tree"></i>
+                <span>Projects Organization</span>
+              </div>
+              <div class="node level-3-node" data-tooltip="Popular JavaScript library for building user interfaces">
+                <i class="fa-brands fa-react"></i>
+                <span>React.js</span>
+              </div>
+              <div class="node level-3-node" data-tooltip="Managing component data and state">
+                <i class="fa-solid fa-database"></i>
+                <span>State Management</span>
+              </div>
+              <div class="node level-3-node" data-tooltip="Creating multi-page applications">
+                <i class="fa-solid fa-route"></i>
+                <span>Routing</span>
+              </div>
+              <div class="node level-3-node" data-tooltip="Deploying your React applications">
+                <i class="fa-solid fa-rocket"></i>
+                <span>Deploy React Project</span>
+              </div>
+              <div class="node level-3-node" data-tooltip="Making API calls within React components">
+                <i class="fa-solid fa-plug"></i>
+                <span>API Calls in React</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Level 4 -->
+          <div class="level level-4">
+            <h2 class="level-title">Level 4 - Projects & Specialization</h2>
+            <div class="nodes-container">
+              <div class="node level-4-node" data-tooltip="Building comprehensive admin interfaces">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Admin Dashboard</span>
+              </div>
+              <div class="node level-4-node" data-tooltip="Creating weather applications with real-time data">
+                <i class="fa-solid fa-cloud-sun"></i>
+                <span>Weather App with API</span>
+              </div>
+              <div class="node level-4-node" data-tooltip="Building task management applications">
+                <i class="fa-solid fa-list-check"></i>
+                <span>To Do App</span>
+              </div>
+              <div class="node level-4-node" data-tooltip="Advanced projects and specialized skills">
+                <i class="fa-solid fa-star"></i>
+                <span>Projects & Specialization</span>
+              </div>
+              <div class="node level-4-node" data-tooltip="Converting design mockups into functional code">
+                <i class="fa-solid fa-palette"></i>
+                <span>Convert Figma Design to Code</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+          <h3>Level Legend</h3>
+          <div class="legend-items">
+            <div class="legend-item">
+              <div class="legend-color level-1-color"></div>
+              <span>Level 1 - Foundation</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color level-2-color"></div>
+              <span>Level 2 - Core Skills</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color level-3-color"></div>
+              <span>Level 3 - Frameworks</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color level-4-color"></div>
+              <span>Level 4 - Projects & Specialization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+      <div class="container">
+        <h2 id="cta-title">Ready to Start Your Frontend Journey?</h2>
+        <p id="cta-text">Begin with Level 1 and progress through each level to become a skilled Frontend Developer</p>
+        <div class="cta-buttons">
+          <button class="login" id="cta-start-btn" onclick="window.location.href='SignUp.html'">Start Learning</button>
+          <button class="guest" id="cta-explore-btn" onclick="window.location.href='RoadMap.html'">Explore More Roadmaps</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 id="footer-logo-title">Masar</h3>
+        <p id="footer-logo-subtitle">From vision to destination</p>
+      </div>
+      <div class="footer-section">
+        <h4 id="footer-quick-links">Quick Links</h4>
+        <ul>
+          <li><a href="home.html" id="footer-home">Home</a></li>
+          <li><a href="about_us.html" id="footer-about">About Us</a></li>
+          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4 id="footer-support">Support</h4>
+        <ul>
+          <li><a href="#" id="footer-help-center">Help Center</a></li>
+          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
+          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      let translations = {};
+      let currentLang = 'en';
+
+      // Fetch translations
+      fetch('../json/roadmap_language.json')
+        .then(response => response.json())
+        .then(data => {
+          translations = data;
+          setLanguage(currentLang);
+        })
+        .catch(error => {
+          console.log('Translation file not found, using default language');
+          setLanguage(currentLang);
+        });
+
+      // Dropdown logic
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const chevron = dropdown.querySelector('.fa-chevron-down');
+        dropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
+              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+            }
+          });
+          dropdown.classList.toggle('active');
+          if (chevron) chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+        });
+        
+        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (item.dataset.lang) {
+              currentLang = item.dataset.lang;
+              setLanguage(currentLang);
+            }
+            dropdown.classList.remove('active');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          });
+        });
+      });
+      
+      document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const chevron = dropdown.querySelector('.fa-chevron-down');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        });
+      });
+
+      // Tooltip functionality
+      const nodes = document.querySelectorAll('.node');
+      nodes.forEach(node => {
+        node.addEventListener('mouseenter', function() {
+          const tooltip = this.getAttribute('data-tooltip');
+          if (tooltip) {
+            showTooltip(this, tooltip);
+          }
+        });
+        
+        node.addEventListener('mouseleave', function() {
+          hideTooltip();
+        });
+      });
+
+      function showTooltip(element, text) {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'tooltip';
+        tooltip.textContent = text;
+        document.body.appendChild(tooltip);
+        
+        const rect = element.getBoundingClientRect();
+        tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
+        tooltip.style.top = rect.top - tooltip.offsetHeight - 10 + 'px';
+        
+        setTimeout(() => tooltip.classList.add('show'), 10);
+      }
+
+      function hideTooltip() {
+        const tooltip = document.querySelector('.tooltip');
+        if (tooltip) {
+          tooltip.remove();
+        }
+      }
+
+      function setLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        document.documentElement.lang = lang;
+        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        
+        // Set page title
+        document.title = lang === 'ar' ? 'خريطة طريق مطور الواجهة الأمامية - مسار' : 'FrontEnd Developer Roadmap - Masar';
+        
+        // Update navigation elements
+        document.getElementById('logo-title').innerHTML = t.logoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
+        document.getElementById('logo-subtitle').textContent = t.logoSubtitle || 'From vision to destination';
+        document.getElementById('nav-language').textContent = t.language || 'language';
+        document.getElementById('dropdown-item-english').textContent = t.english || 'English';
+        document.getElementById('dropdown-item-arabic').textContent = t.arabic || 'Arabic';
+        document.getElementById('nav-fields').textContent = t.fields || 'Fields';
+        document.querySelector('#nav-customer-support span').textContent = t.customerSupport || 'Customer support';
+        document.querySelector('#nav-about-us span').textContent = t.aboutUs || 'About us';
+        
+        // Update roadmap content
+        document.getElementById('roadmap-title').textContent = t.roadmapTitle || 'FrontEnd Developer';
+        document.getElementById('roadmap-subtitle').textContent = t.roadmapSubtitle || 'Master the art of creating beautiful, interactive web experiences';
+        
+        // Update CTA section
+        document.getElementById('cta-title').textContent = t.ctaTitle || 'Ready to Start Your Frontend Journey?';
+        document.getElementById('cta-text').textContent = t.ctaText || 'Begin with Level 1 and progress through each level to become a skilled Frontend Developer';
+        document.getElementById('cta-start-btn').textContent = t.ctaStartBtn || 'Start Learning';
+        document.getElementById('cta-explore-btn').textContent = t.ctaExploreBtn || 'Explore More Roadmaps';
+        
+        // Update footer elements
+        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks || 'Quick Links';
+        document.getElementById('footer-support').textContent = t.footerSupport || 'Support';
+        document.getElementById('footer-help-center').textContent = t.footerHelpCenter || 'Help Center';
+        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy || 'Privacy Policy';
+        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService || 'Terms of Service';
+        document.getElementById('footer-copyright').textContent = t.footerCopyright || '© 2024 Masar. All rights reserved.';
+        document.getElementById('footer-home').textContent = t.footerHome || 'Home';
+        document.getElementById('footer-roadmap').textContent = t.footerRoadmap || 'Roadmap';
+        document.getElementById('footer-contact').textContent = t.footerContact || 'Contact';
+        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle || 'Masar';
+        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle || 'From vision to destination';
+        
+        // Add About Us link to footer
+        const aboutLink = document.getElementById('footer-about');
+        if (aboutLink) {
+          aboutLink.textContent = lang === 'ar' ? 'من نحن' : 'About Us';
+        }
+      }
+    });
+  </script>
+</body>
+</html>

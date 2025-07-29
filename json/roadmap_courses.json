@@ -1,0 +1,154 @@
+{
+  "HTML": {
+    "title": "HTML Basics",
+    "description": "تعلم أساسيات HTML لبناء صفحات الويب، بما في ذلك العناصر، السمات، الهيكل، والنماذج.",
+    "resources": [
+      { "name": "دليل HTML من MDN", "url": "https://developer.mozilla.org/ar/docs/Web/HTML" },
+      { "name": "W3Schools HTML", "url": "https://www.w3schools.com/html/" }
+    ]
+  },
+  "CSS": {
+    "title": "CSS Fundamentals",
+    "description": "تعلم تنسيقات وتصميم صفحات الويب باستخدام CSS، بما في ذلك Flexbox وGrid.",
+    "resources": [
+      { "name": "دليل CSS من MDN", "url": "https://developer.mozilla.org/ar/docs/Web/CSS" },
+      { "name": "CSS Tricks", "url": "https://css-tricks.com/" }
+    ]
+  },
+  "Rsponsive Design": {
+    "title": "Responsive Design",
+    "description": "تعلم كيفية جعل صفحاتك متجاوبة مع جميع الأجهزة باستخدام Media Queries وتقنيات التصميم الحديثة.",
+    "resources": [
+      { "name": "Responsive Web Design Basics", "url": "https://web.dev/responsive-web-design-basics/" }
+    ]
+  },
+  "Git & GitHub Basics": {
+    "title": "Git & GitHub Basics",
+    "description": "تعلم أساسيات التحكم في الإصدارات باستخدام Git وGitHub.",
+    "resources": [
+      { "name": "Git Handbook", "url": "https://guides.github.com/introduction/git-handbook/" },
+      { "name": "Learn Git Branching", "url": "https://learngitbranching.js.org/" }
+    ]
+  },
+  "JavaScript Basics": {
+    "title": "JavaScript Basics",
+    "description": "تعلم أساسيات البرمجة بلغة جافاسكريبت: المتغيرات، الشروط، الحلقات، الدوال.",
+    "resources": [
+      { "name": "JavaScript Guide (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" }
+    ]
+  },
+  "Events & Forms": {
+    "title": "Events & Forms",
+    "description": "تعلم التعامل مع الأحداث والنماذج في جافاسكريبت.",
+    "resources": [
+      { "name": "JavaScript Event Reference", "url": "https://developer.mozilla.org/en-US/docs/Web/Events" }
+    ]
+  },
+  "JvaScript & DOM": {
+    "title": "JavaScript & DOM",
+    "description": "تعلم كيفية التفاعل مع عناصر الصفحة (DOM) باستخدام جافاسكريبت.",
+    "resources": [
+      { "name": "DOM Introduction (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" }
+    ]
+  },
+  "DOM Manipulation": {
+    "title": "DOM Manipulation",
+    "description": "طرق التلاعب بعناصر الصفحة وإضافة/حذف العناصر ديناميكياً.",
+    "resources": [
+      { "name": "DOM Manipulation (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Manipulating_the_DOM" }
+    ]
+  },
+  "API & Fetch": {
+    "title": "API & Fetch",
+    "description": "تعلم كيفية جلب البيانات من الخوادم باستخدام Fetch API.",
+    "resources": [
+      { "name": "Using Fetch (MDN)", "url": "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch" }
+    ]
+  },
+  "Deploy React Project": {
+    "title": "Deploy React Project",
+    "description": "تعلم كيفية نشر تطبيق React على الإنترنت.",
+    "resources": [
+      { "name": "Deploying React Apps", "url": "https://create-react-app.dev/docs/deployment/" }
+    ]
+  },
+  "API Calls in React": {
+    "title": "API Calls in React",
+    "description": "كيفية جلب البيانات من API داخل تطبيق React.",
+    "resources": [
+      { "name": "React Fetch Data", "url": "https://react.dev/learn/synchronizing-with-effects" }
+    ]
+  },
+  "Adinin Dashboaid": {
+    "title": "Admin Dashboard",
+    "description": "مشروع لوحة تحكم لتطبيق ما، يدمج كل ما تعلمته.",
+    "resources": [
+      { "name": "React Admin Dashboard Example", "url": "https://www.freecodecamp.org/news/how-to-build-a-react-dashboard/" }
+    ]
+  },
+  "Weather App with API": {
+    "title": "Weather App with API",
+    "description": "مشروع تطبيق طقس يستخدم API خارجي.",
+    "resources": [
+      { "name": "Weather API Docs", "url": "https://openweathermap.org/api" }
+    ]
+  },
+  "To Do App": {
+    "title": "To Do App",
+    "description": "مشروع تطبيق مهام بسيط لتطبيق المفاهيم الأساسية.",
+    "resources": [
+      { "name": "React To-Do App Tutorial", "url": "https://www.freecodecamp.org/news/how-to-build-a-todo-list-with-react-hooks/" }
+    ]
+  },
+  "Convert Figma Design to Code": {
+    "title": "Convert Figma Design to Code",
+    "description": "تعلم تحويل تصاميم Figma إلى كود HTML/CSS/JS.",
+    "resources": [
+      { "name": "Figma to Code Guide", "url": "https://www.smashingmagazine.com/2020/04/figma-to-code/" }
+    ]
+  },
+  "Project Libraries": {
+    "title": "Project Libraries",
+    "description": "تعرف على أشهر مكتبات الواجهة الأمامية مثل React, Vue, Angular.",
+    "resources": [
+      { "name": "React", "url": "https://react.dev/" },
+      { "name": "Vue", "url": "https://vuejs.org/" },
+      { "name": "Angular", "url": "https://angular.io/" }
+    ]
+  },
+  "Projects Organization": {
+    "title": "Projects Organization",
+    "description": "أفضل طرق تنظيم ملفات ومجلدات المشاريع.",
+    "resources": [
+      { "name": "React Project Structure", "url": "https://react.dev/learn/project-structure" }
+    ]
+  },
+  "React.js": {
+    "title": "React.js",
+    "description": "تعلم مكتبة React لبناء واجهات تفاعلية.",
+    "resources": [
+      { "name": "React Official Docs", "url": "https://react.dev/" }
+    ]
+  },
+  "State Management": {
+    "title": "State Management",
+    "description": "طرق إدارة الحالة في تطبيقات React.",
+    "resources": [
+      { "name": "State Management in React", "url": "https://react.dev/learn/state-a-components-memory" }
+    ]
+  },
+  "Routing": {
+    "title": "Routing",
+    "description": "تعلم التنقل بين الصفحات في تطبيقات الويب.",
+    "resources": [
+      { "name": "React Router", "url": "https://reactrouter.com/en/main" }
+    ]
+  },
+  "Projects & Specialization": {
+    "title": "Projects & Specialization",
+    "description": "ابدأ مشاريعك الخاصة وتخصص في المجال الذي تفضله.",
+    "resources": [
+      { "name": "Frontend Mentor", "url": "https://www.frontendmentor.io/" }
+    ]
+  }
+}

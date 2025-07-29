@@ -142,10 +142,13 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: background 0.2s;
+    border: 3px solid #1ed6b6;
   }
   
   button.login:hover {
-    background: #17b89c;
+    background: #fff;
+    color: #1ed6b6;
+    
   }
   
   button.guest {
@@ -225,10 +228,13 @@ body {
 
 /* Footer Styles */
 footer {
+  
   background: #222;
   color: #fff;
   padding: 40px 20px 20px;
   margin-top: 60px;
+ 
+
 }
 
 .footer-content {
@@ -281,5 +287,60 @@ footer {
   
   footer {
     margin-top: 40px;
+  }
+}
+
+/* Bubble orbit animation */
+.bubble {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  margin: 0 auto 30px auto;
+  background: radial-gradient(circle at 60% 40%, #e0f7fa 60%, #b2ebf2 100%);
+  border-radius: 60px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 1.5px 8px rgba(0,182,182,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  transition: box-shadow 0.3s;
+  overflow: hidden;
+}
+
+.bubble img {
+  position: static;
+  width: 60px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,182,182,0.15);
+  padding: 10px;
+  border: 3px solid #e0f7fa;
+  transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s, background 0.25s;
+  cursor: pointer;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.bubble img:hover {
+  box-shadow: 0 8px 32px rgba(0,182,182,0.22), 0 0 0 8px #b2ebf2;
+  transform: scale(1.15) translateY(-4px);
+  border-color: #00b6b6;
+  background: #f0ffff;
+  z-index: 2;
+}
+
+@media (max-width: 600px) {
+  .bubble {
+    width: 98vw;
+    height: 70px;
+    border-radius: 35px;
+    gap: 8px;
+    padding: 0 4px;
+  }
+  .bubble img {
+    width: 36px;
+    height: 36px;
+    padding: 4px;
   }
 }
