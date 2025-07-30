@@ -1,0 +1,203 @@
+{
+  "Choose a Backend Language": {
+    "title": "Choose a Backend Language",
+    "description": "Select a programming language for backend development. Popular choices include Node.js (JavaScript), Python, Java, C#, PHP, and Go. Each has its strengths and use cases.",
+    "resources": [
+      { "name": "Node.js Official Documentation", "url": "https://nodejs.org/en/docs/" },
+      { "name": "Python Official Documentation", "url": "https://docs.python.org/3/" },
+      { "name": "Java Documentation", "url": "https://docs.oracle.com/en/java/" },
+      { "name": "Backend Language Comparison", "url": "https://www.freecodecamp.org/news/backend-languages/" }
+    ]
+  },
+  "Server-side Programming": {
+    "title": "Server-side Programming",
+    "description": "Learn the fundamentals of server-side programming including HTTP protocols, request/response cycles, server architecture, and handling client requests.",
+    "resources": [
+      { "name": "HTTP Protocol Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP" },
+      { "name": "Server-side Programming Basics", "url": "https://www.freecodecamp.org/news/server-side-programming/" },
+      { "name": "Web Server Architecture", "url": "https://www.nginx.com/resources/library/web-server-architecture/" }
+    ]
+  },
+  "RESTful APIs": {
+    "title": "RESTful APIs",
+    "description": "Master REST (Representational State Transfer) API design principles, HTTP methods, status codes, and best practices for building scalable web services.",
+    "resources": [
+      { "name": "REST API Tutorial", "url": "https://restfulapi.net/" },
+      { "name": "HTTP Status Codes", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" },
+      { "name": "REST API Design Best Practices", "url": "https://blog.logrocket.com/best-practices-rest-api-design/" }
+    ]
+  },
+  "JSON Format": {
+    "title": "JSON Format",
+    "description": "Learn JavaScript Object Notation (JSON) for data exchange between client and server. Understand JSON syntax, parsing, and serialization.",
+    "resources": [
+      { "name": "JSON Official Documentation", "url": "https://www.json.org/json-en.html" },
+      { "name": "JSON Tutorial", "url": "https://www.w3schools.com/js/js_json_intro.asp" },
+      { "name": "JSON Best Practices", "url": "https://jsonapi.org/format/" }
+    ]
+  },
+  "SQL (MySQL/PostgreSQL)": {
+    "title": "SQL Databases",
+    "description": "Learn Structured Query Language (SQL) for relational databases. Master MySQL and PostgreSQL for data storage, queries, and database design.",
+    "resources": [
+      { "name": "MySQL Documentation", "url": "https://dev.mysql.com/doc/" },
+      { "name": "PostgreSQL Documentation", "url": "https://www.postgresql.org/docs/" },
+      { "name": "SQL Tutorial", "url": "https://www.w3schools.com/sql/" },
+      { "name": "Database Design Principles", "url": "https://www.freecodecamp.org/news/database-design-principles/" }
+    ]
+  },
+  "NoSQL (MongoDB)": {
+    "title": "NoSQL Databases",
+    "description": "Explore NoSQL databases like MongoDB for flexible, document-based data storage. Learn when and how to use NoSQL vs SQL databases.",
+    "resources": [
+      { "name": "MongoDB Documentation", "url": "https://docs.mongodb.com/" },
+      { "name": "NoSQL Database Tutorial", "url": "https://www.mongodb.com/nosql-explained" },
+      { "name": "MongoDB University", "url": "https://university.mongodb.com/" }
+    ]
+  },
+  "Database CRUD Operations": {
+    "title": "Database CRUD Operations",
+    "description": "Master Create, Read, Update, and Delete (CRUD) operations for database management. Learn efficient data manipulation techniques.",
+    "resources": [
+      { "name": "CRUD Operations Guide", "url": "https://www.freecodecamp.org/news/crud-operations-explained/" },
+      { "name": "Database Operations Tutorial", "url": "https://www.w3schools.com/sql/sql_intro.asp" },
+      { "name": "SQL CRUD Examples", "url": "https://www.sqlshack.com/sql-crud-operations/" }
+    ]
+  },
+  "ORM/ODM": {
+    "title": "Object-Relational Mapping",
+    "description": "Learn ORM (Object-Relational Mapping) and ODM (Object-Document Mapping) tools like Sequelize, Prisma, Mongoose, and SQLAlchemy for database abstraction.",
+    "resources": [
+      { "name": "Sequelize Documentation", "url": "https://sequelize.org/" },
+      { "name": "Prisma Documentation", "url": "https://www.prisma.io/docs/" },
+      { "name": "Mongoose Documentation", "url": "https://mongoosejs.com/docs/" },
+      { "name": "SQLAlchemy Documentation", "url": "https://docs.sqlalchemy.org/" }
+    ]
+  },
+  "Web Framework (Express.js)": {
+    "title": "Web Framework - Express.js",
+    "description": "Learn Express.js, a minimal and flexible Node.js web application framework. Build RESTful APIs and web applications efficiently.",
+    "resources": [
+      { "name": "Express.js Documentation", "url": "https://expressjs.com/" },
+      { "name": "Express.js Tutorial", "url": "https://www.tutorialspoint.com/expressjs/" },
+      { "name": "Express.js Best Practices", "url": "https://expressjs.com/en/advanced/best-practices-performance.html" }
+    ]
+  },
+  "Routing & Middleware": {
+    "title": "Routing and Middleware",
+    "description": "Master routing concepts and middleware patterns. Learn how to organize routes, handle authentication, validation, and request processing.",
+    "resources": [
+      { "name": "Express.js Routing", "url": "https://expressjs.com/en/guide/routing.html" },
+      { "name": "Express.js Middleware", "url": "https://expressjs.com/en/guide/using-middleware.html" },
+      { "name": "Middleware Patterns", "url": "https://www.freecodecamp.org/news/express-middleware-tutorial/" }
+    ]
+  },
+  "Authentication Systems": {
+    "title": "Authentication Systems",
+    "description": "Implement secure authentication systems including user registration, login, password hashing, and session management.",
+    "resources": [
+      { "name": "Authentication Best Practices", "url": "https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html" },
+      { "name": "Password Hashing Guide", "url": "https://auth0.com/blog/hashing-passwords-one-way-road-to-security/" },
+      { "name": "Session Management", "url": "https://www.owasp.org/index.php/Session_Management_Cheat_Sheet" }
+    ]
+  },
+  "Sessions & JWT": {
+    "title": "Sessions and JWT",
+    "description": "Learn session-based authentication and JSON Web Tokens (JWT) for stateless authentication. Understand when to use each approach.",
+    "resources": [
+      { "name": "JWT Official Documentation", "url": "https://jwt.io/" },
+      { "name": "JWT Tutorial", "url": "https://www.freecodecamp.org/news/jwt-authentication-tutorial/" },
+      { "name": "Session vs JWT", "url": "https://blog.logrocket.com/jwt-vs-sessions/" }
+    ]
+  },
+  "File Upload Handling": {
+    "title": "File Upload Handling",
+    "description": "Implement secure file upload functionality including file validation, storage, and serving. Learn about cloud storage solutions.",
+    "resources": [
+      { "name": "File Upload Security", "url": "https://owasp.org/www-community/vulnerabilities/Unrestricted_File_Upload" },
+      { "name": "Multer Documentation", "url": "https://github.com/expressjs/multer" },
+      { "name": "Cloud Storage Solutions", "url": "https://aws.amazon.com/s3/" }
+    ]
+  },
+  "Project Structure": {
+    "title": "Project Structure",
+    "description": "Learn best practices for organizing backend projects including folder structure, modular architecture, and code organization patterns.",
+    "resources": [
+      { "name": "Node.js Project Structure", "url": "https://blog.logrocket.com/node-js-project-structure-best-practices/" },
+      { "name": "Express.js Project Structure", "url": "https://expressjs.com/en/starter/generator.html" },
+      { "name": "Clean Architecture", "url": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" }
+    ]
+  },
+  "Environment Variables": {
+    "title": "Environment Variables",
+    "description": "Learn to manage configuration using environment variables for different deployment environments (development, staging, production).",
+    "resources": [
+      { "name": "Environment Variables Best Practices", "url": "https://12factor.net/config" },
+      { "name": "Dotenv Documentation", "url": "https://github.com/motdotla/dotenv" },
+      { "name": "Configuration Management", "url": "https://www.freecodecamp.org/news/environment-variables-in-node-js/" }
+    ]
+  },
+  "WebSockets": {
+    "title": "WebSockets",
+    "description": "Implement real-time communication using WebSockets for features like chat applications, live updates, and real-time notifications.",
+    "resources": [
+      { "name": "WebSocket Documentation", "url": "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" },
+      { "name": "Socket.io Documentation", "url": "https://socket.io/docs/" },
+      { "name": "Real-time Applications", "url": "https://www.freecodecamp.org/news/websockets-tutorial-how-to-go-real-time-with-node-and-react-8e4693fbf843/" }
+    ]
+  },
+  "GraphQL": {
+    "title": "GraphQL",
+    "description": "Learn GraphQL as an alternative to REST APIs. Understand schema design, resolvers, and building efficient data APIs.",
+    "resources": [
+      { "name": "GraphQL Official Documentation", "url": "https://graphql.org/learn/" },
+      { "name": "Apollo Server Documentation", "url": "https://www.apollographql.com/docs/apollo-server/" },
+      { "name": "GraphQL vs REST", "url": "https://www.freecodecamp.org/news/graphql-vs-rest-whats-the-difference/" }
+    ]
+  },
+  "Input Validation": {
+    "title": "Input Validation",
+    "description": "Implement robust input validation to prevent security vulnerabilities and ensure data integrity in your applications.",
+    "resources": [
+      { "name": "Input Validation Best Practices", "url": "https://owasp.org/www-project-cheat-sheets/cheatsheets/Input_Validation_Cheat_Sheet.html" },
+      { "name": "Joi Validation Library", "url": "https://joi.dev/" },
+      { "name": "Express Validator", "url": "https://express-validator.github.io/docs/" }
+    ]
+  },
+  "Rate Limiting": {
+    "title": "Rate Limiting",
+    "description": "Implement rate limiting to protect your APIs from abuse and ensure fair usage. Learn different rate limiting strategies.",
+    "resources": [
+      { "name": "Rate Limiting Guide", "url": "https://www.freecodecamp.org/news/rate-limiting-in-node-js/" },
+      { "name": "Express Rate Limit", "url": "https://github.com/nfriedly/express-rate-limit" },
+      { "name": "Rate Limiting Strategies", "url": "https://cloud.google.com/architecture/rate-limiting-strategies-techniques" }
+    ]
+  },
+  "Security Headers": {
+    "title": "Security Headers",
+    "description": "Implement security headers to protect your applications from common web vulnerabilities like XSS, CSRF, and clickjacking.",
+    "resources": [
+      { "name": "Security Headers Guide", "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#security" },
+      { "name": "Helmet.js Documentation", "url": "https://helmetjs.github.io/" },
+      { "name": "OWASP Security Headers", "url": "https://owasp.org/www-project-secure-headers/" }
+    ]
+  },
+  "Docker": {
+    "title": "Docker Containerization",
+    "description": "Learn Docker for containerizing your applications. Understand Dockerfiles, containers, images, and container orchestration.",
+    "resources": [
+      { "name": "Docker Official Documentation", "url": "https://docs.docker.com/" },
+      { "name": "Docker Tutorial", "url": "https://www.freecodecamp.org/news/docker-for-beginners/" },
+      { "name": "Docker Best Practices", "url": "https://docs.docker.com/develop/dev-best-practices/" }
+    ]
+  },
+  "Deployment": {
+    "title": "Application Deployment",
+    "description": "Learn to deploy your backend applications to production environments using cloud platforms like AWS, Heroku, or DigitalOcean.",
+    "resources": [
+      { "name": "Deployment Best Practices", "url": "https://www.freecodecamp.org/news/deploy-your-node-js-app-to-production/" },
+      { "name": "Heroku Documentation", "url": "https://devcenter.heroku.com/" },
+      { "name": "AWS Deployment Guide", "url": "https://aws.amazon.com/getting-started/hands-on/deploy-nodejs-web-app/" }
+    ]
+  }
+} 

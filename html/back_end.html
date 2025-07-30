@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Frontend Developer Roadmap - Masar</title>
+  <title id="page-title">Backend Developer Roadmap - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <!-- Google Fonts for modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="../css/front_end.css">
+  <link rel="stylesheet" href="../css/back_end.css">
 </head>
 <body>
   <header>
@@ -27,7 +27,7 @@
         </div>
       </div>
       <div class="nav-item dropdown" id="fields-dropdown">
-        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-server"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
@@ -42,8 +42,8 @@
 
   <main class="roadmap-main">
     <div class="roadmap-header">
-      <h1 id="roadmap-title">Frontend Developer Roadmap</h1>
-      <p id="roadmap-description">A comprehensive guide to becoming a modern frontend developer. Follow this roadmap to master the essential skills and technologies.</p>
+      <h1 id="roadmap-title">Backend Developer Roadmap</h1>
+      <p id="roadmap-description">A comprehensive guide to becoming a modern backend developer. Follow this roadmap to master server-side development and database management.</p>
       
       <!-- Progress Indicator -->
       <div class="progress-container">
@@ -65,11 +65,11 @@
       </div>
     </div>
 
-    <!-- Frontend Development Explanation -->
-    <div class="frontend-explanation" id="frontend-explanation">
+    <!-- Backend Development Explanation -->
+    <div class="backend-explanation" id="backend-explanation">
       <div class="front-content">
-        <h2 id="what-is-frontend-title">What is Frontend Development?</h2>
-        <p id="what-is-frontend-text">
+        <h2 id="what-is-backend-title">What is Backend Development?</h2>
+        <p id="what-is-backend-text">
           Click to reveal the answer! 💡
         </p>
         <div class="question-icon">❓</div>
@@ -77,16 +77,15 @@
       <div class="back-content">
         <h3>Answer:</h3>
         <p>
-          <span class="highlight">Frontend development</span>, also known as <span class="highlight">client-side development</span>, is the practice of creating the visual and interactive elements of websites and web applications that users directly interact with. It involves building the <span class="highlight">user interface (UI)</span> and <span class="highlight">user experience (UX)</span> using technologies like <span class="highlight">HTML</span> for structure, <span class="highlight">CSS</span> for styling and layout, and <span class="highlight">JavaScript</span> for interactivity and dynamic functionality.
+          <span class="highlight">Backend development</span>, also known as <span class="highlight">server-side development</span>, is the practice of building the server-side logic, databases, and APIs that power web applications and services. It involves creating the <span class="highlight">server infrastructure</span>, <span class="highlight">database management</span>, <span class="highlight">authentication systems</span>, and <span class="highlight">business logic</span> that work behind the scenes to process data, handle user requests, and provide responses to frontend applications.
         </p>
         <p>
-          Frontend developers work on everything users see, click, and interact with in their web browsers - from buttons and forms to animations and responsive designs that adapt to different screen sizes. They collaborate closely with designers to bring visual concepts to life and with backend developers to integrate with server-side functionality, ensuring seamless user experiences across all devices and platforms.
+          Backend developers work with technologies like <span class="highlight">Node.js</span>, <span class="highlight">Python</span>, <span class="highlight">Java</span>, <span class="highlight">databases</span> (SQL and NoSQL), <span class="highlight">APIs</span>, and <span class="highlight">server deployment</span> to ensure applications are secure, scalable, and performant. They handle data processing, user authentication, file uploads, and integration with external services, making sure the application's core functionality operates smoothly and efficiently.
         </p>
-      
       </div>
     </div>
 
-    <!-- New Roadmap Flow (Linear, Level-based) -->
+    <!-- Backend Roadmap Flow (Linear, Level-based) -->
     <div class="roadmap-legend">
       <span class="legend level1">LEVEL 1</span>
       <span class="legend level2">LEVEL 2</span>
@@ -95,52 +94,53 @@
     </div>
     <div class="roadmap-flow">
       <div class="roadmap-row">
-        <div class="roadmap-node level1">HTML</div>
-        <div class="roadmap-node level1">CSS</div>
+        <div class="roadmap-node level1">Choose a Backend Language</div>
+        <div class="roadmap-node level1">Server-side Programming</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level1">Rsponsive Design</div>
-      </div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level1">Git & GitHub Basics</div>
+        <div class="roadmap-node level1">RESTful APIs</div>
+        <div class="roadmap-node level1">JSON Format</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level2">JavaScript Basics</div>
-        <div class="roadmap-node level2">Events & Forms</div>
+        <div class="roadmap-node level2">SQL (MySQL/PostgreSQL)</div>
+        <div class="roadmap-node level2">NoSQL (MongoDB)</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level2">JvaScript & DOM</div>
-        <div class="roadmap-node level2">DOM Manipulation</div>
-      </div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level2">API & Fetch</div>
+        <div class="roadmap-node level2">Database CRUD Operations</div>
+        <div class="roadmap-node level2">ORM/ODM</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Deploy React Project</div>
-        <div class="roadmap-node level3">API Calls in React</div>
+        <div class="roadmap-node level3">Web Framework (Express.js)</div>
+        <div class="roadmap-node level3">Routing & Middleware</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Adinin Dashboaid</div>
-        <div class="roadmap-node level3">Weather App with API</div>
-        <div class="roadmap-node level3">To Do App</div>
+        <div class="roadmap-node level3">Authentication Systems</div>
+        <div class="roadmap-node level3">Sessions & JWT</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Convert Figma Design to Code</div>
+        <div class="roadmap-node level3">File Upload Handling</div>
+        <div class="roadmap-node level3">Project Structure</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level3">Environment Variables</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">Project Libraries</div>
-        <div class="roadmap-node level4">Projects Organization</div>
+        <div class="roadmap-node level4">WebSockets</div>
+        <div class="roadmap-node level4">GraphQL</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">React.js</div>
-        <div class="roadmap-node level4">State Management</div>
-        <div class="roadmap-node level4">Routing</div>
+        <div class="roadmap-node level4">Input Validation</div>
+        <div class="roadmap-node level4">Rate Limiting</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">Projects & Specialization</div>
+        <div class="roadmap-node level4">Security Headers</div>
+        <div class="roadmap-node level4">Docker</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">Deployment</div>
       </div>
     </div>
     
@@ -211,7 +211,7 @@
     // Initialize progress tracking
     function initializeProgressTracking() {
       // Load saved progress from localStorage
-      const savedProgress = localStorage.getItem('frontendRoadmapProgress');
+      const savedProgress = localStorage.getItem('backendRoadmapProgress');
       if (savedProgress) {
         courseProgress = JSON.parse(savedProgress);
       }
@@ -258,7 +258,7 @@
     
     // Save progress to localStorage
     function saveProgress() {
-      localStorage.setItem('frontendRoadmapProgress', JSON.stringify(courseProgress));
+      localStorage.setItem('backendRoadmapProgress', JSON.stringify(courseProgress));
     }
     
     // Reset progress
@@ -383,7 +383,7 @@
       initializeProgressTracking();
 
       // Fetch translations
-      fetch('../json/roadmap.json')
+      fetch('../json/backend_roadmap.json')
         .then(response => response.json())
         .then(data => {
           translations = data;
@@ -391,7 +391,7 @@
         })
         .catch(error => {
           console.error('Error loading translations:', error);
-          // Fallback to home translations if roadmap.json doesn't exist
+          // Fallback to home translations if backend_roadmap.json doesn't exist
           fetch('../json/home language.json')
             .then(response => response.json())
             .then(data => {
@@ -465,7 +465,7 @@
             if (modalDescription) modalDescription.textContent = '';
             if (modalResources) modalResources.innerHTML = '';
             
-            fetch('../json/roadmap_courses.json')
+            fetch('../json/backend_courses.json')
               .then(response => {
                 if (!response.ok) {
                   throw new Error('Network response was not ok');
@@ -541,7 +541,7 @@
       document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
       
       // Page title
-      document.getElementById('page-title').textContent = t.pageTitle || 'Frontend Developer Roadmap - Masar';
+      document.getElementById('page-title').textContent = t.pageTitle || 'Backend Developer Roadmap - Masar';
       
       // Header
       document.getElementById('logo-title').innerHTML = t.logoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
@@ -554,8 +554,8 @@
       document.getElementById('nav-about-us-text').textContent = t.aboutUs || 'About us';
       
       // Main content
-      document.getElementById('roadmap-title').textContent = t.roadmapTitle || 'Frontend Developer Roadmap';
-      document.getElementById('roadmap-description').textContent = t.roadmapDescription || 'A comprehensive guide to becoming a modern frontend developer.';
+      document.getElementById('roadmap-title').textContent = t.roadmapTitle || 'Backend Developer Roadmap';
+      document.getElementById('roadmap-description').textContent = t.roadmapDescription || 'A comprehensive guide to becoming a modern backend developer.';
       
       // Progress section
       document.getElementById('progress-title').textContent = t.progressTitle || 'Your Progress';
@@ -566,9 +566,9 @@
       document.getElementById('status-in-progress').textContent = t.statusInProgress || 'In Progress';
       document.getElementById('status-completed').textContent = t.statusCompleted || 'Completed';
       
-      // Frontend Development Explanation 
-      document.getElementById('what-is-frontend-title').textContent = t.whatIsFrontendTitle || 'What is Frontend Development?';
-      document.getElementById('what-is-frontend-text').textContent = t.whatIsFrontendText || 'Frontend development, also known as client-side development, is the practice of creating the visual and interactive elements of websites and web applications that users directly interact with. It involves building the user interface (UI) and user experience (UX) using technologies like HTML for structure, CSS for styling and layout, and JavaScript for interactivity and dynamic functionality. Frontend developers work on everything users see, click, and interact with in their web browsers - from buttons and forms to animations and responsive designs that adapt to different screen sizes. They collaborate closely with designers to bring visual concepts to life and with backend developers to integrate with server-side functionality, ensuring seamless user experiences across all devices and platforms.';
+      // Backend Development Explanation 
+      document.getElementById('what-is-backend-title').textContent = t.whatIsBackendTitle || 'What is Backend Development?';
+      document.getElementById('what-is-backend-text').textContent = t.whatIsBackendText || 'Backend development, also known as server-side development, is the practice of building the server-side logic, databases, and APIs that power web applications and services.';
       
       // Footer
       document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
@@ -590,10 +590,10 @@
       const closeModal = document.getElementById('close-modal');
       const resetProgressBtn = document.getElementById('reset-progress-btn');
       
-      // Frontend explanation flip animation
-      const frontendExplanation = document.getElementById('frontend-explanation');
-      if (frontendExplanation) {
-        frontendExplanation.addEventListener('click', function() {
+      // Backend explanation flip animation
+      const backendExplanation = document.getElementById('backend-explanation');
+      if (backendExplanation) {
+        backendExplanation.addEventListener('click', function() {
           this.classList.toggle('flipped');
         });
       }

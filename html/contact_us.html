@@ -30,7 +30,7 @@
         <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
-          <div class="dropdown-item">Backend</div>
+          <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
           <div class="dropdown-item">Data Science</div>
         </div>
       </div>
@@ -147,21 +147,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="map-section">
-      <h2 id="map-title">Find Us</h2>
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6767.599834004009!2d36.022465!3d31.993439!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151b66df729926c7%3A0x80a62dc05cbc89e0!2sAlBalqa&#39;a%20Applied%20University%20-%20Faculty%20of%20Engineering%20Technology%20-%20Polytechnic!5e0!3m2!1sen!2sus!4v1753564611454!5m2!1sen!2sus"
-          width="100%" 
-          height="400" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
       </div>
     </div>
   </main>
@@ -308,9 +293,6 @@
         document.getElementById('contact-saturday').textContent = t.contactSaturday;
         document.getElementById('contact-sunday').textContent = t.contactSunday;
         document.getElementById('social-follow-us').textContent = t.socialFollowUs;
-        
-        // Map
-        document.getElementById('map-title').textContent = t.mapTitle;
         
         // Footer
         document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
