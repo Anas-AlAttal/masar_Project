@@ -13,6 +13,15 @@
   <link rel="stylesheet" href="../css/back_end.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+  </div>
+
   <header>
     <div class="logo">
       <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
@@ -27,8 +36,9 @@
         </div>
       </div>
       <div class="nav-item dropdown" id="fields-dropdown">
-        <i class="fa-solid fa-server"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
+          <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
           <div class="dropdown-item">Data Science</div>
@@ -77,10 +87,16 @@
       <div class="back-content">
         <h3>Answer:</h3>
         <p>
-          <span class="highlight">Backend development</span>, also known as <span class="highlight">server-side development</span>, is the practice of building the server-side logic, databases, and APIs that power web applications and services. It involves creating the <span class="highlight">server infrastructure</span>, <span class="highlight">database management</span>, <span class="highlight">authentication systems</span>, and <span class="highlight">business logic</span> that work behind the scenes to process data, handle user requests, and provide responses to frontend applications.
+          <span class="highlight">Backend development</span>, also known as <span class="highlight">server-side development</span>, is the practice of building the server-side logic, databases, and APIs that power web applications and services.
         </p>
         <p>
-          Backend developers work with technologies like <span class="highlight">Node.js</span>, <span class="highlight">Python</span>, <span class="highlight">Java</span>, <span class="highlight">databases</span> (SQL and NoSQL), <span class="highlight">APIs</span>, and <span class="highlight">server deployment</span> to ensure applications are secure, scalable, and performant. They handle data processing, user authentication, file uploads, and integration with external services, making sure the application's core functionality operates smoothly and efficiently.
+          It involves creating the <span class="highlight">server infrastructure</span>, <span class="highlight">database management</span>, <span class="highlight">authentication systems</span>, and <span class="highlight">business logic</span> that work behind the scenes to process data, handle user requests, and provide responses to frontend applications.
+        </p>
+        <p>
+          Backend developers work with technologies like <span class="highlight">Node.js</span>, <span class="highlight">Python</span>, <span class="highlight">Java</span>, <span class="highlight">databases</span> (SQL and NoSQL), <span class="highlight">APIs</span>, and <span class="highlight">server deployment</span> to ensure applications are secure, scalable, and performant.
+        </p>
+        <p>
+          They handle data processing, user authentication, file uploads, and integration with external services, making sure the application's core functionality operates smoothly and efficiently.
         </p>
       </div>
     </div>
@@ -94,8 +110,8 @@
     </div>
     <div class="roadmap-flow">
       <div class="roadmap-row">
-        <div class="roadmap-node level1">Choose a Backend Language</div>
-        <div class="roadmap-node level1">Server-side Programming</div>
+        <div class="roadmap-node level1">Choose Backend Language</div>
+        <div class="roadmap-node level1">Server Programming</div>
       </div>
       <div class="roadmap-row">
         <div class="roadmap-node level1">RESTful APIs</div>
@@ -103,28 +119,28 @@
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level2">SQL (MySQL/PostgreSQL)</div>
-        <div class="roadmap-node level2">NoSQL (MongoDB)</div>
+        <div class="roadmap-node level2">SQL Databases</div>
+        <div class="roadmap-node level2">NoSQL Databases</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level2">Database CRUD Operations</div>
+        <div class="roadmap-node level2">CRUD Operations</div>
         <div class="roadmap-node level2">ORM/ODM</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Web Framework (Express.js)</div>
+        <div class="roadmap-node level3">Web Framework</div>
         <div class="roadmap-node level3">Routing & Middleware</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Authentication Systems</div>
+        <div class="roadmap-node level3">Authentication</div>
         <div class="roadmap-node level3">Sessions & JWT</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">File Upload Handling</div>
+        <div class="roadmap-node level3">File Uploads</div>
         <div class="roadmap-node level3">Project Structure</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Environment Variables</div>
+        <div class="roadmap-node level3">Environment Config</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
@@ -450,21 +466,35 @@
       const nodes = document.querySelectorAll('.roadmap-node');
       const modal = document.getElementById('course-modal');
       
+      console.log('Found nodes:', nodes.length);
+      console.log('Found modal:', modal);
+      
       if (nodes.length > 0 && modal) {
         nodes.forEach(node => {
           node.addEventListener('click', function() {
+            console.log('Node clicked:', this.textContent.trim());
             const nodeName = this.textContent.trim();
             currentCourse = nodeName;
             
-            // Show loading state
+            // Show modal immediately with basic content
             const modalTitle = document.getElementById('modal-title');
             const modalDescription = document.getElementById('modal-description');
             const modalResources = document.getElementById('modal-resources');
             
-            if (modalTitle) modalTitle.textContent = 'جاري التحميل...';
-            if (modalDescription) modalDescription.textContent = '';
-            if (modalResources) modalResources.innerHTML = '';
+            // Set basic content first
+            if (modalTitle) modalTitle.textContent = nodeName;
+            if (modalDescription) modalDescription.textContent = 'Click the status buttons below to track your progress for this course.';
+            if (modalResources) modalResources.innerHTML = '<p>Resources will be available soon.</p>';
             
+            // Set current status in modal
+            const currentStatus = courseProgress[nodeName] || 'not-started';
+            setStatusButtonActive(currentStatus);
+            
+            // Show modal
+            modal.style.display = 'block';
+            console.log('Modal should be visible now');
+            
+            // Try to fetch additional data (optional)
             fetch('../json/backend_courses.json')
               .then(response => {
                 if (!response.ok) {
@@ -474,38 +504,22 @@
               })
               .then(data => {
                 const info = data[nodeName] || {};
-                if (modalTitle) modalTitle.textContent = info.title || nodeName;
-                if (modalDescription) modalDescription.textContent = info.description || 'لا توجد وصف متاح لهذه الدورة.';
+                if (modalTitle && info.title) modalTitle.textContent = info.title;
+                if (modalDescription && info.description) modalDescription.textContent = info.description;
                 
-                let resourcesHTML = '';
                 if (info.resources && info.resources.length) {
-                  resourcesHTML = '<ul>' + info.resources.map(r => `<li><a href="${r.url}" target="_blank">${r.name}</a></li>`).join('') + '</ul>';
-                } else {
-                  resourcesHTML = '<p>لا توجد موارد متاحة حالياً.</p>';
+                  const resourcesHTML = '<ul>' + info.resources.map(r => `<li><a href="${r.url}" target="_blank">${r.name}</a></li>`).join('') + '</ul>';
+                  if (modalResources) modalResources.innerHTML = resourcesHTML;
                 }
-                if (modalResources) modalResources.innerHTML = resourcesHTML;
-                
-                // Set current status in modal
-                const currentStatus = courseProgress[nodeName] || 'not-started';
-                setStatusButtonActive(currentStatus);
-                
-                modal.style.display = 'block';
               })
               .catch(error => {
-                console.error('Error loading course data:', error);
-                // Fallback content
-                if (modalTitle) modalTitle.textContent = nodeName;
-                if (modalDescription) modalDescription.textContent = 'لا توجد وصف متاح لهذه الدورة.';
-                if (modalResources) modalResources.innerHTML = '<p>لا توجد موارد متاحة حالياً.</p>';
-                
-                // Set current status in modal
-                const currentStatus = courseProgress[nodeName] || 'not-started';
-                setStatusButtonActive(currentStatus);
-                
-                modal.style.display = 'block';
+                console.log('Course data not available, using default content');
+                // Modal is already shown with basic content, no need to do anything
               });
           });
         });
+      } else {
+        console.error('Modal or nodes not found!');
       }
     });
 

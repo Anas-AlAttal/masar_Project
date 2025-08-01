@@ -2,16 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">Masar - From vision to destination</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <!-- You can use Google Fonts for a modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+  </div>
+
   <header>
     <div class="logo">
       <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
@@ -28,6 +38,7 @@
       <div class="nav-item dropdown" id="fields-dropdown">
         <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
+          <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
           <div class="dropdown-item">Data Science</div>
@@ -41,14 +52,20 @@
   </header>
   <main>
     <section class="left">
-      <h1 id="main-title">Grow better<br>with Masar!</h1>
+      <h1 id="main-title"><i class="fa-solid fa-rocket"></i> Grow better<br>with Masar!</h1>
       <p id="main-desc">
         Towards the future, where every step is calculated with care and precise guidance.<br>
         Together, we'll build the path that will lead you to your goals.
       </p>
       <div class="buttons" id="auth-buttons">
-        <button class="login" id="login-btn" onclick="window.location.href='LogIn.html'">Login</button>
-        <button class="guest" id="signup-btn" onclick="window.location.href='SignUp.html'">Sign up</button>
+        <button class="login" id="login-btn" onclick="window.location.href='LogIn.html'">
+          <i class="fa-solid fa-sign-in-alt"></i>
+          Login
+        </button>
+        <button class="guest" id="signup-btn" onclick="window.location.href='SignUp.html'">
+          <i class="fa-solid fa-user-plus"></i>
+          Sign up
+        </button>
       </div>
     </section>
     <section class="right">
@@ -70,7 +87,7 @@
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="php">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="matlab">
       </div>
-      <img class="laptop" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="laptop">
+      <!--<img class="laptop" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="laptop">-->
     </section>
   </main>
   
@@ -85,7 +102,7 @@
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
           <li><a href="about_us.html" id="footer-about">About Us</a></li>
-          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
       </div>
@@ -104,6 +121,49 @@
   </footer>
 
   <script>
+    // Add floating animation to background shapes
+    document.addEventListener('DOMContentLoaded', function() {
+      const shapes = document.querySelectorAll('.floating-shape');
+      shapes.forEach((shape, index) => {
+        shape.style.animationDelay = `${index * 0.5}s`;
+      });
+    });
+
+    // Add ripple effect to buttons
+    document.querySelectorAll('.buttons button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Add hover effects to tech logos
+    document.querySelectorAll('.bubble img').forEach(img => {
+      img.addEventListener('mouseenter', function() {
+        this.style.transform = 'scale(1.2) rotate(10deg)';
+        this.style.filter = 'drop-shadow(0 10px 20px rgba(0, 182, 182, 0.3))';
+      });
+      
+      img.addEventListener('mouseleave', function() {
+        this.style.transform = 'scale(1) rotate(0deg)';
+        this.style.filter = 'drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2))';
+      });
+    });
+
     // Dropdown functionality and language switching with JSON
     document.addEventListener('DOMContentLoaded', function() {
       let translations = {};
@@ -115,6 +175,9 @@
         .then(data => {
           translations = data;
           setLanguage(currentLang);
+        })
+        .catch(error => {
+          console.error('Error loading translations:', error);
         });
 
       // Dropdown logic

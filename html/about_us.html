@@ -2,15 +2,25 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="page-title">About Us - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <link rel="stylesheet" href="../css/about.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+  </div>
+
   <header>
     <div class="logo">
       <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
@@ -27,6 +37,7 @@
       <div class="nav-item dropdown" id="fields-dropdown">
         <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
+          <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
           <div class="dropdown-item">Data Science</div>
@@ -42,7 +53,7 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 id="about-hero-title">About Masar</h1>
+        <h1 id="about-hero-title"><i class="fa-solid fa-rocket"></i> About Masar</h1>
         <p id="about-hero-subtitle">Empowering developers to navigate their learning journey with precision and purpose</p>
       </div>
     </section>
@@ -71,7 +82,7 @@
     <!-- What We Do Section -->
     <section class="what-we-do">
       <div class="container">
-        <h2 id="what-we-do-title">What We Do</h2>
+        <h2 id="what-we-do-title"><i class="fa-solid fa-cogs"></i> What We Do</h2>
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">
@@ -111,7 +122,7 @@
     <!-- Our Values Section -->
     <section class="our-values">
       <div class="container">
-        <h2 id="values-title">Our Values</h2>
+        <h2 id="values-title"><i class="fa-solid fa-star"></i> Our Values</h2>
         <div class="values-grid">
           <div class="value-item">
             <div class="value-icon">
@@ -151,7 +162,7 @@
     <!-- Team Section -->
     <section class="team-section">
       <div class="container">
-        <h2 id="team-title">Our Team</h2>
+        <h2 id="team-title"><i class="fa-solid fa-users-gear"></i> Our Team</h2>
         <p id="team-subtitle">Meet the passionate individuals behind Masar who are dedicated to your success</p>
         
         <div class="team-grid">
@@ -159,7 +170,7 @@
             <div class="member-avatar">
               <i class="fa-solid fa-user"></i>
             </div>
-            <h3>Ahmed Hassan</h3>
+            <h3>Anas Al-Attal</h3>
             <p class="member-role">Founder & CEO</p>
             <p class="member-bio">Passionate about education technology and developer empowerment.</p>
           </div>
@@ -168,7 +179,7 @@
             <div class="member-avatar">
               <i class="fa-solid fa-user"></i>
             </div>
-            <h3>Sarah Johnson</h3>
+            <h3>Abdulrahman Abu Salha</h3>
             <p class="member-role">Head of Content</p>
             <p class="member-bio">Expert in curriculum development and learning design.</p>
           </div>
@@ -177,19 +188,12 @@
             <div class="member-avatar">
               <i class="fa-solid fa-user"></i>
             </div>
-            <h3>Mohammed Ali</h3>
+            <h3>Mansor Jamal</h3>
             <p class="member-role">Lead Developer</p>
             <p class="member-bio">Full-stack developer with a passion for creating intuitive user experiences.</p>
           </div>
           
-          <div class="team-member">
-            <div class="member-avatar">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <h3>Emily Chen</h3>
-            <p class="member-role">UX/UI Designer</p>
-            <p class="member-bio">Creating beautiful and functional interfaces that enhance learning.</p>
-          </div>
+          
         </div>
       </div>
     </section>
@@ -197,11 +201,17 @@
     <!-- Call to Action -->
     <section class="cta-section">
       <div class="container">
-        <h2 id="cta-title">Ready to Start Your Journey?</h2>
-        <p id="cta-text">Join thousands of developers who are already learning and growing with Masar</p>
+        <h2 id="cta-title"><i class="fa-solid fa-hand-point-right"></i> Ready to Start Your Journey?</h2>
+        <p id="cta-text">Join thousands of developers who are already on their path to success with Masar</p>
         <div class="cta-buttons">
-          <button class="login" id="cta-signup-btn" onclick="window.location.href='SignUp.html'">Get Started</button>
-          <button class="guest" id="cta-contact-btn" onclick="window.location.href='contact_us.html'">Contact Us</button>
+          <button class="login" onclick="window.location.href='LogIn.html'">
+            <i class="fa-solid fa-sign-in-alt"></i>
+            Get Started
+          </button>
+          <button class="guest" onclick="window.location.href='all_roadmaps.html'">
+            <i class="fa-solid fa-eye"></i>
+            Explore Roadmaps
+          </button>
         </div>
       </div>
     </section>
@@ -217,8 +227,7 @@
         <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="about_us.html" id="footer-about">About Us</a></li>
-          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
       </div>
@@ -237,23 +246,86 @@
   </footer>
 
   <script>
+    // Add floating animation to background shapes
+    document.addEventListener('DOMContentLoaded', function() {
+      const shapes = document.querySelectorAll('.floating-shape');
+      shapes.forEach((shape, index) => {
+        shape.style.animationDelay = `${index * 0.5}s`;
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all animated elements
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.mission-card, .vision-card, .feature-card, .value-item, .team-member');
+      animatedElements.forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // Add hover effects to team members
+    document.querySelectorAll('.team-member').forEach(member => {
+      member.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+      });
+      
+      member.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Add ripple effect to CTA buttons
+    document.querySelectorAll('.cta-buttons button').forEach(button => {
+      button.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+        
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
+        
+        this.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+    });
+
+    // Language switching and translation functionality
     document.addEventListener('DOMContentLoaded', function() {
       let translations = {};
       let currentLang = 'en';
 
       // Fetch translations
-      fetch('../json/about_language.json')
+      fetch('../json/about_us.json')
         .then(response => response.json())
         .then(data => {
           translations = data;
           setLanguage(currentLang);
         })
         .catch(error => {
-          console.log('Translation file not found, using default language');
-          setLanguage(currentLang);
+          console.error('Error loading translations:', error);
         });
 
-      // Dropdown logic
+      // Dropdown functionality
       const dropdowns = document.querySelectorAll('.dropdown');
       dropdowns.forEach(dropdown => {
         const chevron = dropdown.querySelector('.fa-chevron-down');
@@ -266,24 +338,31 @@
               if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
             }
           });
-          dropdown.classList.toggle('active');
-          if (chevron) chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          
+          this.classList.toggle('active');
+          if (chevron) {
+            chevron.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
         });
-        
+
+        // Dropdown item click
         const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
         dropdownItems.forEach(item => {
           item.addEventListener('click', function(e) {
             e.stopPropagation();
+            // Language switching
             if (item.dataset.lang) {
               currentLang = item.dataset.lang;
               setLanguage(currentLang);
             }
             dropdown.classList.remove('active');
+            const chevron = dropdown.querySelector('.fa-chevron-down');
             if (chevron) chevron.style.transform = 'rotate(0deg)';
           });
         });
       });
-      
+
+      // Close dropdowns when clicking outside
       document.addEventListener('click', function() {
         dropdowns.forEach(dropdown => {
           dropdown.classList.remove('active');
@@ -292,85 +371,22 @@
         });
       });
 
+      // Set language from translations
       function setLanguage(lang) {
         if (!translations[lang]) return;
         const t = translations[lang];
+        
+        // Set document direction and language
         document.documentElement.lang = lang;
         document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
         
-        // Set page title
-        document.title = lang === 'ar' ? 'من نحن - مسار' : 'About Us - Masar';
-        
-        // Update navigation elements
-        document.getElementById('logo-title').innerHTML = t.logoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
-        document.getElementById('logo-subtitle').textContent = t.logoSubtitle || 'From vision to destination';
-        document.getElementById('nav-language').textContent = t.language || 'language';
-        document.getElementById('dropdown-item-english').textContent = t.english || 'English';
-        document.getElementById('dropdown-item-arabic').textContent = t.arabic || 'Arabic';
-        document.getElementById('nav-fields').textContent = t.fields || 'Fields';
-        document.querySelector('#nav-customer-support span').textContent = t.customerSupport || 'Customer support';
-        document.querySelector('#nav-about-us span').textContent = t.aboutUs || 'About us';
-        
-        // Update hero section
-        document.getElementById('about-hero-title').textContent = t.aboutHeroTitle || 'About Masar';
-        document.getElementById('about-hero-subtitle').textContent = t.aboutHeroSubtitle || 'Empowering developers to navigate their learning journey with precision and purpose';
-        
-        // Update mission & vision section
-        document.getElementById('mission-title').textContent = t.missionTitle || 'Our Mission';
-        document.getElementById('mission-text').textContent = t.missionText || 'To provide developers with comprehensive, personalized learning roadmaps that guide them from beginner to expert in their chosen technology fields. We believe in making learning accessible, structured, and goal-oriented.';
-        document.getElementById('vision-title').textContent = t.visionTitle || 'Our Vision';
-        document.getElementById('vision-text').textContent = t.visionText || 'To become the leading platform that transforms how developers learn and grow, creating a world where every developer can find their path to success with confidence and clarity.';
-        
-        // Update what we do section
-        document.getElementById('what-we-do-title').textContent = t.whatWeDoTitle || 'What We Do';
-        document.getElementById('feature-1-title').textContent = t.feature1Title || 'Learning Roadmaps';
-        document.getElementById('feature-1-text').textContent = t.feature1Text || 'Comprehensive, step-by-step learning paths designed by industry experts to guide you through your development journey.';
-        document.getElementById('feature-2-title').textContent = t.feature2Title || 'Community Support';
-        document.getElementById('feature-2-text').textContent = t.feature2Text || 'Connect with fellow developers, share experiences, and get help from our supportive community of learners and mentors.';
-        document.getElementById('feature-3-title').textContent = t.feature3Title || 'Progress Tracking';
-        document.getElementById('feature-3-text').textContent = t.feature3Text || 'Monitor your learning progress with detailed analytics and insights to stay motivated and on track.';
-        document.getElementById('feature-4-title').textContent = t.feature4Title || 'Expert Guidance';
-        document.getElementById('feature-4-text').textContent = t.feature4Text || 'Access curated resources, tutorials, and guidance from industry professionals who have walked the same path.';
-        
-        // Update values section
-        document.getElementById('values-title').textContent = t.valuesTitle || 'Our Values';
-        document.getElementById('value-1-title').textContent = t.value1Title || 'Innovation';
-        document.getElementById('value-1-text').textContent = t.value1Text || 'We continuously innovate our platform to provide the best learning experience possible.';
-        document.getElementById('value-2-title').textContent = t.value2Title || 'Passion';
-        document.getElementById('value-2-text').textContent = t.value2Text || 'We\'re passionate about helping developers succeed and grow in their careers.';
-        document.getElementById('value-3-title').textContent = t.value3Title || 'Integrity';
-        document.getElementById('value-3-text').textContent = t.value3Text || 'We maintain the highest standards of integrity in everything we do and provide.';
-        document.getElementById('value-4-title').textContent = t.value4Title || 'Accessibility';
-        document.getElementById('value-4-text').textContent = t.value4Text || 'We believe learning should be accessible to everyone, regardless of their background or location.';
-        
-        // Update team section
-        document.getElementById('team-title').textContent = t.teamTitle || 'Our Team';
-        document.getElementById('team-subtitle').textContent = t.teamSubtitle || 'Meet the passionate individuals behind Masar who are dedicated to your success';
-        
-        // Update CTA section
-        document.getElementById('cta-title').textContent = t.ctaTitle || 'Ready to Start Your Journey?';
-        document.getElementById('cta-text').textContent = t.ctaText || 'Join thousands of developers who are already learning and growing with Masar';
-        document.getElementById('cta-signup-btn').textContent = t.ctaSignupBtn || 'Get Started';
-        document.getElementById('cta-contact-btn').textContent = t.ctaContactBtn || 'Contact Us';
-        
-        // Update footer elements
-        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks || 'Quick Links';
-        document.getElementById('footer-support').textContent = t.footerSupport || 'Support';
-        document.getElementById('footer-help-center').textContent = t.footerHelpCenter || 'Help Center';
-        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy || 'Privacy Policy';
-        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService || 'Terms of Service';
-        document.getElementById('footer-copyright').textContent = t.footerCopyright || '© 2024 Masar. All rights reserved.';
-        document.getElementById('footer-home').textContent = t.footerHome || 'Home';
-        document.getElementById('footer-roadmap').textContent = t.footerRoadmap || 'Roadmap';
-        document.getElementById('footer-contact').textContent = t.footerContact || 'Contact';
-        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle || 'Masar';
-        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle || 'From vision to destination';
-        
-        // Add About Us link to footer
-        const aboutLink = document.getElementById('footer-about');
-        if (aboutLink) {
-          aboutLink.textContent = lang === 'ar' ? 'من نحن' : 'About Us';
-        }
+        // Update all elements with translations
+        Object.keys(t).forEach(key => {
+          const element = document.getElementById(key);
+          if (element) {
+            element.innerHTML = t[key];
+          }
+        });
       }
     });
   </script>

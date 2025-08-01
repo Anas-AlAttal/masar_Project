@@ -13,6 +13,15 @@
   <link rel="stylesheet" href="../css/contact_us.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+  </div>
+
   <header>
     <div class="logo">
       <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
@@ -29,6 +38,7 @@
       <div class="nav-item dropdown" id="fields-dropdown">
         <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
+          <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
           <div class="dropdown-item">Data Science</div>
@@ -42,45 +52,62 @@
 
   <main class="contact-container">
     <div class="contact-header">
-      <h1 id="main-title">Get in Touch</h1>
+      <h1 id="main-title"><i class="fa-solid fa-comments"></i> Get in Touch</h1>
       <p id="main-description">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
     </div>
 
     <div class="contact-content">
       <div class="contact-form-section">
         <div class="form-container">
-          <h2 id="form-title">Send us a Message</h2>
+          <h2 id="form-title"><i class="fa-solid fa-envelope-open"></i> Send us a Message</h2>
           <form class="contact-form" id="contactForm">
             <div class="form-group">
-              <label for="name" id="form-full-name">Full Name *</label>
-              <input type="text" id="name" name="name" required>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-user input-icon"></i>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                <div class="input-line"></div>
+              </div>
             </div>
             
             <div class="form-group">
-              <label for="email" id="form-email">Email Address *</label>
-              <input type="email" id="email" name="email" required>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-envelope input-icon"></i>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <div class="input-line"></div>
+              </div>
             </div>
             
             <div class="form-group">
-              <label for="subject" id="form-subject">Subject *</label>
-              <select id="subject" name="subject" required>
-                <option value="" id="form-select-subject">Select a subject</option>
-                <option value="general" id="form-general-inquiry">General Inquiry</option>
-                <option value="support" id="form-technical-support">Technical Support</option>
-                <option value="partnership" id="form-partnership">Partnership</option>
-                <option value="feedback" id="form-feedback">Feedback</option>
-                <option value="other" id="form-other">Other</option>
-              </select>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-tag input-icon"></i>
+                <select id="subject" name="subject" required>
+                  <option value="" id="form-select-subject">Select a subject</option>
+                  <option value="general" id="form-general-inquiry">General Inquiry</option>
+                  <option value="support" id="form-technical-support">Technical Support</option>
+                  <option value="partnership" id="form-partnership">Partnership</option>
+                  <option value="feedback" id="form-feedback">Feedback</option>
+                  <option value="other" id="form-other">Other</option>
+                </select>
+                <div class="input-line"></div>
+              </div>
             </div>
             
             <div class="form-group">
-              <label for="message" id="form-message">Message *</label>
-              <textarea id="message" name="message" rows="6" required id="form-message-placeholder" placeholder="Tell us how we can help you..."></textarea>
+              <div class="input-wrapper">
+                <i class="fa-solid fa-message input-icon"></i>
+                <textarea id="message" name="message" rows="6" required placeholder="Tell us how we can help you..."></textarea>
+                <div class="input-line"></div>
+              </div>
             </div>
             
-            <button type="submit" class="submit-btn" id="form-submit-button">
-              <i class="fa-solid fa-paper-plane"></i>
-              Send Message
+            <button type="submit" class="submit-btn" id="submitBtn">
+              <span class="btn-text">
+                <i class="fa-solid fa-paper-plane"></i>
+                Send Message
+              </span>
+              <div class="btn-loading">
+                <div class="spinner"></div>
+              </div>
             </button>
           </form>
         </div>
@@ -88,7 +115,7 @@
 
       <div class="contact-info-section">
         <div class="info-container">
-          <h2 id="contact-info-title">Contact Information</h2>
+          <h2 id="contact-info-title"><i class="fa-solid fa-address-book"></i> Contact Information</h2>
           
           <div class="contact-item">
             <div class="contact-icon">
@@ -137,19 +164,43 @@
           </div>
 
           <div class="social-links">
-            <h3 id="social-follow-us">Follow Us</h3>
+            <h3 id="social-follow-us"><i class="fa-solid fa-share-nodes"></i> Follow Us</h3>
             <div class="social-icons">
-              <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
-              <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" class="social-icon"><i class="fa-brands fa-github"></i></a>
+              <a href="#" class="social-icon" data-platform="facebook">
+                <i class="fa-brands fa-facebook"></i>
+                <span class="tooltip">Facebook</span>
+              </a>
+              <a href="#" class="social-icon" data-platform="twitter">
+                <i class="fa-brands fa-twitter"></i>
+                <span class="tooltip">Twitter</span>
+              </a>
+              <a href="#" class="social-icon" data-platform="linkedin">
+                <i class="fa-brands fa-linkedin"></i>
+                <span class="tooltip">LinkedIn</span>
+              </a>
+              <a href="#" class="social-icon" data-platform="instagram">
+                <i class="fa-brands fa-instagram"></i>
+                <span class="tooltip">Instagram</span>
+              </a>
+              <a href="#" class="social-icon" data-platform="github">
+                <i class="fa-brands fa-github"></i>
+                <span class="tooltip">GitHub</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </main>
+
+  <!-- Success message -->
+  <div class="success-message" id="successMessage">
+    <div class="success-content">
+      <i class="fa-solid fa-check-circle"></i>
+      <span>Message sent successfully!</span>
+      <p>We'll get back to you as soon as possible.</p>
+    </div>
+  </div>
 
   <footer>
     <div class="footer-content">
@@ -161,7 +212,7 @@
         <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
       </div>
@@ -180,6 +231,101 @@
   </footer>
 
   <script>
+    // Form submission with animation
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById('submitBtn');
+      const btnText = submitBtn.querySelector('.btn-text');
+      const btnLoading = submitBtn.querySelector('.btn-loading');
+      
+      // Show loading state
+      submitBtn.classList.add('loading');
+      btnText.style.opacity = '0';
+      btnLoading.style.opacity = '1';
+      
+      // Simulate form submission
+      setTimeout(() => {
+        // Show success message
+        const successMessage = document.getElementById('successMessage');
+        successMessage.classList.add('show');
+        
+        // Reset form
+        document.getElementById('contactForm').reset();
+        
+        // Hide success message after 3 seconds
+        setTimeout(() => {
+          successMessage.classList.remove('show');
+        }, 3000);
+        
+        // Reset button
+        submitBtn.classList.remove('loading');
+        btnText.style.opacity = '1';
+        btnLoading.style.opacity = '0';
+      }, 2000);
+    });
+
+    // Input focus animations
+    document.querySelectorAll('.input-wrapper input, .input-wrapper textarea, .input-wrapper select').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+      
+      // Add floating label effect
+      input.addEventListener('input', function() {
+        if (this.value) {
+          this.parentElement.classList.add('has-value');
+        } else {
+          this.parentElement.classList.remove('has-value');
+        }
+      });
+    });
+
+    // Add ripple effect to button
+    document.getElementById('submitBtn').addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.classList.add('ripple');
+      
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+
+    // Social icons hover effects
+    document.querySelectorAll('.social-icon').forEach(icon => {
+      icon.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.1)';
+      });
+      
+      icon.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Add floating animation to background shapes
+    document.addEventListener('DOMContentLoaded', function() {
+      const shapes = document.querySelectorAll('.floating-shape');
+      shapes.forEach((shape, index) => {
+        shape.style.animationDelay = `${index * 0.5}s`;
+      });
+    });
+
     // Language switching and translation functionality
     document.addEventListener('DOMContentLoaded', function() {
       let translations = {};
@@ -251,78 +397,14 @@
         document.documentElement.lang = lang;
         document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
         
-        // Page title
-        document.getElementById('page-title').textContent = t.pageTitle;
-        
-        // Header
-        document.getElementById('logo-title').innerHTML = t.logoTitle;
-        document.getElementById('logo-subtitle').textContent = t.logoSubtitle;
-        document.getElementById('nav-language').textContent = t.language;
-        document.getElementById('dropdown-item-english').textContent = t.english;
-        document.getElementById('dropdown-item-arabic').textContent = t.arabic;
-        document.getElementById('nav-fields').textContent = t.fields;
-        document.getElementById('nav-customer-support-text').textContent = t.customerSupport;
-        document.getElementById('nav-about-us-text').textContent = t.aboutUs;
-        
-        // Main content
-        document.getElementById('main-title').textContent = t.mainTitle;
-        document.getElementById('main-description').textContent = t.mainDescription;
-        
-        // Form
-        document.getElementById('form-title').textContent = t.formTitle;
-        document.getElementById('form-full-name').textContent = t.formFullName;
-        document.getElementById('form-email').textContent = t.formEmail;
-        document.getElementById('form-subject').textContent = t.formSubject;
-        document.getElementById('form-message').textContent = t.formMessage;
-        document.getElementById('form-select-subject').textContent = t.formSelectSubject;
-        document.getElementById('form-general-inquiry').textContent = t.formGeneralInquiry;
-        document.getElementById('form-technical-support').textContent = t.formTechnicalSupport;
-        document.getElementById('form-partnership').textContent = t.formPartnership;
-        document.getElementById('form-feedback').textContent = t.formFeedback;
-        document.getElementById('form-other').textContent = t.formOther;
-        document.getElementById('message').placeholder = t.formMessagePlaceholder;
-        document.getElementById('form-submit-button').innerHTML = '<i class="fa-solid fa-paper-plane"></i> ' + t.formSubmitButton;
-        
-        // Contact information
-        document.getElementById('contact-info-title').textContent = t.contactInfoTitle;
-        document.getElementById('contact-email').textContent = t.contactEmail;
-        document.getElementById('contact-phone').textContent = t.contactPhone;
-        document.getElementById('contact-address').textContent = t.contactAddress;
-        document.getElementById('contact-business-hours').textContent = t.contactBusinessHours;
-        document.getElementById('contact-monday-friday').textContent = t.contactMondayFriday;
-        document.getElementById('contact-saturday').textContent = t.contactSaturday;
-        document.getElementById('contact-sunday').textContent = t.contactSunday;
-        document.getElementById('social-follow-us').textContent = t.socialFollowUs;
-        
-        // Footer
-        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
-        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle;
-        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks;
-        document.getElementById('footer-support').textContent = t.footerSupport;
-        document.getElementById('footer-home').textContent = t.footerHome;
-        document.getElementById('footer-roadmap').textContent = t.footerRoadmap;
-        document.getElementById('footer-contact').textContent = t.footerContact;
-        document.getElementById('footer-help-center').textContent = t.footerHelpCenter;
-        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy;
-        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService;
-        document.getElementById('footer-copyright').textContent = t.footerCopyright;
+        // Update all elements with translations
+        Object.keys(t).forEach(key => {
+          const element = document.getElementById(key);
+          if (element) {
+            element.innerHTML = t[key];
+          }
+        });
       }
-
-      // Form submission handling
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        
-        // Show success message in current language
-        const successMessage = translations[currentLang]?.formSuccessMessage || 'Thank you for your message! We\'ll get back to you soon.';
-        alert(successMessage);
-        
-        // Reset form
-        this.reset();
-      });
     });
   </script>
 </body>

@@ -2,29 +2,186 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Masar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/LogIn.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+  </div>
+
   <div class="login-container">
     <div class="login-header">
-      <span class="masar-logo" onclick="window.location.href='home.html'" >Masar <span style="color:#00b6b6;">&#8599;</span></span>
+      <span class="masar-logo" onclick="window.location.href='home.html'">
+        <i class="fa-solid fa-arrow-up-right"></i>
+        Masar <span style="color:#00b6b6;">&#8599;</span>
+      </span>
       <div class="subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
     </div>
-    <form class="login-form">
-      <h2>Login</h2>
-      <label for="email">Email</label>
-      <input type="email" id="email" placeholder="Enter your email" required>
-      <label for="password">Password</label>
-      <input type="password" id="password" placeholder="Enter your password" required>
-      <button type="submit" class="login-btn">Login</button>
+    
+    <form class="login-form" id="loginForm">
+      <div class="form-header">
+        <h2><i class="fa-solid fa-user-circle"></i> Welcome Back</h2>
+        <p>Sign in to continue your learning journey</p>
+      </div>
+      
+      <div class="input-group">
+        <div class="input-wrapper">
+          <i class="fa-solid fa-envelope input-icon"></i>
+          <input type="email" id="email" placeholder="Enter your email" required>
+          <div class="input-line"></div>
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <div class="input-wrapper">
+          <i class="fa-solid fa-lock input-icon"></i>
+          <input type="password" id="password" placeholder="Enter your password" required>
+          <div class="input-line"></div>
+          <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword()"></i>
+        </div>
+      </div>
+      
+      <div class="form-options">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" id="remember">
+          <span class="checkmark"></span>
+          Remember me
+        </label>
+      </div>
+      
+      <button type="submit" class="login-btn" id="loginBtn">
+        <span class="btn-text">Sign In</span>
+        <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
+        <div class="btn-loading">
+          <div class="spinner"></div>
+        </div>
+      </button>
+      
       <div class="login-links">
-        <a href="Forgot_password.html">Forgot password?</a>
-        <span>|</span>
-        <a href="SignUp.html">Create account</a>
+        <a href="Forgot_password.html" class="link-item">
+          <i class="fa-solid fa-key"></i>
+          Forgot password?
+        </a>
+        <span class="divider">|</span>
+        <a href="SignUp.html" class="link-item">
+          <i class="fa-solid fa-user-plus"></i>
+          Create account
+        </a>
       </div>
     </form>
+    
+    <!-- Success message -->
+    <div class="success-message" id="successMessage">
+      <div class="success-content">
+        <i class="fa-solid fa-check-circle"></i>
+        <span>Login successful! Redirecting...</span>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Toggle password visibility
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const toggleIcon = document.querySelector('.toggle-password');
+      
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      }
+    }
+
+    // Form submission with animation
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const loginBtn = document.getElementById('loginBtn');
+      const btnText = loginBtn.querySelector('.btn-text');
+      const btnIcon = loginBtn.querySelector('.btn-icon');
+      const btnLoading = loginBtn.querySelector('.btn-loading');
+      
+      // Show loading state
+      loginBtn.classList.add('loading');
+      btnText.style.opacity = '0';
+      btnIcon.style.opacity = '0';
+      btnLoading.style.opacity = '1';
+      
+      // Simulate login process
+      setTimeout(() => {
+        // Show success message
+        const successMessage = document.getElementById('successMessage');
+        successMessage.classList.add('show');
+        
+        // Redirect after success animation
+        setTimeout(() => {
+          window.location.href = 'home.html';
+        }, 2000);
+      }, 2000);
+    });
+
+    // Input focus animations
+    document.querySelectorAll('.input-wrapper input').forEach(input => {
+      input.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      input.addEventListener('blur', function() {
+        if (!this.value) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+      
+      // Add floating label effect
+      input.addEventListener('input', function() {
+        if (this.value) {
+          this.parentElement.classList.add('has-value');
+        } else {
+          this.parentElement.classList.remove('has-value');
+        }
+      });
+    });
+
+    // Add ripple effect to button
+    document.getElementById('loginBtn').addEventListener('click', function(e) {
+      const ripple = document.createElement('span');
+      const rect = this.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const x = e.clientX - rect.left - size / 2;
+      const y = e.clientY - rect.top - size / 2;
+      
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = x + 'px';
+      ripple.style.top = y + 'px';
+      ripple.classList.add('ripple');
+      
+      this.appendChild(ripple);
+      
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+
+    // Add floating animation to background shapes
+    document.addEventListener('DOMContentLoaded', function() {
+      const shapes = document.querySelectorAll('.floating-shape');
+      shapes.forEach((shape, index) => {
+        shape.style.animationDelay = `${index * 0.5}s`;
+      });
+    });
+  </script>
 </body>
 </html>
