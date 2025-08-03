@@ -226,7 +226,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
@@ -329,7 +329,7 @@
     // Language switching and translation functionality
     document.addEventListener('DOMContentLoaded', function() {
       let translations = {};
-      let currentLang = 'en';
+      let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
 
       // Fetch translations
       fetch('../json/contact_us.json')
@@ -370,6 +370,7 @@
             // Language switching
             if (item.dataset.lang) {
               currentLang = item.dataset.lang;
+              localStorage.setItem('selectedLanguage', currentLang); // Save language preference
               setLanguage(currentLang);
             }
             dropdown.classList.remove('active');

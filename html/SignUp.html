@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up - Masar</title>
+  <title data-translate="pageTitle">Sign Up - Masar</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/LogIn.css">
@@ -18,25 +18,46 @@
     <div class="floating-shape shape-5"></div>
   </div>
 
+  <!-- Language Switcher -->
+  <div class="language-switcher">
+    <div class="dropdown">
+      <button class="dropdown-toggle" onclick="toggleDropdown()">
+        <i class="fa-solid fa-globe"></i>
+        <span data-translate="language">Language</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="dropdown-menu" id="languageDropdown">
+        <div class="dropdown-item" data-lang="en" onclick="setLanguage('en')">
+          <i class="fa-solid fa-flag"></i>
+          <span data-translate="english">English</span>
+        </div>
+        <div class="dropdown-item" data-lang="ar" onclick="setLanguage('ar')">
+          <i class="fa-solid fa-flag"></i>
+          <span data-translate="arabic">Arabic</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="login-container">
     <div class="login-header">
-      <span class="masar-logo" onclick="window.location.href='home.html'">
+      <span class="masar-logo" onclick="window.location.href='home.html'" data-translate="logoTitle">
         <i class="fa-solid fa-arrow-up-right"></i>
         Masar <span style="color:#00b6b6;">&#8599;</span>
       </span>
-      <div class="subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <div class="subtitle" onclick="window.location.href='home.html'" data-translate="logoSubtitle">From vision to destination</div>
     </div>
     
     <form class="login-form" id="signupForm">
       <div class="form-header">
-        <h2><i class="fa-solid fa-user-plus"></i> Create Account</h2>
-        <p>Join Masar and start your learning journey today</p>
+        <h2><i class="fa-solid fa-user-plus"></i> <span data-translate="mainTitle">Join Masar Today!</span></h2>
+        <p data-translate="mainDescription">Create your account and start your learning journey with us</p>
       </div>
       
       <div class="input-group">
         <div class="input-wrapper">
           <i class="fa-solid fa-user input-icon"></i>
-          <input type="text" id="name" placeholder="Enter your full name" required>
+          <input type="text" id="name" data-translate-placeholder="formFullNamePlaceholder" placeholder="Enter your full name" required>
           <div class="input-line"></div>
         </div>
       </div>
@@ -44,7 +65,7 @@
       <div class="input-group">
         <div class="input-wrapper">
           <i class="fa-solid fa-envelope input-icon"></i>
-          <input type="email" id="email" placeholder="Enter your email" required>
+          <input type="email" id="email" data-translate-placeholder="formEmailPlaceholder" placeholder="Enter your email address" required>
           <div class="input-line"></div>
         </div>
       </div>
@@ -52,7 +73,7 @@
       <div class="input-group">
         <div class="input-wrapper">
           <i class="fa-solid fa-lock input-icon"></i>
-          <input type="password" id="password" placeholder="Create a password" required>
+          <input type="password" id="password" data-translate-placeholder="formPasswordPlaceholder" placeholder="Create a strong password" required>
           <div class="input-line"></div>
           <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword('password')"></i>
         </div>
@@ -61,7 +82,7 @@
       <div class="input-group">
         <div class="input-wrapper">
           <i class="fa-solid fa-lock input-icon"></i>
-          <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+          <input type="password" id="confirm-password" data-translate-placeholder="formConfirmPasswordPlaceholder" placeholder="Confirm your password" required>
           <div class="input-line"></div>
           <i class="fa-solid fa-eye-slash toggle-password" onclick="togglePassword('confirm-password')"></i>
         </div>
@@ -71,12 +92,12 @@
         <label class="checkbox-wrapper">
           <input type="checkbox" id="terms" required>
           <span class="checkmark"></span>
-          I agree to the <a href="#" style="color: #00b6b6;">Terms & Conditions</a>
+          <span data-translate="formAgreeTerms">I agree to the Terms of Service and Privacy Policy</span>
         </label>
       </div>
       
       <button type="submit" class="login-btn" id="signupBtn">
-        <span class="btn-text">Create Account</span>
+        <span class="btn-text" data-translate="formSignUpButton">Create Account</span>
         <span class="btn-icon"><i class="fa-solid fa-arrow-right"></i></span>
         <div class="btn-loading">
           <div class="spinner"></div>
@@ -86,7 +107,7 @@
       <div class="login-links">
         <a href="LogIn.html" class="link-item">
           <i class="fa-solid fa-sign-in-alt"></i>
-          Already have an account? Sign In
+          <span data-translate="formLoginLink">Sign in here</span>
         </a>
       </div>
     </form>
@@ -95,15 +116,78 @@
     <div class="success-message" id="successMessage">
       <div class="success-content">
         <i class="fa-solid fa-check-circle"></i>
-        <span>Account created successfully! Redirecting...</span>
+        <span data-translate="signupSuccessMessage">Account created successfully! Welcome to Masar.</span>
       </div>
     </div>
   </div>
 
   <script>
+    // Translation system
+    let translations = {};
+    let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+    // Load translations
+    async function loadTranslations() {
+      try {
+        const response = await fetch('../json/signup.json');
+        translations = await response.json();
+        setLanguage(currentLang);
+      } catch (error) {
+        console.error('Error loading translations:', error);
+      }
+    }
+
+    // Set language
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('selectedLanguage', lang);
+      
+      // Update document direction for Arabic
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+      
+      // Update placeholders
+      document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+      
+      // Update page title
+      const titleKey = document.title.getAttribute('data-translate');
+      if (titleKey && translations[lang] && translations[lang][titleKey]) {
+        document.title = translations[lang][titleKey];
+      }
+    }
+
+    // Toggle dropdown
+    function toggleDropdown() {
+      const dropdown = document.getElementById('languageDropdown');
+      dropdown.classList.toggle('show');
+    }
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('languageDropdown');
+      const toggle = document.querySelector('.dropdown-toggle');
+      
+      if (!toggle.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+      }
+    });
+
     // Toggle password visibility
-    function togglePassword(inputId) {
-      const passwordInput = document.getElementById(inputId);
+    function togglePassword(fieldId) {
+      const passwordInput = document.getElementById(fieldId);
       const toggleIcon = passwordInput.parentElement.querySelector('.toggle-password');
       
       if (passwordInput.type === 'password') {
@@ -193,6 +277,9 @@
       shapes.forEach((shape, index) => {
         shape.style.animationDelay = `${index * 0.5}s`;
       });
+      
+      // Load translations
+      loadTranslations();
     });
   </script>
 </body>

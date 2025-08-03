@@ -217,14 +217,13 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footer-logo-title">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></h3>
+        <h3 id="footer-logo-title">Masar</h3>
         <p id="footer-logo-subtitle">From vision to destination</p>
       </div>
       <div class="footer-section">
         <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="about_us.html" id="footer-about">About Us</a></li>
           <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
@@ -239,14 +238,14 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">© 2024 Masar. All rights reserved.</p>
+      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
   <script src="../json/all_roadmaps.json"></script>
   <script>
     // Language switching functionality
-    let currentLang = 'en';
+    let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
     let translations = {};
 
     // Load translations
@@ -266,6 +265,7 @@
         const lang = this.getAttribute('data-lang');
         if (lang) {
           currentLang = lang;
+          localStorage.setItem('selectedLanguage', currentLang); // Save language preference
           updateLanguage(lang);
         }
       });

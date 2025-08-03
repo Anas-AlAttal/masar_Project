@@ -201,7 +201,7 @@
         <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
+          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
       </div>
@@ -215,7 +215,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
@@ -393,7 +393,7 @@
     // Language switching and translation functionality
     document.addEventListener('DOMContentLoaded', function() {
       let translations = {};
-      let currentLang = 'en';
+      let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
 
       // Initialize progress tracking
       initializeProgressTracking();
@@ -444,6 +444,7 @@
             // Language switching
             if (item.dataset.lang) {
               currentLang = item.dataset.lang;
+              localStorage.setItem('selectedLanguage', currentLang); // Save language preference
               setLanguage(currentLang);
             }
             dropdown.classList.remove('active');
@@ -495,7 +496,7 @@
             console.log('Modal should be visible now');
             
             // Try to fetch additional data (optional)
-            fetch('../json/backend_courses.json')
+            fetch('../json/roadmap_courses.json')
               .then(response => {
                 if (!response.ok) {
                   throw new Error('Network response was not ok');
@@ -590,12 +591,12 @@
       document.getElementById('footer-quick-links').textContent = t.footerQuickLinks || 'Quick Links';
       document.getElementById('footer-support').textContent = t.footerSupport || 'Support';
       document.getElementById('footer-home').textContent = t.footerHome || 'Home';
-      document.getElementById('footer-roadmap').textContent = t.footerRoadmap || 'Roadmap';
+      document.getElementById('footer-roadmap').textContent = t.footerRoadmap || 'All Roadmaps';
       document.getElementById('footer-contact').textContent = t.footerContact || 'Contact';
       document.getElementById('footer-help-center').textContent = t.footerHelpCenter || 'Help Center';
       document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy || 'Privacy Policy';
       document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService || 'Terms of Service';
-      document.getElementById('footer-copyright').textContent = t.footerCopyright || '© 2024 Masar. All rights reserved.';
+      document.getElementById('footer-copyright').textContent = t.footerCopyright || '© 2025 Masar. All rights reserved.';
     }
   </script>
   <script>

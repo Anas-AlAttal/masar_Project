@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title id="page-title">Profile - Masar</title>
+  <title data-translate="pageTitle">Profile - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;400&display=swap" rel="stylesheet">
@@ -12,50 +12,110 @@
 <body>
   <header>
     <div class="logo">
-      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <span class="masar-logo" onclick="window.location.href='home.html'" data-translate="logoTitle">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" onclick="window.location.href='home.html'" data-translate="logoSubtitle">From vision to destination</div>
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
-        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-language"></i> <span data-translate="language">language</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
-          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
-          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+          <div class="dropdown-item" data-lang="en" onclick="setLanguage('en')" data-translate="english">English</div>
+          <div class="dropdown-item" data-lang="ar" onclick="setLanguage('ar')" data-translate="arabic">Arabic</div>
         </div>
       </div>
       <div class="nav-item dropdown" id="fields-dropdown">
-        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-desktop"></i> <span data-translate="fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
           <div class="dropdown-item">Frontend</div>
           <div class="dropdown-item">Backend</div>
           <div class="dropdown-item">Data Science</div>
         </div>
       </div>
-      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
-      <div class="nav-item" id="nav-about-us"><b>!</b> <span>About us</span></div>
+      <div class="nav-item" onclick="window.location.href='contact_us.html'"><i class="fa-solid fa-user-group"></i> <span data-translate="customerSupport">Customer support</span></div>
+      <div class="nav-item" onclick="window.location.href='about_us.html'"><b>!</b> <span data-translate="aboutUs">About us</span></div>
       <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
     </nav>
   </header>
   <main>
     <section class="profile-section">
       <div class="profile-card">
+        <h2 data-translate="mainTitle">My Profile</h2>
+        <p data-translate="mainDescription">Manage your account settings and preferences</p>
+        
         <div class="profile-avatar">
           <img src="https://www.gravatar.com/avatar/?d=mp" alt="User Avatar" id="profile-avatar-img">
+          <div class="avatar-actions">
+            <button class="avatar-btn" data-translate="profileAvatarUpload">Upload new picture</button>
+            <button class="avatar-btn" data-translate="profileAvatarRemove">Remove picture</button>
+          </div>
         </div>
+        
         <form class="profile-form">
           <div class="profile-field">
-            <label for="profile-name" id="profile-name-label">Name</label>
-            <input type="text" id="profile-name" value="John Doe">
+            <label for="profile-name" data-translate="profileFullName">Full Name</label>
+            <input type="text" id="profile-name" data-translate-placeholder="profileFullNamePlaceholder" placeholder="Enter your full name" value="John Doe">
           </div>
           <div class="profile-field">
-            <label for="profile-email" id="profile-email-label">Email</label>
-            <input type="email" id="profile-email" value="john.doe@email.com">
+            <label for="profile-email" data-translate="profileEmail">Email Address</label>
+            <input type="email" id="profile-email" data-translate-placeholder="profileEmailPlaceholder" placeholder="Enter your email address" value="john.doe@email.com">
           </div>
           <div class="profile-field">
-            <label for="profile-password" id="profile-password-label">Password</label>
-            <input type="password" id="profile-password" value="">
+            <label for="profile-phone" data-translate="profilePhone">Phone Number</label>
+            <input type="tel" id="profile-phone" data-translate-placeholder="profilePhonePlaceholder" placeholder="Enter your phone number">
           </div>
-          <button type="submit" class="save-btn" id="profile-save-btn"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+          <div class="profile-field">
+            <label for="profile-bio" data-translate="profileBio">Bio</label>
+            <textarea id="profile-bio" data-translate-placeholder="profileBioPlaceholder" placeholder="Tell us about yourself..."></textarea>
+          </div>
+          <div class="profile-field">
+            <label for="profile-location" data-translate="profileLocation">Location</label>
+            <input type="text" id="profile-location" data-translate-placeholder="profileLocationPlaceholder" placeholder="Enter your location">
+          </div>
+          <div class="profile-field">
+            <label for="profile-website" data-translate="profileWebsite">Website</label>
+            <input type="url" id="profile-website" data-translate-placeholder="profileWebsitePlaceholder" placeholder="Enter your website URL">
+          </div>
+          
+          <div class="security-section">
+            <h3 data-translate="securitySectionTitle">Security Settings</h3>
+            <div class="profile-field">
+              <label for="current-password" data-translate="securityCurrentPassword">Current Password</label>
+              <input type="password" id="current-password" data-translate-placeholder="securityCurrentPasswordPlaceholder" placeholder="Enter your current password">
+            </div>
+            <div class="profile-field">
+              <label for="new-password" data-translate="securityNewPassword">New Password</label>
+              <input type="password" id="new-password" data-translate-placeholder="securityNewPasswordPlaceholder" placeholder="Enter your new password">
+            </div>
+            <div class="profile-field">
+              <label for="confirm-password" data-translate="securityConfirmPassword">Confirm New Password</label>
+              <input type="password" id="confirm-password" data-translate-placeholder="securityConfirmPasswordPlaceholder" placeholder="Confirm your new password">
+            </div>
+          </div>
+          
+          <div class="preferences-section">
+            <h3 data-translate="preferencesSectionTitle">Preferences</h3>
+            <div class="profile-field">
+              <label for="language-preference" data-translate="preferencesLanguage">Language</label>
+              <select id="language-preference">
+                <option value="en" data-translate="english">English</option>
+                <option value="ar" data-translate="arabic">Arabic</option>
+              </select>
+            </div>
+            <div class="profile-field">
+              <label for="theme-preference" data-translate="preferencesTheme">Theme</label>
+              <select id="theme-preference">
+                <option value="light" data-translate="preferencesThemeLight">Light</option>
+                <option value="dark" data-translate="preferencesThemeDark">Dark</option>
+                <option value="auto" data-translate="preferencesThemeAuto">Auto</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-actions">
+            <button type="submit" class="save-btn" data-translate="saveButton"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
+            <button type="button" class="cancel-btn" data-translate="cancelButton">Cancel</button>
+            <button type="button" class="logout-btn" data-translate="logoutButton"><i class="fa-solid fa-sign-out-alt"></i> Logout</button>
+          </div>
         </form>
       </div>
     </section>
@@ -63,114 +123,113 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footer-logo-title">Masar</h3>
-        <p id="footer-logo-subtitle">From vision to destination</p>
+        <h3 data-translate="footerLogoTitle">Masar</h3>
+        <p data-translate="footerLogoSubtitle">From vision to destination</p>
       </div>
       <div class="footer-section">
-        <h4 id="footer-quick-links">Quick Links</h4>
+        <h4 data-translate="footerQuickLinks">Quick Links</h4>
         <ul>
-          <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="RoadMap.html" id="footer-roadmap">Roadmap</a></li>
-          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+          <li><a href="home.html" data-translate="footerHome">Home</a></li>
+          <li><a href="all_roadmaps.html" data-translate="footerRoadmap">All Roadmaps</a></li>
+          <li><a href="contact_us.html" data-translate="footerContact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4 id="footer-support">Support</h4>
+        <h4 data-translate="footerSupport">Support</h4>
         <ul>
-          <li><a href="#" id="footer-help-center">Help Center</a></li>
-          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
-          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+          <li><a href="#" data-translate="footerHelpCenter">Help Center</a></li>
+          <li><a href="#" data-translate="footerPrivacyPolicy">Privacy Policy</a></li>
+          <li><a href="#" data-translate="footerTermsOfService">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+      <p data-translate="footerCopyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
   <script>
-    // Dropdown functionality and language switching with JSON
+    // Translation system
+    let translations = {};
+    let currentLang = localStorage.getItem('selectedLanguage') || 'en';
+
+    // Load translations
+    async function loadTranslations() {
+      try {
+        const response = await fetch('../json/profile.json');
+        translations = await response.json();
+        setLanguage(currentLang);
+      } catch (error) {
+        console.error('Error loading translations:', error);
+      }
+    }
+
+    // Set language
+    function setLanguage(lang) {
+      currentLang = lang;
+      localStorage.setItem('selectedLanguage', lang);
+      
+      // Update document direction for Arabic
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = lang;
+      
+      // Update all translatable elements
+      document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[lang] && translations[lang][key]) {
+          element.innerHTML = translations[lang][key];
+        }
+      });
+      
+      // Update placeholders
+      document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-translate-placeholder');
+        if (translations[lang] && translations[lang][key]) {
+          element.placeholder = translations[lang][key];
+        }
+      });
+      
+      // Update page title
+      const titleKey = document.title.getAttribute('data-translate');
+      if (titleKey && translations[lang] && translations[lang][titleKey]) {
+        document.title = translations[lang][titleKey];
+      }
+    }
+
+    // Dropdown functionality
     document.addEventListener('DOMContentLoaded', function() {
-      let translations = {};
-      let currentLang = 'en';
-
-      // Fetch translations
-      fetch('../json/home language.json')
-        .then(response => response.json())
-        .then(data => {
-          translations = data;
-          setLanguage(currentLang);
-        });
-
-      // Dropdown logic
+      // Load translations
+      loadTranslations();
+      
+      // Dropdown functionality
       const dropdowns = document.querySelectorAll('.dropdown');
       dropdowns.forEach(dropdown => {
         const chevron = dropdown.querySelector('.fa-chevron-down');
         dropdown.addEventListener('click', function(e) {
           e.stopPropagation();
-          dropdowns.forEach(otherDropdown => {
-            if (otherDropdown !== dropdown) {
-              otherDropdown.classList.remove('active');
-              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
-              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
-            }
-          });
-          dropdown.classList.toggle('active');
-          if (chevron) chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
-        });
-        // Dropdown item click
-        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
-        dropdownItems.forEach(item => {
-          item.addEventListener('click', function(e) {
-            e.stopPropagation();
-            // Language switching
-            if (item.dataset.lang) {
-              currentLang = item.dataset.lang;
-              setLanguage(currentLang);
-            }
-            dropdown.classList.remove('active');
-            if (chevron) chevron.style.transform = 'rotate(0deg)';
-          });
+          this.classList.toggle('active');
+          if (chevron) {
+            chevron.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
         });
       });
+
+      // Close dropdowns when clicking outside
       document.addEventListener('click', function() {
         dropdowns.forEach(dropdown => {
           dropdown.classList.remove('active');
           const chevron = dropdown.querySelector('.fa-chevron-down');
-          if (chevron) chevron.style.transform = 'rotate(0deg)';
+          if (chevron) {
+            chevron.style.transform = 'rotate(0deg)';
+          }
         });
       });
 
-      // Set language from translations
-      function setLanguage(lang) {
-        if (!translations[lang]) return;
-        const t = translations[lang];
-        document.documentElement.lang = lang;
-        document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-        // Title
-        document.title = lang === 'ar' ? 'مسار - من الرؤية إلى الوجهة' : 'Masar - From vision to destination';
-        // Header
-        document.getElementById('logo-title').innerHTML = t.logoTitle;
-        document.getElementById('logo-subtitle').textContent = t.logoSubtitle;
-        // Nav
-        document.getElementById('nav-language').textContent = t.language;
-        document.getElementById('dropdown-item-english').textContent = t.english;
-        document.getElementById('dropdown-item-arabic').textContent = t.arabic;
-        document.getElementById('nav-fields').textContent = t.fields;
-        document.querySelector('#nav-customer-support span').textContent = t.customerSupport;
-        document.querySelector('#nav-about-us span').textContent = t.aboutUs;
-        // Footer
-        document.getElementById('footer-quick-links').textContent = t.footerQuickLinks;
-        document.getElementById('footer-support').textContent = t.footerSupport;
-        document.getElementById('footer-help-center').textContent = t.footerHelpCenter;
-        document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy;
-        document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService;
-        document.getElementById('footer-copyright').textContent = t.footerCopyright;
-        document.getElementById('footer-home').textContent = t.footerHome;
-        document.getElementById('footer-roadmap').textContent = t.footerRoadmap;
-        document.getElementById('footer-contact').textContent = t.footerContact;
-        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
-        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle;
-      }
+      // Form submission
+      document.querySelector('.profile-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Handle form submission
+        console.log('Profile updated');
+      });
     });
   </script>
 </body>

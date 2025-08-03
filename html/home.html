@@ -101,7 +101,6 @@
         <h4 id="footer-quick-links">Quick Links</h4>
         <ul>
           <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="about_us.html" id="footer-about">About Us</a></li>
           <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
           <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
         </ul>
@@ -116,7 +115,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2024 Masar. All rights reserved.</p>
+      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
@@ -167,7 +166,7 @@
     // Dropdown functionality and language switching with JSON
     document.addEventListener('DOMContentLoaded', function() {
       let translations = {};
-      let currentLang = 'en';
+      let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
 
       // Fetch translations
       fetch('../json/home language.json')
@@ -204,6 +203,7 @@
             // Language switching
             if (item.dataset.lang) {
               currentLang = item.dataset.lang;
+              localStorage.setItem('selectedLanguage', currentLang); // Save language preference
               setLanguage(currentLang);
             }
             dropdown.classList.remove('active');
@@ -272,6 +272,132 @@
         document.getElementById('user-name').style.display = 'inline-block';
         var authBtns = document.getElementById('auth-buttons');
         if (authBtns) authBtns.style.display = 'none';
+      }
+
+      // Enhanced Footer Animations
+      const footer = document.querySelector('footer');
+      const footerSections = document.querySelectorAll('.footer-section');
+      const footerLinks = document.querySelectorAll('.footer-section ul li a');
+      const footerBottom = document.querySelector('.footer-bottom');
+
+      // Intersection Observer for scroll-triggered animations
+      const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = 'running';
+            
+            // Add staggered animation to footer sections
+            footerSections.forEach((section, index) => {
+              setTimeout(() => {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0) scale(1)';
+              }, index * 200);
+            });
+
+            // Animate footer links with delay
+            footerLinks.forEach((link, index) => {
+              setTimeout(() => {
+                link.style.opacity = '1';
+                link.style.transform = 'translateX(0)';
+              }, 800 + (index * 100));
+            });
+
+            // Animate footer bottom
+            setTimeout(() => {
+              footerBottom.style.opacity = '1';
+              footerBottom.style.transform = 'translateY(0)';
+            }, 1200);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+      });
+
+      if (footer) {
+        footerObserver.observe(footer);
+      }
+
+      // Enhanced hover effects for footer links
+      footerLinks.forEach(link => {
+        link.addEventListener('mouseenter', function() {
+          // Add ripple effect
+          const ripple = document.createElement('span');
+          ripple.classList.add('footer-ripple');
+          this.appendChild(ripple);
+          
+          setTimeout(() => {
+            ripple.remove();
+          }, 600);
+
+          // Add floating animation
+          this.style.transform = 'translateX(15px) translateY(-5px)';
+          this.style.textShadow = '0 5px 15px rgba(0, 184, 148, 0.8)';
+        });
+
+        link.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateX(0) translateY(0)';
+          this.style.textShadow = '0 1px 2px rgba(0, 0, 0, 0.3)';
+        });
+      });
+
+      // Footer section hover effects
+      footerSections.forEach(section => {
+        section.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-15px) scale(1.03)';
+          this.style.boxShadow = '0 20px 40px rgba(0, 184, 148, 0.3)';
+        });
+
+        section.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+          this.style.boxShadow = 'none';
+        });
+      });
+
+      // Animated copyright text
+      const copyrightText = document.querySelector('.footer-bottom p');
+      if (copyrightText) {
+        copyrightText.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.1) rotate(2deg)';
+          this.style.color = '#00b894';
+        });
+
+        copyrightText.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1) rotate(0deg)';
+          this.style.color = 'rgba(255, 255, 255, 0.8)';
+        });
+      }
+
+      // Add floating particles to footer
+      function createFloatingParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'footer-particle';
+        particle.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 8 + 4}px;
+          height: ${Math.random() * 8 + 4}px;
+          background: rgba(0, 184, 148, ${Math.random() * 0.5 + 0.2});
+          border-radius: 50%;
+          pointer-events: none;
+          z-index: 1;
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          animation: particleFloat ${Math.random() * 10 + 5}s ease-in-out infinite;
+        `;
+        
+        footer.appendChild(particle);
+        
+        setTimeout(() => {
+          particle.remove();
+        }, 15000);
+      }
+
+      // Create particles periodically
+      setInterval(createFloatingParticle, 3000);
+      
+      // Create initial particles
+      for (let i = 0; i < 5; i++) {
+        setTimeout(createFloatingParticle, i * 500);
       }
     });
   </script>
