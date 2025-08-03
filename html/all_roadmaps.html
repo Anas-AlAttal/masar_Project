@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">All Roadmaps - Masar</title>
+  <title id="pageTitle">All Roadmaps - Masar</title>
   <link rel="stylesheet" href="../css/all_roadmaps.css">
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,27 +12,27 @@
 <body>
   <header>
     <div class="logo">
-      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <span class="masar-logo" id="logoTitle" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logoSubtitle" onclick="window.location.href='home.html'">From vision to destination</div>
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
-        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-language"></i> <span id="language">language</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
-          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
-          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+          <div class="dropdown-item" data-lang="en" id="english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="arabic">Arabic</div>
         </div>
       </div>
       <div class="nav-item dropdown" id="fields-dropdown">
-        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-desktop"></i> <span id="fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
-          <div class="dropdown-item">Data Science</div>
+          <div class="dropdown-item" onclick="window.location.href='data_science.html'">Data Science</div>
         </div>
       </div>
-      <div class="nav-item" onclick="window.location.href='contact_us.html'" id="nav-customer-support"><i class="fa-solid fa-user-group" ></i> <span >Customer support</span></div>
-      <div class="nav-item" onclick="window.location.href='about_us.html'" id="nav-about-us"><i class="fa-solid fa-info-circle" ></i> <span>About us</span></div>
+      <div class="nav-item" onclick="window.location.href='contact_us.html'" id="customerSupport"><i class="fa-solid fa-user-group" ></i> <span >Customer support</span></div>
+      <div class="nav-item" onclick="window.location.href='about_us.html'" id="aboutUs"><i class="fa-solid fa-info-circle" ></i> <span>About us</span></div>
       <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
       <span id="user-name" style="display:none; font-weight:600; color:#00b6b6; margin-left:20px;"></span>
     </nav>
@@ -41,8 +41,8 @@
   <main>
     <section class="hero-section">
       <div class="hero-content">
-        <h1 id="hero-title">Explore All Roadmaps</h1>
-        <p id="hero-description">Choose your path to success with our comprehensive learning roadmaps</p>
+        <h1 id="heroTitle">Explore All Roadmaps</h1>
+        <p id="heroDescription">Choose your path to success with our comprehensive learning roadmaps</p>
       </div>
     </section>
 
@@ -55,29 +55,29 @@
           <div class="card-badge">Popular</div>
         </div>
         <div class="card-content">
-          <h3 id="frontend-title">Frontend Development</h3>
-          <p id="frontend-description">Master modern web development with HTML, CSS, JavaScript, and popular frameworks</p>
+          <h3 id="frontendTitle">Frontend Development</h3>
+          <p id="frontendDescription">Master modern web development with HTML, CSS, JavaScript, and popular frameworks</p>
           <div class="card-features">
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="frontend-feature-1">HTML5 & CSS3</span>
+              <span id="frontendFeature1">HTML5 & CSS3</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="frontend-feature-2">JavaScript ES6+</span>
+              <span id="frontendFeature2">JavaScript ES6+</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="frontend-feature-3">React, Vue, Angular</span>
+              <span id="frontendFeature3">React, Vue, Angular</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="frontend-feature-4">Responsive Design</span>
+              <span id="frontendFeature4">Responsive Design</span>
             </div>
           </div>
         </div>
         <div class="card-footer">
-          <span class="progress-text" id="frontend-progress">0% Complete</span>
+          <span class="progress-text" id="frontendProgress">0% Complete</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 0%"></div>
           </div>
@@ -92,67 +92,67 @@
           <div class="card-badge">In Demand</div>
         </div>
         <div class="card-content">
-          <h3 id="backend-title">Backend Development</h3>
-          <p id="backend-description">Build robust server-side applications and APIs with modern technologies</p>
+          <h3 id="backendTitle">Backend Development</h3>
+          <p id="backendDescription">Build robust server-side applications and APIs with modern technologies</p>
           <div class="card-features">
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="backend-feature-1">Node.js & Express</span>
+              <span id="backendFeature1">Node.js & Express</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="backend-feature-2">Database Management</span>
+              <span id="backendFeature2">Database Management</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="backend-feature-3">API Development</span>
+              <span id="backendFeature3">API Development</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-check"></i>
-              <span id="backend-feature-4">Security & Authentication</span>
+              <span id="backendFeature4">Security & Authentication</span>
             </div>
           </div>
         </div>
         <div class="card-footer">
-          <span class="progress-text" id="backend-progress">0% Complete</span>
+          <span class="progress-text" id="backendProgress">0% Complete</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 0%"></div>
           </div>
         </div>
       </div>
 
-      <div class="roadmap-card data-science-card coming-soon">
+      <div class="roadmap-card data-science-card" onclick="window.location.href='data_science.html'">
         <div class="card-header">
           <div class="card-icon">
             <i class="fa-solid fa-chart-line"></i>
           </div>
-          <div class="card-badge coming-soon-badge">Coming Soon</div>
+          <div class="card-badge">Available Now</div>
         </div>
         <div class="card-content">
-          <h3 id="data-science-title">Data Science</h3>
-          <p id="data-science-description">Unlock the power of data with machine learning and analytics</p>
+          <h3 id="dataScienceTitle">Data Science</h3>
+          <p id="dataScienceDescription">Unlock the power of data with machine learning and analytics</p>
           <div class="card-features">
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
-              <span id="data-science-feature-1">Python & R</span>
+              <i class="fa-solid fa-check"></i>
+              <span id="dataScienceFeature1">Python & R</span>
             </div>
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
-              <span id="data-science-feature-2">Machine Learning</span>
+              <i class="fa-solid fa-check"></i>
+              <span id="dataScienceFeature2">Machine Learning</span>
             </div>
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
-              <span id="data-science-feature-3">Data Visualization</span>
+              <i class="fa-solid fa-check"></i>
+              <span id="dataScienceFeature3">Data Visualization</span>
             </div>
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
-              <span id="data-science-feature-4">Statistical Analysis</span>
+              <i class="fa-solid fa-check"></i>
+              <span id="dataScienceFeature4">Statistical Analysis</span>
             </div>
           </div>
         </div>
         <div class="card-footer">
-          <span class="progress-text" id="data-science-progress">Coming Soon</span>
-          <div class="progress-bar disabled">
+          <span class="progress-text" id="dataScienceProgress">0% Complete</span>
+          <div class="progress-bar">
             <div class="progress-fill" style="width: 0%"></div>
           </div>
         </div>
@@ -166,29 +166,29 @@
           <div class="card-badge coming-soon-badge">Coming Soon</div>
         </div>
         <div class="card-content">
-          <h3 id="mobile-dev-title">Mobile Development</h3>
-          <p id="mobile-dev-description">Create amazing mobile applications for iOS and Android</p>
+          <h3 id="mobileDevTitle">Mobile Development</h3>
+          <p id="mobileDevDescription">Create amazing mobile applications for iOS and Android</p>
           <div class="card-features">
             <div class="feature">
               <i class="fa-solid fa-clock"></i>
-              <span id="mobile-dev-feature-1">React Native</span>
+              <span id="mobileDevFeature1">React Native</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-clock"></i>
-              <span id="mobile-dev-feature-2">Flutter</span>
+              <span id="mobileDevFeature2">Flutter</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-clock"></i>
-              <span id="mobile-dev-feature-3">Native Development</span>
+              <span id="mobileDevFeature3">Native Development</span>
             </div>
             <div class="feature">
               <i class="fa-solid fa-clock"></i>
-              <span id="mobile-dev-feature-4">App Store Deployment</span>
+              <span id="mobileDevFeature4">App Store Deployment</span>
             </div>
           </div>
         </div>
         <div class="card-footer">
-          <span class="progress-text" id="mobile-dev-progress">Coming Soon</span>
+          <span class="progress-text" id="mobileDevProgress">Coming Soon</span>
           <div class="progress-bar disabled">
             <div class="progress-fill" style="width: 0%"></div>
           </div>
@@ -199,16 +199,16 @@
     <section class="stats-section">
       <div class="stats-container">
         <div class="stat-item">
-          <div class="stat-number" id="total-roadmaps">2</div>
-          <div class="stat-label" id="stat-roadmaps-label">Active Roadmaps</div>
+          <div class="stat-number" id="totalRoadmaps">3</div>
+          <div class="stat-label" id="statRoadmapsLabel">Active Roadmaps</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" id="total-courses">150+</div>
-          <div class="stat-label" id="stat-courses-label">Courses Available</div>
+          <div class="stat-number" id="totalCourses">200+</div>
+          <div class="stat-label" id="statCoursesLabel">Courses Available</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" id="total-users">10K+</div>
-          <div class="stat-label" id="stat-users-label">Active Learners</div>
+          <div class="stat-number" id="totalUsers">15K+</div>
+          <div class="stat-label" id="statUsersLabel">Active Learners</div>
         </div>
       </div>
     </section>
@@ -217,32 +217,31 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footer-logo-title">Masar</h3>
-        <p id="footer-logo-subtitle">From vision to destination</p>
+        <h3 id="footerLogoTitle">Masar</h3>
+        <p id="footerLogoSubtitle">From vision to destination</p>
       </div>
       <div class="footer-section">
-        <h4 id="footer-quick-links">Quick Links</h4>
+        <h4 id="footerQuickLinks">Quick Links</h4>
         <ul>
-          <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
-          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+          <li><a href="home.html" id="footerHome">Home</a></li>
+          <li><a href="all_roadmaps.html" id="footerRoadmap">All Roadmaps</a></li>
+          <li><a href="contact_us.html" id="footerContact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4 id="footer-support">Support</h4>
+        <h4 id="footerSupport">Support</h4>
         <ul>
-          <li><a href="#" id="footer-help-center">Help Center</a></li>
-          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
-          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+          <li><a href="#" id="footerHelpCenter">Help Center</a></li>
+          <li><a href="#" id="footerPrivacyPolicy">Privacy Policy</a></li>
+          <li><a href="#" id="footerTermsOfService">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
+      <p id="footerCopyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="../json/all_roadmaps.json"></script>
   <script>
     // Language switching functionality
     let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
@@ -253,62 +252,155 @@
       .then(response => response.json())
       .then(data => {
         translations = data;
-        updateLanguage(currentLang);
+        setLanguage(currentLang);
       })
       .catch(error => {
         console.error('Error loading translations:', error);
       });
 
-    // Language dropdown functionality
-    document.querySelectorAll('.dropdown-item').forEach(item => {
-      item.addEventListener('click', function() {
-        const lang = this.getAttribute('data-lang');
-        if (lang) {
-          currentLang = lang;
-          localStorage.setItem('selectedLanguage', currentLang); // Save language preference
-          updateLanguage(lang);
-        }
+    // Dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(dropdown => {
+        const chevron = dropdown.querySelector('.fa-chevron-down');
+        dropdown.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdowns.forEach(otherDropdown => {
+            if (otherDropdown !== dropdown) {
+              otherDropdown.classList.remove('active');
+              const otherChevron = otherDropdown.querySelector('.fa-chevron-down');
+              if (otherChevron) otherChevron.style.transform = 'rotate(0deg)';
+            }
+          });
+          
+          this.classList.toggle('active');
+          if (chevron) {
+            chevron.style.transform = this.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+          }
+        });
+
+        // Dropdown item click
+        const dropdownItems = dropdown.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', function(e) {
+            e.stopPropagation();
+            // Language switching
+            if (item.dataset.lang) {
+              currentLang = item.dataset.lang;
+              localStorage.setItem('selectedLanguage', currentLang); // Save language preference
+              setLanguage(currentLang);
+            }
+            dropdown.classList.remove('active');
+            const chevron = dropdown.querySelector('.fa-chevron-down');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          });
+        });
+      });
+
+      // Close dropdowns when clicking outside
+      document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+          dropdown.classList.remove('active');
+          const chevron = dropdown.querySelector('.fa-chevron-down');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
+        });
       });
     });
 
-    // Update page language
-    function updateLanguage(lang) {
-      const elements = document.querySelectorAll('[id]');
-      elements.forEach(element => {
-        const key = element.id;
-        if (translations[lang] && translations[lang][key]) {
-          if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-            element.placeholder = translations[lang][key];
-          } else {
-            element.innerHTML = translations[lang][key];
-          }
+    // Set language from translations
+    function setLanguage(lang) {
+      if (!translations[lang]) return;
+      const t = translations[lang];
+      
+      // Set document direction and language
+      document.documentElement.lang = lang;
+      document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      
+      // Update all elements with translations
+      Object.keys(t).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.innerHTML = t[key];
         }
       });
-
-      // Update HTML lang attribute
-      document.documentElement.lang = lang;
-      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
     }
 
-    // Load user progress from localStorage
-    function loadProgress() {
-      const frontendProgress = localStorage.getItem('frontend_progress') || 0;
-      const backendProgress = localStorage.getItem('backend_progress') || 0;
+    // Load user progress from JSON file
+    async function loadProgress() {
+      try {
+        const response = await fetch('../json/progress_tracking.json');
+        if (response.ok) {
+          const progressData = await response.json();
+          
+          // Calculate frontend progress
+          const frontendCourses = Object.values(progressData.frontend || {});
+          const frontendCompleted = frontendCourses.filter(status => status === 'completed').length;
+          const frontendProgress = frontendCourses.length > 0 ? Math.round((frontendCompleted / frontendCourses.length) * 100) : 0;
+          
+          // Calculate backend progress
+          const backendCourses = Object.values(progressData.backend || {});
+          const backendCompleted = backendCourses.filter(status => status === 'completed').length;
+          const backendProgress = backendCourses.length > 0 ? Math.round((backendCompleted / backendCourses.length) * 100) : 0;
 
-      // Update frontend progress
-      const frontendProgressText = document.getElementById('frontend-progress');
-      const frontendProgressFill = document.querySelector('.frontend-card .progress-fill');
-      if (frontendProgressText && frontendProgressFill) {
-        frontendProgressText.textContent = `${frontendProgress}% Complete`;
-        frontendProgressFill.style.width = `${frontendProgress}%`;
-      }
+          // Calculate data science progress
+          const dataScienceCourses = Object.values(progressData.data_science || {});
+          const dataScienceCompleted = dataScienceCourses.filter(status => status === 'completed').length;
+          const dataScienceProgress = dataScienceCourses.length > 0 ? Math.round((dataScienceCompleted / dataScienceCourses.length) * 100) : 0;
 
-      // Update backend progress
-      const backendProgressText = document.getElementById('backend-progress');
-      const backendProgressFill = document.querySelector('.backend-card .progress-fill');
-      if (backendProgressText && backendProgressFill) {
-        backendProgressText.textContent = `${backendProgress}% Complete`;
-        backendProgressFill.style.width = `${backendProgress}%`;
+          // Update frontend progress
+          const frontendProgressText = document.getElementById('frontendProgress');
+          const frontendProgressFill = document.querySelector('.frontend-card .progress-fill');
+          if (frontendProgressText && frontendProgressFill) {
+            frontendProgressText.textContent = `${frontendProgress}% Complete`;
+            frontendProgressFill.style.width = `${frontendProgress}%`;
+          }
+
+          // Update backend progress
+          const backendProgressText = document.getElementById('backendProgress');
+          const backendProgressFill = document.querySelector('.backend-card .progress-fill');
+          if (backendProgressText && backendProgressFill) {
+            backendProgressText.textContent = `${backendProgress}% Complete`;
+            backendProgressFill.style.width = `${backendProgress}%`;
+          }
+
+          // Update data science progress
+          const dataScienceProgressText = document.getElementById('dataScienceProgress');
+          const dataScienceProgressFill = document.querySelector('.data-science-card .progress-fill');
+          if (dataScienceProgressText && dataScienceProgressFill) {
+            dataScienceProgressText.textContent = `${dataScienceProgress}% Complete`;
+            dataScienceProgressFill.style.width = `${dataScienceProgress}%`;
+          }
+        }
+      } catch (error) {
+        console.error('Error loading progress:', error);
+        // Fallback to localStorage
+        const frontendProgress = localStorage.getItem('frontend_progress') || 0;
+        const backendProgress = localStorage.getItem('backend_progress') || 0;
+        const dataScienceProgress = localStorage.getItem('data_science_progress') || 0;
+
+        // Update frontend progress
+        const frontendProgressText = document.getElementById('frontendProgress');
+        const frontendProgressFill = document.querySelector('.frontend-card .progress-fill');
+        if (frontendProgressText && frontendProgressFill) {
+          frontendProgressText.textContent = `${frontendProgress}% Complete`;
+          frontendProgressFill.style.width = `${frontendProgress}%`;
+        }
+
+        // Update backend progress
+        const backendProgressText = document.getElementById('backendProgress');
+        const backendProgressFill = document.querySelector('.backend-card .progress-fill');
+        if (backendProgressText && backendProgressFill) {
+          backendProgressText.textContent = `${backendProgress}% Complete`;
+          backendProgressFill.style.width = `${backendProgress}%`;
+        }
+
+        // Update data science progress
+        const dataScienceProgressText = document.getElementById('dataScienceProgress');
+        const dataScienceProgressFill = document.querySelector('.data-science-card .progress-fill');
+        if (dataScienceProgressText && dataScienceProgressFill) {
+          dataScienceProgressText.textContent = `${dataScienceProgress}% Complete`;
+          dataScienceProgressFill.style.width = `${dataScienceProgress}%`;
+        }
       }
     }
 

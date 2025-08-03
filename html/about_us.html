@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">About Us - Masar</title>
+  <title id="pageTitle">About Us - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -23,19 +23,19 @@
 
   <header>
     <div class="logo">
-      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <span class="masar-logo" id="logoTitle" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logoSubtitle" onclick="window.location.href='home.html'">From vision to destination</div>
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
-        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-language"></i> <span id="language">language</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
-          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
-          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+          <div class="dropdown-item" data-lang="en" id="english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="arabic">Arabic</div>
         </div>
       </div>
       <div class="nav-item dropdown" id="fields-dropdown">
-        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-desktop"></i> <span id="fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
           <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
@@ -43,8 +43,8 @@
           <div class="dropdown-item">Data Science</div>
         </div>
       </div>
-      <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
-      <div class="nav-item active" id="nav-about-us"><i class="fa-solid fa-info-circle"></i> <span>About us</span></div>
+      <div class="nav-item" id="customerSupport"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
+      <div class="nav-item active" id="aboutUs"><i class="fa-solid fa-info-circle"></i> <span>About us</span></div>
       <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
     </nav>
   </header>
@@ -53,8 +53,8 @@
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-content">
-        <h1 id="about-hero-title"><i class="fa-solid fa-rocket"></i> About Masar</h1>
-        <p id="about-hero-subtitle">Empowering developers to navigate their learning journey with precision and purpose</p>
+        <h1 id="aboutHeroTitle"><i class="fa-solid fa-rocket"></i> About Masar</h1>
+        <p id="aboutHeroSubtitle">Empowering developers to navigate their learning journey with precision and purpose</p>
       </div>
     </section>
 
@@ -65,16 +65,16 @@
           <div class="card-icon">
             <i class="fa-solid fa-bullseye"></i>
           </div>
-          <h2 id="mission-title">Our Mission</h2>
-          <p id="mission-text">To provide developers with comprehensive, personalized learning roadmaps that guide them from beginner to expert in their chosen technology fields. We believe in making learning accessible, structured, and goal-oriented.</p>
+          <h2 id="missionTitle">Our Mission</h2>
+          <p id="missionText">To provide developers with comprehensive, personalized learning roadmaps that guide them from beginner to expert in their chosen technology fields. We believe in making learning accessible, structured, and goal-oriented.</p>
         </div>
         
         <div class="vision-card">
           <div class="card-icon">
             <i class="fa-solid fa-eye"></i>
           </div>
-          <h2 id="vision-title">Our Vision</h2>
-          <p id="vision-text">To become the leading platform that transforms how developers learn and grow, creating a world where every developer can find their path to success with confidence and clarity.</p>
+          <h2 id="visionTitle">Our Vision</h2>
+          <p id="visionText">To become the leading platform that transforms how developers learn and grow, creating a world where every developer can find their path to success with confidence and clarity.</p>
         </div>
       </div>
     </section>
@@ -82,38 +82,38 @@
     <!-- What We Do Section -->
     <section class="what-we-do">
       <div class="container">
-        <h2 id="what-we-do-title"><i class="fa-solid fa-cogs"></i> What We Do</h2>
+        <h2 id="whatWeDoTitle"><i class="fa-solid fa-cogs"></i> What We Do</h2>
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fa-solid fa-route"></i>
             </div>
-            <h3 id="feature-1-title">Learning Roadmaps</h3>
-            <p id="feature-1-text">Comprehensive, step-by-step learning paths designed by industry experts to guide you through your development journey.</p>
+            <h3 id="feature1Title">Learning Roadmaps</h3>
+            <p id="feature1Text">Comprehensive, step-by-step learning paths designed by industry experts to guide you through your development journey.</p>
           </div>
           
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fa-solid fa-users"></i>
             </div>
-            <h3 id="feature-2-title">Community Support</h3>
-            <p id="feature-2-text">Connect with fellow developers, share experiences, and get help from our supportive community of learners and mentors.</p>
+            <h3 id="feature2Title">Community Support</h3>
+            <p id="feature2Text">Connect with fellow developers, share experiences, and get help from our supportive community of learners and mentors.</p>
           </div>
           
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fa-solid fa-chart-line"></i>
             </div>
-            <h3 id="feature-3-title">Progress Tracking</h3>
-            <p id="feature-3-text">Monitor your learning progress with detailed analytics and insights to stay motivated and on track.</p>
+            <h3 id="feature3Title">Progress Tracking</h3>
+            <p id="feature3Text">Monitor your learning progress with detailed analytics and insights to stay motivated and on track.</p>
           </div>
           
           <div class="feature-card">
             <div class="feature-icon">
               <i class="fa-solid fa-graduation-cap"></i>
             </div>
-            <h3 id="feature-4-title">Expert Guidance</h3>
-            <p id="feature-4-text">Access curated resources, tutorials, and guidance from industry professionals who have walked the same path.</p>
+            <h3 id="feature4Title">Expert Guidance</h3>
+            <p id="feature4Text">Access curated resources, tutorials, and guidance from industry professionals who have walked the same path.</p>
           </div>
         </div>
       </div>
@@ -122,38 +122,38 @@
     <!-- Our Values Section -->
     <section class="our-values">
       <div class="container">
-        <h2 id="values-title"><i class="fa-solid fa-star"></i> Our Values</h2>
+        <h2 id="valuesTitle"><i class="fa-solid fa-star"></i> Our Values</h2>
         <div class="values-grid">
           <div class="value-item">
             <div class="value-icon">
               <i class="fa-solid fa-lightbulb"></i>
             </div>
-            <h3 id="value-1-title">Innovation</h3>
-            <p id="value-1-text">We continuously innovate our platform to provide the best learning experience possible.</p>
+            <h3 id="value1Title">Innovation</h3>
+            <p id="value1Text">We continuously innovate our platform to provide the best learning experience possible.</p>
           </div>
           
           <div class="value-item">
             <div class="value-icon">
               <i class="fa-solid fa-heart"></i>
             </div>
-            <h3 id="value-2-title">Passion</h3>
-            <p id="value-2-text">We're passionate about helping developers succeed and grow in their careers.</p>
+            <h3 id="value2Title">Passion</h3>
+            <p id="value2Text">We're passionate about helping developers succeed and grow in their careers.</p>
           </div>
           
           <div class="value-item">
             <div class="value-icon">
               <i class="fa-solid fa-handshake"></i>
             </div>
-            <h3 id="value-3-title">Integrity</h3>
-            <p id="value-3-text">We maintain the highest standards of integrity in everything we do and provide.</p>
+            <h3 id="value3Title">Integrity</h3>
+            <p id="value3Text">We maintain the highest standards of integrity in everything we do and provide.</p>
           </div>
           
           <div class="value-item">
             <div class="value-icon">
               <i class="fa-solid fa-globe"></i>
             </div>
-            <h3 id="value-4-title">Accessibility</h3>
-            <p id="value-4-text">We believe learning should be accessible to everyone, regardless of their background or location.</p>
+            <h3 id="value4Title">Accessibility</h3>
+            <p id="value4Text">We believe learning should be accessible to everyone, regardless of their background or location.</p>
           </div>
         </div>
       </div>
@@ -162,8 +162,8 @@
     <!-- Team Section -->
     <section class="team-section">
       <div class="container">
-        <h2 id="team-title"><i class="fa-solid fa-users-gear"></i> Our Team</h2>
-        <p id="team-subtitle">Meet the passionate individuals behind Masar who are dedicated to your success</p>
+        <h2 id="teamTitle"><i class="fa-solid fa-users-gear"></i> Our Team</h2>
+        <p id="teamSubtitle">Meet the passionate individuals behind Masar who are dedicated to your success</p>
         
         <div class="team-grid">
           <div class="team-member">
@@ -201,16 +201,16 @@
     <!-- Call to Action -->
     <section class="cta-section">
       <div class="container">
-        <h2 id="cta-title"><i class="fa-solid fa-hand-point-right"></i> Ready to Start Your Journey?</h2>
-        <p id="cta-text">Join thousands of developers who are already on their path to success with Masar</p>
+        <h2 id="ctaTitle"><i class="fa-solid fa-hand-point-right"></i> Ready to Start Your Journey?</h2>
+        <p id="ctaText">Join thousands of developers who are already on their path to success with Masar</p>
         <div class="cta-buttons">
           <button class="login" onclick="window.location.href='LogIn.html'">
             <i class="fa-solid fa-sign-in-alt"></i>
-            Get Started
+            <span id="ctaSignupBtn">Get Started</span>
           </button>
           <button class="guest" onclick="window.location.href='all_roadmaps.html'">
             <i class="fa-solid fa-eye"></i>
-            Explore Roadmaps
+            <span id="ctaContactBtn">Explore Roadmaps</span>
           </button>
         </div>
       </div>
@@ -220,28 +220,28 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footer-logo-title">Masar</h3>
-        <p id="footer-logo-subtitle">From vision to destination</p>
+        <h3 id="footerLogoTitle">Masar</h3>
+        <p id="footerLogoSubtitle">From vision to destination</p>
       </div>
       <div class="footer-section">
-        <h4 id="footer-quick-links">Quick Links</h4>
+        <h4 id="footerQuickLinks">Quick Links</h4>
         <ul>
-          <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
-          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+          <li><a href="home.html" id="footerHome">Home</a></li>
+          <li><a href="all_roadmaps.html" id="footerRoadmap">All Roadmaps</a></li>
+          <li><a href="contact_us.html" id="footerContact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4 id="footer-support">Support</h4>
+        <h4 id="footerSupport">Support</h4>
         <ul>
-          <li><a href="#" id="footer-help-center">Help Center</a></li>
-          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
-          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+          <li><a href="#" id="footerHelpCenter">Help Center</a></li>
+          <li><a href="#" id="footerPrivacyPolicy">Privacy Policy</a></li>
+          <li><a href="#" id="footerTermsOfService">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
+      <p id="footerCopyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
@@ -315,7 +315,7 @@
       let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
 
       // Fetch translations
-      fetch('../json/about_us.json')
+      fetch('../json/about_language.json')
         .then(response => response.json())
         .then(data => {
           translations = data;

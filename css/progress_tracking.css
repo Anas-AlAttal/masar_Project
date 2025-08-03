@@ -1,0 +1,140 @@
+/* Progress Tracking Styles */
+.save-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #00b6b6, #008080);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 182, 182, 0.3);
+  z-index: 1000;
+  transform: translateX(100%);
+  animation: slideIn 0.5s ease forwards;
+  max-width: 300px;
+}
+
+.save-message .completion-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.save-message i {
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.save-message span {
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.save-message.removing {
+  animation: slideOut 0.5s ease forwards;
+}
+
+/* RTL Support for Arabic */
+[dir="rtl"] .save-message {
+  right: auto;
+  left: 20px;
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .save-message {
+  animation: slideInRTL 0.5s ease forwards;
+}
+
+@keyframes slideInRTL {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRTL {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+[dir="rtl"] .save-message.removing {
+  animation: slideOutRTL 0.5s ease forwards;
+}
+
+/* Progress Bar Enhancements */
+.progress-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill {
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, #00b6b6, #008080);
+  position: relative;
+}
+
+.progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Save Button Enhancement */
+.reset-progress-btn {
+  transition: all 0.3s ease;
+}
+
+.reset-progress-btn:hover {
+  background: #ff6b6b;
+  transform: scale(1.05);
+}
+
+.reset-progress-btn:active {
+  transform: scale(0.95);
+} 

@@ -3,17 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Frontend Developer Roadmap - Masar</title>
+  <title id="pageTitle">Data Science Roadmap - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <!-- Google Fonts for modern look -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <link rel="stylesheet" href="../css/front_end.css">
+  <link rel="stylesheet" href="../css/back_end.css">
   <link rel="stylesheet" href="../css/progress_tracking.css">
 </head>
 <body>
+  <!-- Animated background elements -->
+  <div class="animated-bg">
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+    <div class="floating-shape shape-4"></div>
+    <div class="floating-shape shape-5"></div>
+  </div>
+
   <header>
     <div class="logo">
       <span class="masar-logo" id="logoTitle" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
@@ -44,8 +53,8 @@
 
   <main class="roadmap-main">
     <div class="roadmap-header">
-      <h1 id="roadmapTitle">Frontend Developer Roadmap</h1>
-      <p id="roadmapDescription">A comprehensive guide to becoming a modern frontend developer. Follow this roadmap to master the essential skills and technologies.</p>
+      <h1 id="roadmapTitle">Data Science Roadmap</h1>
+      <p id="roadmapDescription">A comprehensive guide to becoming a data scientist. Follow this roadmap to master data analysis, machine learning, and statistical modeling.</p>
       
       <!-- Progress Indicator -->
       <div class="progress-container">
@@ -67,11 +76,11 @@
       </div>
     </div>
 
-    <!-- Frontend Development Explanation -->
-    <div class="frontend-explanation" id="frontend-explanation">
+    <!-- Data Science Explanation -->
+    <div class="backend-explanation" id="data-science-explanation">
       <div class="front-content">
-        <h2 id="whatIsFrontendTitle">What is Frontend Development?</h2>
-        <p id="whatIsFrontendText">
+        <h2 id="whatIsDataScienceTitle">What is Data Science?</h2>
+        <p id="whatIsDataScienceText">
           Click to reveal the answer! 💡
         </p>
         <div class="question-icon">❓</div>
@@ -79,16 +88,21 @@
       <div class="back-content">
         <h3>Answer:</h3>
         <p>
-          <span class="highlight">Frontend development</span>, also known as <span class="highlight">client-side development</span>, is the practice of creating the visual and interactive elements of websites and web applications that users directly interact with. It involves building the <span class="highlight">user interface (UI)</span> and <span class="highlight">user experience (UX)</span> using technologies like <span class="highlight">HTML</span> for structure, <span class="highlight">CSS</span> for styling and layout, and <span class="highlight">JavaScript</span> for interactivity and dynamic functionality.
+          <span class="highlight">Data Science</span> is an interdisciplinary field that combines <span class="highlight">statistics</span>, <span class="highlight">computer science</span>, and <span class="highlight">domain expertise</span> to extract meaningful insights from data.
         </p>
         <p>
-          Frontend developers work on everything users see, click, and interact with in their web browsers - from buttons and forms to animations and responsive designs that adapt to different screen sizes. They collaborate closely with designers to bring visual concepts to life and with backend developers to integrate with server-side functionality, ensuring seamless user experiences across all devices and platforms.
+          It involves collecting, cleaning, analyzing, and interpreting large datasets to help organizations make data-driven decisions. Data scientists use various techniques including <span class="highlight">machine learning</span>, <span class="highlight">statistical analysis</span>, <span class="highlight">data visualization</span>, and <span class="highlight">predictive modeling</span>.
         </p>
-      
+        <p>
+          The field encompasses everything from <span class="highlight">exploratory data analysis</span> and <span class="highlight">feature engineering</span> to building <span class="highlight">machine learning models</span> and creating <span class="highlight">data pipelines</span>. Data scientists work with tools like <span class="highlight">Python</span>, <span class="highlight">R</span>, <span class="highlight">SQL</span>, and various <span class="highlight">cloud platforms</span>.
+        </p>
+        <p>
+          They help businesses understand patterns in their data, predict future trends, optimize processes, and create intelligent systems that can learn and improve over time.
+        </p>
       </div>
     </div>
 
-    <!-- New Roadmap Flow (Linear, Level-based) -->
+    <!-- Data Science Roadmap Flow (Linear, Level-based) -->
     <div class="roadmap-legend">
       <span class="legend level1">LEVEL 1</span>
       <span class="legend level2">LEVEL 2</span>
@@ -97,50 +111,46 @@
     </div>
     <div class="roadmap-flow">
       <div class="roadmap-row">
-        <div class="roadmap-node level1">HTML</div>
-        <div class="roadmap-node level1">CSS</div>
+        <div class="roadmap-node level1">Python Basics</div>
+        <div class="roadmap-node level1">Mathematics & Statistics</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level1">Rsponsive Design</div>
-      </div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level1">Git & GitHub Basics</div>
+        <div class="roadmap-node level1">Data Manipulation</div>
+        <div class="roadmap-node level1">Data Visualization</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level2">JavaScript Basics</div>
-        <div class="roadmap-node level2">Events & Forms</div>
+        <div class="roadmap-node level2">Exploratory Data Analysis</div>
+        <div class="roadmap-node level2">SQL & Databases</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level2">JvaScript & DOM</div>
-      
-        <div class="roadmap-node level2">API & Fetch</div>
-      </div>
-      <div class="level-separator"></div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level3">Deploy React Project</div>
-        <div class="roadmap-node level3">API Calls in React</div>
-      </div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level3">Adinin Dashboaid</div>
-        <div class="roadmap-node level3">Weather App with API</div>
-        <div class="roadmap-node level3">To Do App</div>
-      </div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level3">Convert Figma Design to Code</div>
+        <div class="roadmap-node level2">Feature Engineering</div>
+        <div class="roadmap-node level2">Data Cleaning</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">Project Libraries</div>
-        <div class="roadmap-node level4">Projects Organization</div>
+        <div class="roadmap-node level3">Machine Learning Basics</div>
+        <div class="roadmap-node level3">Supervised Learning</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">React.js</div>
-        <div class="roadmap-node level4">State Management</div>
-        <div class="roadmap-node level4">Routing</div>
+        <div class="roadmap-node level3">Unsupervised Learning</div>
+        <div class="roadmap-node level3">Model Evaluation</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">Projects & Specialization</div>
+        <div class="roadmap-node level3">Deep Learning</div>
+        <div class="roadmap-node level3">Natural Language Processing</div>
+      </div>
+      <div class="level-separator"></div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">Big Data Technologies</div>
+        <div class="roadmap-node level4">Cloud Platforms</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">MLOps & Deployment</div>
+        <div class="roadmap-node level4">Advanced Analytics</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">Real-world Projects</div>
       </div>
     </div>
     
@@ -215,7 +225,7 @@
         const response = await fetch('../json/progress_tracking.json');
         if (response.ok) {
           allProgressData = await response.json();
-          courseProgress = allProgressData.frontend || {};
+          courseProgress = allProgressData.data_science || {};
           console.log('Progress loaded from JSON:', courseProgress);
         } else {
           console.warn('Could not load progress from JSON, starting fresh');
@@ -230,8 +240,8 @@
     // Save progress to JSON file
     async function saveProgressToJSON() {
       try {
-        // Update the frontend progress in the main data object
-        allProgressData.frontend = courseProgress;
+        // Update the data_science progress in the main data object
+        allProgressData.data_science = courseProgress;
         allProgressData.last_updated = new Date().toISOString();
         
         // Try to save to server first (if available)
@@ -253,7 +263,7 @@
         } catch (serverError) {
           console.log('Server not available, using local storage:', serverError);
           // Fallback to localStorage
-          localStorage.setItem('frontendRoadmapProgress', JSON.stringify(courseProgress));
+          localStorage.setItem('dataScienceRoadmapProgress', JSON.stringify(courseProgress));
           localStorage.setItem('allProgressData', JSON.stringify(allProgressData));
         }
         
@@ -264,7 +274,7 @@
       } catch (error) {
         console.error('Error saving progress to JSON:', error);
         // Fallback to localStorage
-        localStorage.setItem('frontendRoadmapProgress', JSON.stringify(courseProgress));
+        localStorage.setItem('dataScienceRoadmapProgress', JSON.stringify(courseProgress));
       }
     }
     
@@ -460,7 +470,7 @@
       await initializeProgressTracking();
 
       // Fetch translations
-      fetch('../json/roadmap.json')
+      fetch('../json/data_science_roadmap.json')
         .then(response => response.json())
         .then(data => {
           translations = data;
@@ -469,7 +479,7 @@
         })
         .catch(error => {
           console.error('Error loading translations:', error);
-          // Fallback to home translations if roadmap.json doesn't exist
+          // Fallback to home translations if data_science_roadmap.json doesn't exist
           fetch('../json/home language.json')
             .then(response => response.json())
             .then(data => {
@@ -529,21 +539,35 @@
       const nodes = document.querySelectorAll('.roadmap-node');
       const modal = document.getElementById('course-modal');
       
+      console.log('Found nodes:', nodes.length);
+      console.log('Found modal:', modal);
+      
       if (nodes.length > 0 && modal) {
         nodes.forEach(node => {
           node.addEventListener('click', function() {
+            console.log('Node clicked:', this.textContent.trim());
             const nodeName = this.textContent.trim();
             currentCourse = nodeName;
             
-            // Show loading state
+            // Show modal immediately with basic content
             const modalTitle = document.getElementById('modal-title');
             const modalDescription = document.getElementById('modal-description');
             const modalResources = document.getElementById('modal-resources');
             
-            if (modalTitle) modalTitle.textContent = 'جاري التحميل...';
-            if (modalDescription) modalDescription.textContent = '';
-            if (modalResources) modalResources.innerHTML = '';
+            // Set basic content first
+            if (modalTitle) modalTitle.textContent = nodeName;
+            if (modalDescription) modalDescription.textContent = 'Click the status buttons below to track your progress for this course.';
+            if (modalResources) modalResources.innerHTML = '<p>Resources will be available soon.</p>';
             
+            // Set current status in modal
+            const currentStatus = courseProgress[nodeName] || 'not-started';
+            setStatusButtonActive(currentStatus);
+            
+            // Show modal
+            modal.style.display = 'block';
+            console.log('Modal should be visible now');
+            
+            // Try to fetch additional data (optional)
             fetch('../json/roadmap_courses.json')
               .then(response => {
                 if (!response.ok) {
@@ -553,38 +577,22 @@
               })
               .then(data => {
                 const info = data[nodeName] || {};
-                if (modalTitle) modalTitle.textContent = info.title || nodeName;
-                if (modalDescription) modalDescription.textContent = info.description || 'لا توجد وصف متاح لهذه الدورة.';
+                if (modalTitle && info.title) modalTitle.textContent = info.title;
+                if (modalDescription && info.description) modalDescription.textContent = info.description;
                 
-                let resourcesHTML = '';
                 if (info.resources && info.resources.length) {
-                  resourcesHTML = '<ul>' + info.resources.map(r => `<li><a href="${r.url}" target="_blank">${r.name}</a></li>`).join('') + '</ul>';
-                } else {
-                  resourcesHTML = '<p>لا توجد موارد متاحة حالياً.</p>';
+                  const resourcesHTML = '<ul>' + info.resources.map(r => `<li><a href="${r.url}" target="_blank">${r.name}</a></li>`).join('') + '</ul>';
+                  if (modalResources) modalResources.innerHTML = resourcesHTML;
                 }
-                if (modalResources) modalResources.innerHTML = resourcesHTML;
-                
-                // Set current status in modal
-                const currentStatus = courseProgress[nodeName] || 'not-started';
-                setStatusButtonActive(currentStatus);
-                
-                modal.style.display = 'block';
               })
               .catch(error => {
-                console.error('Error loading course data:', error);
-                // Fallback content
-                if (modalTitle) modalTitle.textContent = nodeName;
-                if (modalDescription) modalDescription.textContent = 'لا توجد وصف متاح لهذه الدورة.';
-                if (modalResources) modalResources.innerHTML = '<p>لا توجد موارد متاحة حالياً.</p>';
-                
-                // Set current status in modal
-                const currentStatus = courseProgress[nodeName] || 'not-started';
-                setStatusButtonActive(currentStatus);
-                
-                modal.style.display = 'block';
+                console.log('Course data not available, using default content');
+                // Modal is already shown with basic content, no need to do anything
               });
           });
         });
+      } else {
+        console.error('Modal or nodes not found!');
       }
     });
 
@@ -649,10 +657,10 @@
       const closeModal = document.getElementById('close-modal');
       const resetProgressBtn = document.getElementById('reset-progress-btn');
       
-      // Frontend explanation flip animation
-      const frontendExplanation = document.getElementById('frontend-explanation');
-      if (frontendExplanation) {
-        frontendExplanation.addEventListener('click', function() {
+      // Data science explanation flip animation
+      const dataScienceExplanation = document.getElementById('data-science-explanation');
+      if (dataScienceExplanation) {
+        dataScienceExplanation.addEventListener('click', function() {
           this.classList.toggle('flipped');
         });
       }
@@ -684,4 +692,4 @@
     });
   </script>
 </body>
-</html>
+</html> 

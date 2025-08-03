@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="page-title">Backend Developer Roadmap - Masar</title>
+  <title id="pageTitle">Backend Developer Roadmap - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <!-- Google Fonts for modern look -->
@@ -11,6 +11,7 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/back_end.css">
+  <link rel="stylesheet" href="../css/progress_tracking.css">
 </head>
 <body>
   <!-- Animated background elements -->
@@ -24,41 +25,41 @@
 
   <header>
     <div class="logo">
-      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <span class="masar-logo" id="logoTitle" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
+      <div class="subtitle" id="logoSubtitle" onclick="window.location.href='home.html'">From vision to destination</div>
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
-        <i class="fa-solid fa-language"></i> <span id="nav-language">language</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-language"></i> <span id="language">language</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
-          <div class="dropdown-item" data-lang="en" id="dropdown-item-english">English</div>
-          <div class="dropdown-item" data-lang="ar" id="dropdown-item-arabic">Arabic</div>
+          <div class="dropdown-item" data-lang="en" id="english">English</div>
+          <div class="dropdown-item" data-lang="ar" id="arabic">Arabic</div>
         </div>
       </div>
       <div class="nav-item dropdown" id="fields-dropdown">
-        <i class="fa-solid fa-desktop"></i> <span id="nav-fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
+        <i class="fa-solid fa-desktop"></i> <span id="fields">Fields</span> <i class="fa-solid fa-chevron-down"></i>
         <div class="dropdown-menu">
           <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
-          <div class="dropdown-item">Data Science</div>
+          <div class="dropdown-item" onclick="window.location.href='data_science.html'">Data Science</div>
         </div>
       </div>
-      <div class="nav-item" id="nav-customer-support" onclick="window.location.href='contact_us.html'"><i class="fa-solid fa-user-group"></i> <span id="nav-customer-support-text">Customer support</span></div>
-      <div class="nav-item" id="nav-about-us" onclick="window.location.href='about_us.html'"><b>!</b> <span id="nav-about-us-text">About us</span></div>
+      <div class="nav-item" id="customerSupport" onclick="window.location.href='contact_us.html'"><i class="fa-solid fa-user-group"></i> <span id="customerSupport-text">Customer support</span></div>
+      <div class="nav-item" id="aboutUs" onclick="window.location.href='about_us.html'"><b>!</b> <span id="aboutUs-text">About us</span></div>
       <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
     </nav>
   </header>
 
   <main class="roadmap-main">
     <div class="roadmap-header">
-      <h1 id="roadmap-title">Backend Developer Roadmap</h1>
-      <p id="roadmap-description">A comprehensive guide to becoming a modern backend developer. Follow this roadmap to master server-side development and database management.</p>
+      <h1 id="roadmapTitle">Backend Developer Roadmap</h1>
+      <p id="roadmapDescription">A comprehensive guide to becoming a modern backend developer. Follow this roadmap to master server-side development and database management.</p>
       
       <!-- Progress Indicator -->
       <div class="progress-container">
         <div class="progress-header">
-          <h3 id="progress-title">Your Progress</h3>
+          <h3 id="progressTitle">Your Progress</h3>
           <div class="progress-controls">
             <span class="progress-percentage" id="progress-percentage">0%</span>
             <button class="reset-progress-btn" id="reset-progress-btn" title="Reset Progress">
@@ -78,8 +79,8 @@
     <!-- Backend Development Explanation -->
     <div class="backend-explanation" id="backend-explanation">
       <div class="front-content">
-        <h2 id="what-is-backend-title">What is Backend Development?</h2>
-        <p id="what-is-backend-text">
+        <h2 id="whatIsBackendTitle">What is Backend Development?</h2>
+        <p id="whatIsBackendText">
           Click to reveal the answer! 💡
         </p>
         <div class="question-icon">❓</div>
@@ -170,19 +171,19 @@
         
         <!-- Course Status Section -->
         <div class="course-status-section">
-          <h4 id="course-status-title">Course Status</h4>
+          <h4 id="courseStatusTitle">Course Status</h4>
           <div class="status-options">
             <button class="status-btn not-started active" data-status="not-started">
               <i class="fa-solid fa-circle"></i>
-              <span id="status-not-started">Not Started</span>
+              <span id="statusNotStarted">Not Started</span>
             </button>
             <button class="status-btn in-progress" data-status="in-progress">
               <i class="fa-solid fa-play"></i>
-              <span id="status-in-progress">In Progress</span>
+              <span id="statusInProgress">In Progress</span>
             </button>
             <button class="status-btn completed" data-status="completed">
               <i class="fa-solid fa-check"></i>
-              <span id="status-completed">Completed</span>
+              <span id="statusCompleted">Completed</span>
             </button>
           </div>
         </div>
@@ -194,28 +195,28 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footer-logo-title">Masar</h3>
-        <p id="footer-logo-subtitle">From vision to destination</p>
+        <h3 id="footerLogoTitle">Masar</h3>
+        <p id="footerLogoSubtitle">From vision to destination</p>
       </div>
       <div class="footer-section">
-        <h4 id="footer-quick-links">Quick Links</h4>
+        <h4 id="footerQuickLinks">Quick Links</h4>
         <ul>
-          <li><a href="home.html" id="footer-home">Home</a></li>
-          <li><a href="all_roadmaps.html" id="footer-roadmap">All Roadmaps</a></li>
-          <li><a href="contact_us.html" id="footer-contact">Contact</a></li>
+          <li><a href="home.html" id="footerHome">Home</a></li>
+          <li><a href="all_roadmaps.html" id="footerRoadmap">All Roadmaps</a></li>
+          <li><a href="contact_us.html" id="footerContact">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
-        <h4 id="footer-support">Support</h4>
+        <h4 id="footerSupport">Support</h4>
         <ul>
-          <li><a href="#" id="footer-help-center">Help Center</a></li>
-          <li><a href="#" id="footer-privacy-policy">Privacy Policy</a></li>
-          <li><a href="#" id="footer-terms-of-service">Terms of Service</a></li>
+          <li><a href="#" id="footerHelpCenter">Help Center</a></li>
+          <li><a href="#" id="footerPrivacyPolicy">Privacy Policy</a></li>
+          <li><a href="#" id="footerTermsOfService">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p id="footer-copyright">&copy; 2025 Masar. All rights reserved.</p>
+      <p id="footerCopyright">&copy; 2025 Masar. All rights reserved.</p>
     </div>
   </footer>
 
@@ -223,14 +224,96 @@
     // Progress Tracking System
     let courseProgress = {};
     let currentCourse = null;
+    let allProgressData = {};
+    
+    // Load progress from JSON file
+    async function loadProgressFromJSON() {
+      try {
+        const response = await fetch('../json/progress_tracking.json');
+        if (response.ok) {
+          allProgressData = await response.json();
+          courseProgress = allProgressData.backend || {};
+          console.log('Progress loaded from JSON:', courseProgress);
+        } else {
+          console.warn('Could not load progress from JSON, starting fresh');
+          courseProgress = {};
+        }
+      } catch (error) {
+        console.error('Error loading progress from JSON:', error);
+        courseProgress = {};
+      }
+    }
+    
+    // Save progress to JSON file
+    async function saveProgressToJSON() {
+      try {
+        // Update the backend progress in the main data object
+        allProgressData.backend = courseProgress;
+        allProgressData.last_updated = new Date().toISOString();
+        
+        // Try to save to server first (if available)
+        try {
+          const serverResponse = await fetch('../api/save_progress.php', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(allProgressData)
+          });
+          
+          if (serverResponse.ok) {
+            const result = await serverResponse.json();
+            console.log('Progress saved to server:', result);
+          } else {
+            throw new Error('Server save failed');
+          }
+        } catch (serverError) {
+          console.log('Server not available, using local storage:', serverError);
+          // Fallback to localStorage
+          localStorage.setItem('backendRoadmapProgress', JSON.stringify(courseProgress));
+          localStorage.setItem('allProgressData', JSON.stringify(allProgressData));
+        }
+        
+        console.log('Progress saved to JSON structure:', allProgressData);
+        
+        // Show save confirmation
+        showSaveMessage();
+      } catch (error) {
+        console.error('Error saving progress to JSON:', error);
+        // Fallback to localStorage
+        localStorage.setItem('backendRoadmapProgress', JSON.stringify(courseProgress));
+      }
+    }
+    
+    // Show save message
+    function showSaveMessage() {
+      const message = document.createElement('div');
+      message.className = 'completion-message save-message';
+      
+      // Get current language
+      const currentLang = document.documentElement.lang || 'en';
+      const isArabic = currentLang === 'ar';
+      
+      const saveText = isArabic ? 'تم حفظ التقدم بنجاح! 💾' : 'Progress saved successfully! 💾';
+      
+      message.innerHTML = `
+        <div class="completion-content">
+          <i class="fa-solid fa-save"></i>
+          <span>${saveText}</span>
+        </div>
+      `;
+      document.body.appendChild(message);
+      
+      // Remove message after 2 seconds
+      setTimeout(() => {
+        message.remove();
+      }, 2000);
+    }
     
     // Initialize progress tracking
-    function initializeProgressTracking() {
-      // Load saved progress from localStorage
-      const savedProgress = localStorage.getItem('backendRoadmapProgress');
-      if (savedProgress) {
-        courseProgress = JSON.parse(savedProgress);
-      }
+    async function initializeProgressTracking() {
+      // Load saved progress from JSON
+      await loadProgressFromJSON();
       
       // Count total courses
       const totalCourses = document.querySelectorAll('.roadmap-node').length;
@@ -272,11 +355,6 @@
       });
     }
     
-    // Save progress to localStorage
-    function saveProgress() {
-      localStorage.setItem('backendRoadmapProgress', JSON.stringify(courseProgress));
-    }
-    
     // Reset progress
     function resetProgress() {
       // Get current language
@@ -289,7 +367,7 @@
       
       if (confirm(confirmMessage)) {
         courseProgress = {};
-        saveProgress();
+        saveProgressToJSON(); // Save reset progress
         
         // Reset all nodes
         document.querySelectorAll('.roadmap-node').forEach(node => {
@@ -333,7 +411,7 @@
     function updateCourseStatus(courseName, status) {
       const previousStatus = courseProgress[courseName];
       courseProgress[courseName] = status;
-      saveProgress();
+      saveProgressToJSON(); // Save progress after update
       
       // Update node appearance
       const node = Array.from(document.querySelectorAll('.roadmap-node')).find(n => n.textContent.trim() === courseName);
@@ -391,18 +469,19 @@
     }
     
     // Language switching and translation functionality
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', async function() {
       let translations = {};
       let currentLang = localStorage.getItem('selectedLanguage') || 'en'; // Get saved language or default to 'en'
 
       // Initialize progress tracking
-      initializeProgressTracking();
+      await initializeProgressTracking();
 
       // Fetch translations
       fetch('../json/backend_roadmap.json')
         .then(response => response.json())
         .then(data => {
           translations = data;
+          console.log('Translations loaded successfully:', data);
           setLanguage(currentLang);
         })
         .catch(error => {
@@ -548,55 +627,35 @@
 
     // Set language from translations
     function setLanguage(lang) {
-      if (!translations[lang]) return;
+      if (!translations[lang]) {
+        console.error('Translations not found for language:', lang);
+        return;
+      }
       const t = translations[lang];
       
       // Set document direction and language
       document.documentElement.lang = lang;
       document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
       
-      // Page title
-      document.getElementById('page-title').textContent = t.pageTitle || 'Backend Developer Roadmap - Masar';
+      console.log('Setting language to:', lang);
+      console.log('Available translation keys:', Object.keys(t));
       
-      // Header
-      document.getElementById('logo-title').innerHTML = t.logoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
-      document.getElementById('logo-subtitle').textContent = t.logoSubtitle || 'From vision to destination';
-      document.getElementById('nav-language').textContent = t.language || 'language';
-      document.getElementById('dropdown-item-english').textContent = t.english || 'English';
-      document.getElementById('dropdown-item-arabic').textContent = t.arabic || 'Arabic';
-      document.getElementById('nav-fields').textContent = t.fields || 'Fields';
-      document.getElementById('nav-customer-support-text').textContent = t.customerSupport || 'Customer support';
-      document.getElementById('nav-about-us-text').textContent = t.aboutUs || 'About us';
+      // Update all elements with translations
+      Object.keys(t).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+          element.innerHTML = t[key];
+          console.log('Updated element:', key, 'with:', t[key]);
+        } else {
+          console.warn('Element not found for key:', key);
+        }
+      });
       
-      // Main content
-      document.getElementById('roadmap-title').textContent = t.roadmapTitle || 'Backend Developer Roadmap';
-      document.getElementById('roadmap-description').textContent = t.roadmapDescription || 'A comprehensive guide to becoming a modern backend developer.';
-      
-      // Progress section
-      document.getElementById('progress-title').textContent = t.progressTitle || 'Your Progress';
-      
-      // Course status section
-      document.getElementById('course-status-title').textContent = t.courseStatusTitle || 'Course Status';
-      document.getElementById('status-not-started').textContent = t.statusNotStarted || 'Not Started';
-      document.getElementById('status-in-progress').textContent = t.statusInProgress || 'In Progress';
-      document.getElementById('status-completed').textContent = t.statusCompleted || 'Completed';
-      
-      // Backend Development Explanation 
-      document.getElementById('what-is-backend-title').textContent = t.whatIsBackendTitle || 'What is Backend Development?';
-      document.getElementById('what-is-backend-text').textContent = t.whatIsBackendText || 'Backend development, also known as server-side development, is the practice of building the server-side logic, databases, and APIs that power web applications and services.';
-      
-      // Footer
-      document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle || 'Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span>';
-      document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle || 'From vision to destination';
-      document.getElementById('footer-quick-links').textContent = t.footerQuickLinks || 'Quick Links';
-      document.getElementById('footer-support').textContent = t.footerSupport || 'Support';
-      document.getElementById('footer-home').textContent = t.footerHome || 'Home';
-      document.getElementById('footer-roadmap').textContent = t.footerRoadmap || 'All Roadmaps';
-      document.getElementById('footer-contact').textContent = t.footerContact || 'Contact';
-      document.getElementById('footer-help-center').textContent = t.footerHelpCenter || 'Help Center';
-      document.getElementById('footer-privacy-policy').textContent = t.footerPrivacyPolicy || 'Privacy Policy';
-      document.getElementById('footer-terms-of-service').textContent = t.footerTermsOfService || 'Terms of Service';
-      document.getElementById('footer-copyright').textContent = t.footerCopyright || '© 2025 Masar. All rights reserved.';
+      // Also update title element
+      const titleElement = document.getElementById('pageTitle');
+      if (titleElement && t.pageTitle) {
+        document.title = t.pageTitle;
+      }
     }
   </script>
   <script>

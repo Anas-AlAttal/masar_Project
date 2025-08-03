@@ -88,7 +88,9 @@
     "courseStatusTitle": "Course Status",
     "statusNotStarted": "Not Started",
     "statusInProgress": "In Progress",
-    "statusCompleted": "Completed"
+    "statusCompleted": "Completed",
+    "whatIsFrontendTitle": "What is Frontend Development?",
+    "whatIsFrontendText": "Click to reveal the answer! 💡"
   },
   "ar": {
     "pageTitle": "خريطة طريق مطور الواجهة الأمامية - مسار",
@@ -179,6 +181,8 @@
     "courseStatusTitle": "حالة الدورة",
     "statusNotStarted": "لم تبدأ",
     "statusInProgress": "قيد التنفيذ",
-    "statusCompleted": "مكتملة"
+    "statusCompleted": "مكتملة",
+    "whatIsFrontendTitle": "ما هو تطوير الواجهة الأمامية؟",
+    "whatIsFrontendText": "انقر لكشف الإجابة! 💡"
   }
 } 
