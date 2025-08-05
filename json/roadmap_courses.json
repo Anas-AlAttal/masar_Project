@@ -151,7 +151,8 @@
     "title": "State Management",
     "description": "Methods for managing state in React applications.",
     "resources": [
-      { "name": "course", "url": "https://www.youtube.com/watch?v=VenLRGHx3D4" }
+      { "name": "course", "url": "https://www.youtube.com/watch?v=VenLRGHx3D4" },
+      { "name": "React Native State Management", "url": "https://reactnative.dev/docs/state" }
     ]
   },
   "Routing": {
@@ -170,7 +171,7 @@
       { "name": "article", "url": "https://personalmba.com/" }
     ]
   },
-  "Choose a Backend Language": {
+  "Choose Backend Language": {
     "title": "Choose a Backend Language",
     "description": "Select a programming language for backend development. Popular choices include Node.js (JavaScript), Python, Java, C#, PHP, and Go. Each has its strengths and use cases.",
     "resources": [
@@ -180,7 +181,7 @@
       { "name": "Backend Language Comparison", "url": "https://www.freecodecamp.org/news/backend-languages/" }
     ]
   },
-  "Server-side Programming": {
+  "Server Programming": {
     "title": "Server-side Programming",
     "description": "Learn the fundamentals of server-side programming including HTTP protocols, request/response cycles, server architecture, and handling client requests.",
     "resources": [
@@ -207,7 +208,7 @@
       { "name": "JSON Best Practices", "url": "https://jsonapi.org/format/" }
     ]
   },
-  "SQL (MySQL/PostgreSQL)": {
+  "SQL Databases": {
     "title": "SQL Databases",
     "description": "Learn Structured Query Language (SQL) for relational databases. Master MySQL and PostgreSQL for data storage, queries, and database design.",
     "resources": [
@@ -217,7 +218,7 @@
       { "name": "Database Design Principles", "url": "https://www.freecodecamp.org/news/database-design-principles/" }
     ]
   },
-  "NoSQL (MongoDB)": {
+  "NoSQL Databases": {
     "title": "NoSQL Databases",
     "description": "Explore NoSQL databases like MongoDB for flexible, document-based data storage. Learn when and how to use NoSQL vs SQL databases.",
     "resources": [
@@ -226,7 +227,7 @@
       { "name": "MongoDB University", "url": "https://university.mongodb.com/" }
     ]
   },
-  "Database CRUD Operations": {
+  "CRUD Operations": {
     "title": "Database CRUD Operations",
     "description": "Master Create, Read, Update, and Delete (CRUD) operations for database management. Learn efficient data manipulation techniques.",
     "resources": [
@@ -245,7 +246,7 @@
       { "name": "SQLAlchemy Documentation", "url": "https://docs.sqlalchemy.org/" }
     ]
   },
-  "Web Framework (Express.js)": {
+  "Web Framework": {
     "title": "Web Framework - Express.js",
     "description": "Learn Express.js, a minimal and flexible Node.js web application framework. Build RESTful APIs and web applications efficiently.",
     "resources": [
@@ -263,7 +264,7 @@
       { "name": "Middleware Patterns", "url": "https://www.freecodecamp.org/news/express-middleware-tutorial/" }
     ]
   },
-  "Authentication Systems": {
+  "Authentication": {
     "title": "Authentication Systems",
     "description": "Implement secure authentication systems including user registration, login, password hashing, and session management.",
     "resources": [
@@ -281,7 +282,7 @@
       { "name": "Session vs JWT", "url": "https://blog.logrocket.com/jwt-vs-sessions/" }
     ]
   },
-  "File Upload Handling": {
+  "File Uploads": {
     "title": "File Upload Handling",
     "description": "Implement secure file upload functionality including file validation, storage, and serving. Learn about cloud storage solutions.",
     "resources": [
@@ -299,8 +300,8 @@
       { "name": "Clean Architecture", "url": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" }
     ]
   },
-  "Environment Variables": {
-    "title": "Environment Variables",
+  "Environment Config": {
+    "title": "Environment Config",
     "description": "Learn to manage configuration using environment variables for different deployment environments (development, staging, production).",
     "resources": [
       { "name": "Environment Variables Best Practices", "url": "https://12factor.net/config" },
@@ -369,6 +370,420 @@
       { "name": "Deployment Best Practices", "url": "https://www.freecodecamp.org/news/deploy-your-node-js-app-to-production/" },
       { "name": "Heroku Documentation", "url": "https://devcenter.heroku.com/" },
       { "name": "AWS Deployment Guide", "url": "https://aws.amazon.com/getting-started/hands-on/deploy-nodejs-web-app/" }
+    ]
+  },
+  "Choose Platform": {
+    "title": "Choose Mobile Platform",
+    "description": "Decide between iOS, Android, or cross-platform development. Understand the pros and cons of each platform and their development requirements.",
+    "resources": [
+      { "name": "iOS vs Android Development", "url": "https://www.freecodecamp.org/news/ios-vs-android-development/" },
+      { "name": "Cross-platform Development Guide", "url": "https://www.freecodecamp.org/news/cross-platform-development/" },
+      { "name": "Mobile Platform Comparison", "url": "https://www.techrepublic.com/article/ios-vs-android-development/" }
+    ]
+  },
+  "Programming Basics": {
+    "title": "Programming Fundamentals",
+    "description": "Learn fundamental programming concepts including variables, data types, control structures, functions, and object-oriented programming principles.",
+    "resources": [
+      { "name": "Programming Fundamentals", "url": "https://www.freecodecamp.org/news/programming-fundamentals/" },
+      { "name": "Object-Oriented Programming", "url": "https://www.freecodecamp.org/news/object-oriented-programming-concepts/" },
+      { "name": "Programming Best Practices", "url": "https://www.freecodecamp.org/news/programming-best-practices/" }
+    ]
+  },
+  "Mobile UI Design": {
+    "title": "Mobile UI/UX Design",
+    "description": "Learn mobile-specific design principles, patterns, and best practices for creating intuitive and engaging user interfaces.",
+    "resources": [
+      { "name": "Mobile UI Design Principles", "url": "https://www.freecodecamp.org/news/mobile-ui-design-principles/" },
+      { "name": "Material Design Guidelines", "url": "https://material.io/design" },
+      { "name": "iOS Human Interface Guidelines", "url": "https://developer.apple.com/design/human-interface-guidelines/" }
+    ]
+  },
+  "App Architecture": {
+    "title": "Mobile App Architecture",
+    "description": "Understand mobile app architecture patterns including MVC, MVVM, Clean Architecture, and how to structure mobile applications.",
+    "resources": [
+      { "name": "Mobile App Architecture Patterns", "url": "https://www.freecodecamp.org/news/mobile-app-architecture-patterns/" },
+      { "name": "Clean Architecture for Mobile", "url": "https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" },
+      { "name": "MVVM Pattern Guide", "url": "https://www.freecodecamp.org/news/mvvm-pattern-guide/" }
+    ]
+  },
+  "iOS Development": {
+    "title": "iOS Development with Swift",
+    "description": "Learn iOS development using Swift programming language. Master iOS SDK, UIKit, SwiftUI, and iOS app development lifecycle.",
+    "resources": [
+      { "name": "Swift Official Documentation", "url": "https://docs.swift.org/swift-book/" },
+      { "name": "iOS Development Tutorial", "url": "https://developer.apple.com/tutorials/swiftui" },
+      { "name": "UIKit Framework", "url": "https://developer.apple.com/documentation/uikit" },
+      { "name": "iOS App Development Guide", "url": "https://developer.apple.com/develop/" }
+    ]
+  },
+  "Android Development": {
+    "title": "Android Development with Kotlin",
+    "description": "Learn Android development using Kotlin programming language. Master Android SDK, Jetpack Compose, and Android app development.",
+    "resources": [
+      { "name": "Kotlin Official Documentation", "url": "https://kotlinlang.org/docs/home.html" },
+      { "name": "Android Developer Guide", "url": "https://developer.android.com/guide" },
+      { "name": "Jetpack Compose Tutorial", "url": "https://developer.android.com/jetpack/compose" },
+      { "name": "Android Studio Documentation", "url": "https://developer.android.com/studio" }
+    ]
+  },
+  "Cross-Platform": {
+    "title": "Cross-Platform Development",
+    "description": "Learn cross-platform development approaches and frameworks that allow you to build apps for multiple platforms with a single codebase.",
+    "resources": [
+      { "name": "Cross-Platform Development Guide", "url": "https://www.freecodecamp.org/news/cross-platform-development/" },
+      { "name": "Platform Comparison", "url": "https://www.freecodecamp.org/news/react-native-vs-flutter/" },
+      { "name": "Cross-Platform Best Practices", "url": "https://www.freecodecamp.org/news/cross-platform-best-practices/" }
+    ]
+  },
+  "React Native": {
+    "title": "React Native Development",
+    "description": "Learn React Native for building native mobile applications using JavaScript and React. Master React Native components, navigation, and APIs.",
+    "resources": [
+      { "name": "React Native Documentation", "url": "https://reactnative.dev/docs/getting-started" },
+      { "name": "React Native Tutorial", "url": "https://www.freecodecamp.org/news/react-native-tutorial/" },
+      { "name": "React Navigation", "url": "https://reactnavigation.org/" },
+      { "name": "React Native Elements", "url": "https://reactnativeelements.com/" }
+    ]
+  },
+  "Flutter": {
+    "title": "Flutter Development",
+    "description": "Learn Flutter framework for building beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+    "resources": [
+      { "name": "Flutter Official Documentation", "url": "https://docs.flutter.dev/" },
+      { "name": "Flutter Tutorial", "url": "https://www.freecodecamp.org/news/flutter-tutorial/" },
+      { "name": "Flutter Widget Catalog", "url": "https://docs.flutter.dev/development/ui/widgets" },
+      { "name": "Dart Programming Language", "url": "https://dart.dev/guides" }
+    ]
+  },
+  "Xamarin": {
+    "title": "Xamarin Development",
+    "description": "Learn Xamarin for building cross-platform mobile applications using C# and .NET. Master Xamarin.Forms and Xamarin.Native.",
+    "resources": [
+      { "name": "Xamarin Documentation", "url": "https://docs.microsoft.com/en-us/xamarin/" },
+      { "name": "Xamarin.Forms Tutorial", "url": "https://docs.microsoft.com/en-us/xamarin/xamarin-forms/" },
+      { "name": "Xamarin Best Practices", "url": "https://docs.microsoft.com/en-us/xamarin/cross-platform/deploy-test/performance" }
+    ]
+  },
+  "Navigation": {
+    "title": "Mobile App Navigation",
+    "description": "Master navigation patterns and libraries for mobile applications including stack navigation, tab navigation, and drawer navigation.",
+    "resources": [
+      { "name": "React Navigation", "url": "https://reactnavigation.org/" },
+      { "name": "Flutter Navigation", "url": "https://docs.flutter.dev/development/ui/navigation" },
+      { "name": "iOS Navigation", "url": "https://developer.apple.com/documentation/uikit/view_controllers" },
+      { "name": "Android Navigation", "url": "https://developer.android.com/guide/navigation" }
+    ]
+  },
+  "API Integration": {
+    "title": "Mobile API Integration",
+    "description": "Learn how to integrate REST APIs and GraphQL with mobile applications. Master HTTP requests, authentication, and data handling.",
+    "resources": [
+      { "name": "Mobile API Integration", "url": "https://www.freecodecamp.org/news/mobile-api-integration/" },
+      { "name": "REST API for Mobile", "url": "https://www.freecodecamp.org/news/rest-api-for-mobile/" },
+      { "name": "GraphQL for Mobile", "url": "https://www.freecodecamp.org/news/graphql-for-mobile/" },
+      { "name": "HTTP Client Libraries", "url": "https://www.freecodecamp.org/news/http-client-libraries/" }
+    ]
+  },
+  "Local Storage": {
+    "title": "Mobile Local Storage",
+    "description": "Learn local storage solutions for mobile applications including SQLite, Core Data, SharedPreferences, and secure storage options.",
+    "resources": [
+      { "name": "Mobile Local Storage", "url": "https://www.freecodecamp.org/news/mobile-local-storage/" },
+      { "name": "SQLite for Mobile", "url": "https://www.sqlite.org/index.html" },
+      { "name": "Core Data Tutorial", "url": "https://developer.apple.com/documentation/coredata" },
+      { "name": "Android Data Storage", "url": "https://developer.android.com/guide/topics/data" }
+    ]
+  },
+  "Push Notifications": {
+    "title": "Push Notifications",
+    "description": "Implement push notifications for mobile applications using Firebase Cloud Messaging, Apple Push Notification Service, and local notifications.",
+    "resources": [
+      { "name": "Push Notifications Guide", "url": "https://www.freecodecamp.org/news/push-notifications-guide/" },
+      { "name": "Firebase Cloud Messaging", "url": "https://firebase.google.com/docs/cloud-messaging" },
+      { "name": "Apple Push Notifications", "url": "https://developer.apple.com/documentation/usernotifications" },
+      { "name": "Android Notifications", "url": "https://developer.android.com/guide/topics/ui/notifiers/notifications" }
+    ]
+  },
+  "Device Features": {
+    "title": "Mobile Device Features",
+    "description": "Learn to integrate device features like camera, GPS, sensors, biometrics, and hardware capabilities into mobile applications.",
+    "resources": [
+      { "name": "Mobile Device Features", "url": "https://www.freecodecamp.org/news/mobile-device-features/" },
+      { "name": "Camera Integration", "url": "https://developer.android.com/guide/topics/media/camera" },
+      { "name": "Location Services", "url": "https://developer.apple.com/documentation/corelocation" },
+      { "name": "Biometric Authentication", "url": "https://developer.android.com/training/sign-in/biometric-auth" }
+    ]
+  },
+  "Testing": {
+    "title": "Mobile App Testing",
+    "description": "Learn testing strategies for mobile applications including unit testing, integration testing, UI testing, and automated testing frameworks.",
+    "resources": [
+      { "name": "Mobile App Testing", "url": "https://www.freecodecamp.org/news/mobile-app-testing/" },
+      { "name": "Jest Testing Framework", "url": "https://jestjs.io/" },
+      { "name": "Detox for React Native", "url": "https://github.com/wix/Detox" },
+      { "name": "Flutter Testing", "url": "https://docs.flutter.dev/testing" }
+    ]
+  },
+  "Debugging": {
+    "title": "Mobile App Debugging",
+    "description": "Master debugging techniques and tools for mobile applications including logging, crash reporting, performance monitoring, and debugging tools.",
+    "resources": [
+      { "name": "Mobile App Debugging", "url": "https://www.freecodecamp.org/news/mobile-app-debugging/" },
+      { "name": "React Native Debugging", "url": "https://reactnative.dev/docs/debugging" },
+      { "name": "Flutter Debugging", "url": "https://docs.flutter.dev/testing/debugging" },
+      { "name": "Crash Reporting Tools", "url": "https://firebase.google.com/docs/crashlytics" }
+    ]
+  },
+  "App Performance": {
+    "title": "Mobile App Performance",
+    "description": "Learn performance optimization techniques for mobile applications including memory management, battery optimization, and performance monitoring.",
+    "resources": [
+      { "name": "Mobile App Performance", "url": "https://www.freecodecamp.org/news/mobile-app-performance/" },
+      { "name": "React Native Performance", "url": "https://reactnative.dev/docs/performance" },
+      { "name": "Flutter Performance", "url": "https://docs.flutter.dev/perf" },
+      { "name": "Performance Monitoring", "url": "https://firebase.google.com/docs/perf-mon" }
+    ]
+  },
+  "Security": {
+    "title": "Mobile App Security",
+    "description": "Implement security best practices for mobile applications including data encryption, secure storage, network security, and app signing.",
+    "resources": [
+      { "name": "Mobile App Security", "url": "https://www.freecodecamp.org/news/mobile-app-security/" },
+      { "name": "OWASP Mobile Security", "url": "https://owasp.org/www-project-mobile-top-10/" },
+      { "name": "Data Encryption", "url": "https://developer.android.com/guide/topics/security/cryptography" },
+      { "name": "App Signing", "url": "https://developer.android.com/studio/publish/app-signing" }
+    ]
+  },
+  "App Store Deployment": {
+    "title": "App Store Deployment",
+    "description": "Learn to deploy mobile applications to app stores including Apple App Store and Google Play Store. Master app store guidelines and submission process.",
+    "resources": [
+      { "name": "App Store Deployment", "url": "https://www.freecodecamp.org/news/app-store-deployment/" },
+      { "name": "Apple App Store Guidelines", "url": "https://developer.apple.com/app-store/review/guidelines/" },
+      { "name": "Google Play Console", "url": "https://play.google.com/console/" },
+      { "name": "App Store Optimization", "url": "https://www.freecodecamp.org/news/app-store-optimization/" }
+    ]
+  },
+  "CI/CD": {
+    "title": "Mobile CI/CD",
+    "description": "Implement continuous integration and continuous deployment for mobile applications using tools like Fastlane, GitHub Actions, and Jenkins.",
+    "resources": [
+      { "name": "Mobile CI/CD", "url": "https://www.freecodecamp.org/news/mobile-ci-cd/" },
+      { "name": "Fastlane Documentation", "url": "https://docs.fastlane.tools/" },
+      { "name": "GitHub Actions for Mobile", "url": "https://github.com/features/actions" },
+      { "name": "Jenkins for Mobile", "url": "https://www.jenkins.io/doc/book/pipeline/" }
+    ]
+  },
+  "Analytics": {
+    "title": "Mobile App Analytics",
+    "description": "Implement analytics and tracking for mobile applications to understand user behavior, app performance, and business metrics.",
+    "resources": [
+      { "name": "Mobile App Analytics", "url": "https://www.freecodecamp.org/news/mobile-app-analytics/" },
+      { "name": "Firebase Analytics", "url": "https://firebase.google.com/docs/analytics" },
+      { "name": "Google Analytics for Mobile", "url": "https://analytics.google.com/" },
+      { "name": "Mixpanel Documentation", "url": "https://developer.mixpanel.com/" }
+    ]
+  },
+  "Monetization": {
+    "title": "Mobile App Monetization",
+    "description": "Learn monetization strategies for mobile applications including in-app purchases, subscriptions, advertising, and freemium models.",
+    "resources": [
+      { "name": "Mobile App Monetization", "url": "https://www.freecodecamp.org/news/mobile-app-monetization/" },
+      { "name": "In-App Purchases", "url": "https://developer.apple.com/in-app-purchase/" },
+      { "name": "Google Play Billing", "url": "https://developer.android.com/google/play/billing" },
+      { "name": "Mobile Advertising", "url": "https://developers.google.com/admob" }
+    ]
+  },
+  "Python Basics": {
+    "title": "Python Programming Fundamentals",
+    "description": "Learn Python programming language fundamentals including syntax, data types, control structures, functions, and object-oriented programming.",
+    "resources": [
+      { "name": "Python Official Documentation", "url": "https://docs.python.org/3/" },
+      { "name": "Python Tutorial", "url": "https://www.w3schools.com/python/" },
+      { "name": "Python for Data Science", "url": "https://www.freecodecamp.org/news/python-for-data-science/" },
+      { "name": "Python Best Practices", "url": "https://www.freecodecamp.org/news/python-best-practices/" }
+    ]
+  },
+  "Mathematics & Statistics": {
+    "title": "Mathematics and Statistics",
+    "description": "Master essential mathematical concepts and statistical methods including linear algebra, calculus, probability, and inferential statistics.",
+    "resources": [
+      { "name": "Mathematics for Data Science", "url": "https://www.freecodecamp.org/news/mathematics-for-data-science/" },
+      { "name": "Statistics Fundamentals", "url": "https://www.khanacademy.org/math/statistics-probability" },
+      { "name": "Linear Algebra", "url": "https://www.khanacademy.org/math/linear-algebra" },
+      { "name": "Probability Theory", "url": "https://www.khanacademy.org/math/probability" }
+    ]
+  },
+  "Data Manipulation": {
+    "title": "Data Manipulation with Pandas",
+    "description": "Learn data manipulation techniques using Pandas library including data cleaning, transformation, filtering, and aggregation operations.",
+    "resources": [
+      { "name": "Pandas Documentation", "url": "https://pandas.pydata.org/docs/" },
+      { "name": "Data Manipulation Tutorial", "url": "https://www.freecodecamp.org/news/data-manipulation-with-pandas/" },
+      { "name": "Pandas Best Practices", "url": "https://pandas.pydata.org/pandas-docs/stable/user_guide/basics.html" },
+      { "name": "Data Cleaning Guide", "url": "https://www.freecodecamp.org/news/data-cleaning-guide/" }
+    ]
+  },
+  "Data Visualization": {
+    "title": "Data Visualization",
+    "description": "Learn data visualization techniques using libraries like Matplotlib, Seaborn, and Plotly to create informative and engaging visualizations.",
+    "resources": [
+      { "name": "Matplotlib Documentation", "url": "https://matplotlib.org/" },
+      { "name": "Seaborn Documentation", "url": "https://seaborn.pydata.org/" },
+      { "name": "Plotly Documentation", "url": "https://plotly.com/python/" },
+      { "name": "Data Visualization Best Practices", "url": "https://www.freecodecamp.org/news/data-visualization-best-practices/" }
+    ]
+  },
+  "Exploratory Data Analysis": {
+    "title": "Exploratory Data Analysis (EDA)",
+    "description": "Master exploratory data analysis techniques to understand data patterns, relationships, and insights through statistical analysis and visualization.",
+    "resources": [
+      { "name": "Exploratory Data Analysis", "url": "https://www.freecodecamp.org/news/exploratory-data-analysis/" },
+      { "name": "EDA Best Practices", "url": "https://www.freecodecamp.org/news/eda-best-practices/" },
+      { "name": "Statistical Analysis Guide", "url": "https://www.freecodecamp.org/news/statistical-analysis-guide/" },
+      { "name": "Data Storytelling", "url": "https://www.freecodecamp.org/news/data-storytelling/" }
+    ]
+  },
+  "SQL & Databases": {
+    "title": "SQL and Database Management",
+    "description": "Learn SQL for data querying and database management. Master relational databases, SQL queries, and database design principles.",
+    "resources": [
+      { "name": "SQL Tutorial", "url": "https://www.w3schools.com/sql/" },
+      { "name": "PostgreSQL Documentation", "url": "https://www.postgresql.org/docs/" },
+      { "name": "MySQL Documentation", "url": "https://dev.mysql.com/doc/" },
+      { "name": "Database Design Principles", "url": "https://www.freecodecamp.org/news/database-design-principles/" }
+    ]
+  },
+  "Feature Engineering": {
+    "title": "Feature Engineering",
+    "description": "Learn feature engineering techniques to create, transform, and select features that improve machine learning model performance.",
+    "resources": [
+      { "name": "Feature Engineering Guide", "url": "https://www.freecodecamp.org/news/feature-engineering-guide/" },
+      { "name": "Feature Selection Methods", "url": "https://www.freecodecamp.org/news/feature-selection-methods/" },
+      { "name": "Feature Scaling", "url": "https://www.freecodecamp.org/news/feature-scaling/" },
+      { "name": "Feature Engineering Best Practices", "url": "https://www.freecodecamp.org/news/feature-engineering-best-practices/" }
+    ]
+  },
+  "Data Cleaning": {
+    "title": "Data Cleaning and Preprocessing",
+    "description": "Master data cleaning techniques including handling missing values, outliers, data validation, and data quality assessment.",
+    "resources": [
+      { "name": "Data Cleaning Guide", "url": "https://www.freecodecamp.org/news/data-cleaning-guide/" },
+      { "name": "Handling Missing Data", "url": "https://www.freecodecamp.org/news/handling-missing-data/" },
+      { "name": "Outlier Detection", "url": "https://www.freecodecamp.org/news/outlier-detection/" },
+      { "name": "Data Quality Assessment", "url": "https://www.freecodecamp.org/news/data-quality-assessment/" }
+    ]
+  },
+  "Machine Learning Basics": {
+    "title": "Machine Learning Fundamentals",
+    "description": "Learn fundamental machine learning concepts including supervised vs unsupervised learning, model evaluation, and basic algorithms.",
+    "resources": [
+      { "name": "Machine Learning Basics", "url": "https://www.freecodecamp.org/news/machine-learning-basics/" },
+      { "name": "Scikit-learn Documentation", "url": "https://scikit-learn.org/stable/" },
+      { "name": "Machine Learning Tutorial", "url": "https://www.freecodecamp.org/news/machine-learning-tutorial/" },
+      { "name": "ML Fundamentals", "url": "https://www.coursera.org/learn/machine-learning" }
+    ]
+  },
+  "Supervised Learning": {
+    "title": "Supervised Learning Algorithms",
+    "description": "Master supervised learning algorithms including linear regression, logistic regression, decision trees, random forests, and support vector machines.",
+    "resources": [
+      { "name": "Supervised Learning Guide", "url": "https://www.freecodecamp.org/news/supervised-learning-guide/" },
+      { "name": "Linear Regression", "url": "https://www.freecodecamp.org/news/linear-regression/" },
+      { "name": "Decision Trees", "url": "https://www.freecodecamp.org/news/decision-trees/" },
+      { "name": "Random Forests", "url": "https://www.freecodecamp.org/news/random-forests/" }
+    ]
+  },
+  "Unsupervised Learning": {
+    "title": "Unsupervised Learning Algorithms",
+    "description": "Learn unsupervised learning algorithms including clustering (K-means, DBSCAN), dimensionality reduction (PCA), and association rules.",
+    "resources": [
+      { "name": "Unsupervised Learning Guide", "url": "https://www.freecodecamp.org/news/unsupervised-learning-guide/" },
+      { "name": "K-means Clustering", "url": "https://www.freecodecamp.org/news/k-means-clustering/" },
+      { "name": "Principal Component Analysis", "url": "https://www.freecodecamp.org/news/principal-component-analysis/" },
+      { "name": "Association Rules", "url": "https://www.freecodecamp.org/news/association-rules/" }
+    ]
+  },
+  "Model Evaluation": {
+    "title": "Model Evaluation and Validation",
+    "description": "Learn model evaluation techniques including cross-validation, performance metrics, hyperparameter tuning, and model selection.",
+    "resources": [
+      { "name": "Model Evaluation Guide", "url": "https://www.freecodecamp.org/news/model-evaluation-guide/" },
+      { "name": "Cross-Validation", "url": "https://www.freecodecamp.org/news/cross-validation/" },
+      { "name": "Performance Metrics", "url": "https://www.freecodecamp.org/news/performance-metrics/" },
+      { "name": "Hyperparameter Tuning", "url": "https://www.freecodecamp.org/news/hyperparameter-tuning/" }
+    ]
+  },
+  "Deep Learning": {
+    "title": "Deep Learning with Neural Networks",
+    "description": "Learn deep learning concepts including neural networks, backpropagation, activation functions, and popular architectures.",
+    "resources": [
+      { "name": "Deep Learning Guide", "url": "https://www.freecodecamp.org/news/deep-learning-guide/" },
+      { "name": "TensorFlow Documentation", "url": "https://www.tensorflow.org/" },
+      { "name": "PyTorch Documentation", "url": "https://pytorch.org/docs/" },
+      { "name": "Neural Networks Tutorial", "url": "https://www.freecodecamp.org/news/neural-networks-tutorial/" }
+    ]
+  },
+  "Natural Language Processing": {
+    "title": "Natural Language Processing (NLP)",
+    "description": "Learn NLP techniques including text preprocessing, sentiment analysis, named entity recognition, and language models.",
+    "resources": [
+      { "name": "NLP Guide", "url": "https://www.freecodecamp.org/news/nlp-guide/" },
+      { "name": "NLTK Documentation", "url": "https://www.nltk.org/" },
+      { "name": "spaCy Documentation", "url": "https://spacy.io/usage" },
+      { "name": "Transformers Library", "url": "https://huggingface.co/transformers/" }
+    ]
+  },
+  "Big Data Technologies": {
+    "title": "Big Data Processing",
+    "description": "Learn big data technologies including Apache Spark, Hadoop, and distributed computing for handling large-scale datasets.",
+    "resources": [
+      { "name": "Big Data Technologies", "url": "https://www.freecodecamp.org/news/big-data-technologies/" },
+      { "name": "Apache Spark Documentation", "url": "https://spark.apache.org/docs/latest/" },
+      { "name": "Hadoop Documentation", "url": "https://hadoop.apache.org/docs/current/" },
+      { "name": "PySpark Tutorial", "url": "https://www.freecodecamp.org/news/pyspark-tutorial/" }
+    ]
+  },
+  "Cloud Platforms": {
+    "title": "Cloud Computing for Data Science",
+    "description": "Learn cloud platforms for data science including AWS, Google Cloud, and Azure for scalable data processing and model deployment.",
+    "resources": [
+      { "name": "Cloud Platforms for Data Science", "url": "https://www.freecodecamp.org/news/cloud-platforms-for-data-science/" },
+      { "name": "AWS Machine Learning", "url": "https://aws.amazon.com/machine-learning/" },
+      { "name": "Google Cloud AI", "url": "https://cloud.google.com/ai" },
+      { "name": "Azure Machine Learning", "url": "https://azure.microsoft.com/en-us/services/machine-learning/" }
+    ]
+  },
+  "MLOps & Deployment": {
+    "title": "MLOps and Model Deployment",
+    "description": "Learn MLOps practices including model versioning, CI/CD for ML, model monitoring, and deployment strategies.",
+    "resources": [
+      { "name": "MLOps Guide", "url": "https://www.freecodecamp.org/news/mlops-guide/" },
+      { "name": "MLflow Documentation", "url": "https://mlflow.org/docs/latest/index.html" },
+      { "name": "Kubeflow Documentation", "url": "https://www.kubeflow.org/docs/" },
+      { "name": "Model Deployment Best Practices", "url": "https://www.freecodecamp.org/news/model-deployment-best-practices/" }
+    ]
+  },
+  "Advanced Analytics": {
+    "title": "Advanced Analytics Techniques",
+    "description": "Learn advanced analytics techniques including time series analysis, A/B testing, predictive analytics, and business intelligence.",
+    "resources": [
+      { "name": "Advanced Analytics", "url": "https://www.freecodecamp.org/news/advanced-analytics/" },
+      { "name": "Time Series Analysis", "url": "https://www.freecodecamp.org/news/time-series-analysis/" },
+      { "name": "A/B Testing Guide", "url": "https://www.freecodecamp.org/news/ab-testing-guide/" },
+      { "name": "Predictive Analytics", "url": "https://www.freecodecamp.org/news/predictive-analytics/" }
+    ]
+  },
+  "Real-world Projects": {
+    "title": "Real-world Data Science Projects",
+    "description": "Work on real-world data science projects to apply your skills and build a portfolio. Focus on end-to-end project development.",
+    "resources": [
+      { "name": "Data Science Projects", "url": "https://www.freecodecamp.org/news/data-science-projects/" },
+      { "name": "Kaggle Competitions", "url": "https://www.kaggle.com/competitions" },
+      { "name": "GitHub Data Science Projects", "url": "https://github.com/topics/data-science" },
+      { "name": "Portfolio Building Guide", "url": "https://www.freecodecamp.org/news/portfolio-building-guide/" }
     ]
   }
 }

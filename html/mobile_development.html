@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title id="pageTitle">Data Science Roadmap - Masar</title>
+  <title id="pageTitle">Mobile Development Roadmap - Masar</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="favicon.ico">
   <!-- Google Fonts for modern look -->
@@ -319,6 +319,7 @@
           <div class="dropdown-item" onclick="window.location.href='all_roadmaps.html'">All Roadmaps</div>
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
+          <div class="dropdown-item" onclick="window.location.href='mobile_development.html'">Mobile Development</div>
           <div class="dropdown-item" onclick="window.location.href='data_science.html'">Data Science</div>
         </div>
       </div>
@@ -334,25 +335,25 @@
         </div>
         <div class="search-dropdown" id="search-dropdown">
           <div class="search-suggestions">
-            <div class="suggestion-item" data-search="python">
-              <i class="fa-brands fa-python"></i>
-              <span>Python</span>
+            <div class="suggestion-item" data-search="react">
+              <i class="fa-brands fa-react"></i>
+              <span>React Native</span>
             </div>
-            <div class="suggestion-item" data-search="machine">
-              <i class="fa-solid fa-brain"></i>
-              <span>Machine Learning</span>
+            <div class="suggestion-item" data-search="flutter">
+              <i class="fa-solid fa-mobile-alt"></i>
+              <span>Flutter</span>
             </div>
-            <div class="suggestion-item" data-search="data">
-              <i class="fa-solid fa-chart-line"></i>
-              <span>Data Analysis</span>
+            <div class="suggestion-item" data-search="ios">
+              <i class="fa-brands fa-apple"></i>
+              <span>iOS Development</span>
             </div>
-            <div class="suggestion-item" data-search="deep">
-              <i class="fa-solid fa-network-wired"></i>
-              <span>Deep Learning</span>
+            <div class="suggestion-item" data-search="android">
+              <i class="fa-brands fa-android"></i>
+              <span>Android Development</span>
             </div>
-            <div class="suggestion-item" data-search="visualization">
-              <i class="fa-solid fa-chart-bar"></i>
-              <span>Data Visualization</span>
+            <div class="suggestion-item" data-search="navigation">
+              <i class="fa-solid fa-route"></i>
+              <span>Navigation</span>
             </div>
           </div>
         </div>
@@ -362,8 +363,8 @@
 
   <main class="roadmap-main">
     <div class="roadmap-header">
-      <h1 id="roadmapTitle">Data Science Roadmap</h1>
-      <p id="roadmapDescription">A comprehensive guide to becoming a data scientist. Follow this roadmap to master data analysis, machine learning, and statistical modeling.</p>
+      <h1 id="roadmapTitle">Mobile Development Roadmap</h1>
+      <p id="roadmapDescription">A comprehensive guide to becoming a modern mobile developer. Follow this roadmap to master iOS, Android, and cross-platform development.</p>
       
       <!-- Progress Indicator -->
       <div class="progress-container">
@@ -385,11 +386,11 @@
       </div>
     </div>
 
-    <!-- Data Science Explanation -->
-    <div class="backend-explanation" id="data-science-explanation">
+    <!-- Mobile Development Explanation -->
+    <div class="backend-explanation" id="mobile-explanation">
       <div class="front-content">
-        <h2 id="whatIsDataScienceTitle">What is Data Science?</h2>
-        <p id="whatIsDataScienceText">
+        <h2 id="whatIsMobileTitle">What is Mobile Development?</h2>
+        <p id="whatIsMobileText">
           Click to reveal the answer! 💡
         </p>
         <div class="question-icon">❓</div>
@@ -397,21 +398,21 @@
       <div class="back-content">
         <h3>Answer:</h3>
         <p>
-          <span class="highlight">Data Science</span> is an interdisciplinary field that combines <span class="highlight">statistics</span>, <span class="highlight">computer science</span>, and <span class="highlight">domain expertise</span> to extract meaningful insights from data.
+          <span class="highlight">Mobile development</span> is the process of creating software applications that run on mobile devices such as smartphones and tablets. It involves designing, building, and maintaining apps for iOS, Android, and other mobile platforms.
         </p>
         <p>
-          It involves collecting, cleaning, analyzing, and interpreting large datasets to help organizations make data-driven decisions. Data scientists use various techniques including <span class="highlight">machine learning</span>, <span class="highlight">statistical analysis</span>, <span class="highlight">data visualization</span>, and <span class="highlight">predictive modeling</span>.
+          Mobile developers work with <span class="highlight">native development</span> (iOS with Swift/Objective-C, Android with Java/Kotlin), <span class="highlight">cross-platform frameworks</span> (React Native, Flutter, Xamarin), and <span class="highlight">mobile-specific technologies</span> to create user-friendly, performant applications.
         </p>
         <p>
-          The field encompasses everything from <span class="highlight">exploratory data analysis</span> and <span class="highlight">feature engineering</span> to building <span class="highlight">machine learning models</span> and creating <span class="highlight">data pipelines</span>. Data scientists work with tools like <span class="highlight">Python</span>, <span class="highlight">R</span>, <span class="highlight">SQL</span>, and various <span class="highlight">cloud platforms</span>.
+          They handle <span class="highlight">UI/UX design</span>, <span class="highlight">app performance</span>, <span class="highlight">device integration</span> (camera, GPS, sensors), <span class="highlight">app store deployment</span>, and <span class="highlight">mobile-specific challenges</span> like different screen sizes, operating systems, and device capabilities.
         </p>
         <p>
-          They help businesses understand patterns in their data, predict future trends, optimize processes, and create intelligent systems that can learn and improve over time.
+          Mobile development requires understanding of platform guidelines, user experience principles, and the unique constraints and opportunities of mobile devices.
         </p>
       </div>
     </div>
 
-    <!-- Data Science Roadmap Flow (Linear, Level-based) -->
+    <!-- Mobile Development Roadmap Flow (Linear, Level-based) -->
     <div class="roadmap-legend">
       <span class="legend level1">LEVEL 1</span>
       <span class="legend level2">LEVEL 2</span>
@@ -420,46 +421,55 @@
     </div>
     <div class="roadmap-flow">
       <div class="roadmap-row">
-        <div class="roadmap-node level1">Python Basics</div>
-        <div class="roadmap-node level1">Mathematics & Statistics</div>
+        <div class="roadmap-node level1">Choose Platform</div>
+        <div class="roadmap-node level1">Programming Basics</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level1">Data Manipulation</div>
-        <div class="roadmap-node level1">Data Visualization</div>
-      </div>
-      <div class="level-separator"></div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level2">Exploratory Data Analysis</div>
-        <div class="roadmap-node level2">SQL & Databases</div>
-      </div>
-      <div class="roadmap-row">
-        <div class="roadmap-node level2">Feature Engineering</div>
-        <div class="roadmap-node level2">Data Cleaning</div>
+        <div class="roadmap-node level1">Mobile UI Design</div>
+        <div class="roadmap-node level1">App Architecture</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Machine Learning Basics</div>
-        <div class="roadmap-node level3">Supervised Learning</div>
+        <div class="roadmap-node level2">iOS Development</div>
+        <div class="roadmap-node level2">Android Development</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Unsupervised Learning</div>
-        <div class="roadmap-node level3">Model Evaluation</div>
+        <div class="roadmap-node level2">Cross-Platform</div>
+        <div class="roadmap-node level2">React Native</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level3">Deep Learning</div>
-        <div class="roadmap-node level3">Natural Language Processing</div>
+        <div class="roadmap-node level2">Flutter</div>
+        <div class="roadmap-node level2">Xamarin</div>
       </div>
       <div class="level-separator"></div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">Big Data Technologies</div>
-        <div class="roadmap-node level4">Cloud Platforms</div>
+        <div class="roadmap-node level3">State Management</div>
+        <div class="roadmap-node level3">Navigation</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">MLOps & Deployment</div>
-        <div class="roadmap-node level4">Advanced Analytics</div>
+        <div class="roadmap-node level3">API Integration</div>
+        <div class="roadmap-node level3">Local Storage</div>
       </div>
       <div class="roadmap-row">
-        <div class="roadmap-node level4">Real-world Projects</div>
+        <div class="roadmap-node level3">Push Notifications</div>
+        <div class="roadmap-node level3">Device Features</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level3">Testing</div>
+        <div class="roadmap-node level3">Debugging</div>
+      </div>
+      <div class="level-separator"></div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">App Performance</div>
+        <div class="roadmap-node level4">Security</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">App Store Deployment</div>
+        <div class="roadmap-node level4">CI/CD</div>
+      </div>
+      <div class="roadmap-row">
+        <div class="roadmap-node level4">Analytics</div>
+        <div class="roadmap-node level4">Monetization</div>
       </div>
     </div>
     
@@ -534,7 +544,7 @@
         const response = await fetch('../json/progress_tracking.json');
         if (response.ok) {
           allProgressData = await response.json();
-          courseProgress = allProgressData.data_science || {};
+          courseProgress = allProgressData.mobile || {};
           console.log('Progress loaded from JSON:', courseProgress);
         } else {
           console.warn('Could not load progress from JSON, starting fresh');
@@ -549,8 +559,8 @@
     // Save progress to JSON file
     async function saveProgressToJSON() {
       try {
-        // Update the data_science progress in the main data object
-        allProgressData.data_science = courseProgress;
+        // Update the mobile progress in the main data object
+        allProgressData.mobile = courseProgress;
         allProgressData.last_updated = new Date().toISOString();
         
         // Try to save to server first (if available)
@@ -572,7 +582,7 @@
         } catch (serverError) {
           console.log('Server not available, using local storage:', serverError);
           // Fallback to localStorage
-          localStorage.setItem('dataScienceRoadmapProgress', JSON.stringify(courseProgress));
+          localStorage.setItem('mobileRoadmapProgress', JSON.stringify(courseProgress));
           localStorage.setItem('allProgressData', JSON.stringify(allProgressData));
         }
         
@@ -583,7 +593,7 @@
       } catch (error) {
         console.error('Error saving progress to JSON:', error);
         // Fallback to localStorage
-        localStorage.setItem('dataScienceRoadmapProgress', JSON.stringify(courseProgress));
+        localStorage.setItem('mobileRoadmapProgress', JSON.stringify(courseProgress));
       }
     }
     
@@ -779,7 +789,7 @@
       await initializeProgressTracking();
 
       // Fetch translations
-      fetch('../json/data_science_roadmap.json')
+      fetch('../json/mobile_roadmap.json')
         .then(response => response.json())
         .then(data => {
           translations = data;
@@ -788,7 +798,7 @@
         })
         .catch(error => {
           console.error('Error loading translations:', error);
-          // Fallback to home translations if data_science_roadmap.json doesn't exist
+          // Fallback to home translations if mobile_roadmap.json doesn't exist
           fetch('../json/home language.json')
             .then(response => response.json())
             .then(data => {
@@ -966,10 +976,10 @@
       const closeModal = document.getElementById('close-modal');
       const resetProgressBtn = document.getElementById('reset-progress-btn');
       
-      // Data science explanation flip animation
-      const dataScienceExplanation = document.getElementById('data-science-explanation');
-      if (dataScienceExplanation) {
-        dataScienceExplanation.addEventListener('click', function() {
+      // Mobile explanation flip animation
+      const mobileExplanation = document.getElementById('mobile-explanation');
+      if (mobileExplanation) {
+        mobileExplanation.addEventListener('click', function() {
           this.classList.toggle('flipped');
         });
       }

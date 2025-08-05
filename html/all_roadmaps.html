@@ -28,12 +28,41 @@
         <div class="dropdown-menu">
           <div class="dropdown-item" onclick="window.location.href='front_end.html'">Frontend</div>
           <div class="dropdown-item" onclick="window.location.href='back_end.html'">Backend</div>
+          <div class="dropdown-item" onclick="window.location.href='mobile_development.html'">Mobile Development</div>
           <div class="dropdown-item" onclick="window.location.href='data_science.html'">Data Science</div>
         </div>
       </div>
       <div class="nav-item" onclick="window.location.href='contact_us.html'" id="customerSupport"><i class="fa-solid fa-user-group" ></i> <span >Customer support</span></div>
-      <div class="nav-item" onclick="window.location.href='about_us.html'" id="aboutUs"><i class="fa-solid fa-info-circle" ></i> <span>About us</span></div>
-      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="nav-item" id="aboutUs" onclick="window.location.href='about_us.html'"><b>!</b> <span id="aboutUs-text">About us</span></div>
+      <div class="nav-item search-container" id="search-container">
+        <div class="search-bar" id="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon" id="search-icon"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="Search roadmaps..." />
+          <button class="search-clear" id="search-clear">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <div class="search-dropdown" id="search-dropdown">
+          <div class="search-suggestions">
+            <div class="suggestion-item" data-search="frontend">
+              <i class="fa-solid fa-code"></i>
+              <span>Frontend Development</span>
+            </div>
+            <div class="suggestion-item" data-search="backend">
+              <i class="fa-solid fa-server"></i>
+              <span>Backend Development</span>
+            </div>
+            <div class="suggestion-item" data-search="mobile">
+              <i class="fa-solid fa-mobile-alt"></i>
+              <span>Mobile Development</span>
+            </div>
+            <div class="suggestion-item" data-search="data">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Data Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <span id="user-name" style="display:none; font-weight:600; color:#00b6b6; margin-left:20px;"></span>
     </nav>
   </header>
@@ -158,38 +187,38 @@
         </div>
       </div>
 
-      <div class="roadmap-card mobile-dev-card coming-soon">
+      <div class="roadmap-card mobile-dev-card" onclick="window.location.href='mobile_development.html'">
         <div class="card-header">
           <div class="card-icon">
             <i class="fa-solid fa-mobile-alt"></i>
           </div>
-          <div class="card-badge coming-soon-badge">Coming Soon</div>
+          <div class="card-badge">Available Now</div>
         </div>
         <div class="card-content">
           <h3 id="mobileDevTitle">Mobile Development</h3>
           <p id="mobileDevDescription">Create amazing mobile applications for iOS and Android</p>
           <div class="card-features">
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
+              <i class="fa-solid fa-check"></i>
               <span id="mobileDevFeature1">React Native</span>
             </div>
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
+              <i class="fa-solid fa-check"></i>
               <span id="mobileDevFeature2">Flutter</span>
             </div>
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
+              <i class="fa-solid fa-check"></i>
               <span id="mobileDevFeature3">Native Development</span>
             </div>
             <div class="feature">
-              <i class="fa-solid fa-clock"></i>
+              <i class="fa-solid fa-check"></i>
               <span id="mobileDevFeature4">App Store Deployment</span>
             </div>
           </div>
         </div>
         <div class="card-footer">
-          <span class="progress-text" id="mobileDevProgress">Coming Soon</span>
-          <div class="progress-bar disabled">
+          <span class="progress-text" id="mobileDevProgress">0% Complete</span>
+          <div class="progress-bar">
             <div class="progress-fill" style="width: 0%"></div>
           </div>
         </div>
@@ -199,7 +228,7 @@
     <section class="stats-section">
       <div class="stats-container">
         <div class="stat-item">
-          <div class="stat-number" id="totalRoadmaps">3</div>
+          <div class="stat-number" id="totalRoadmaps">4</div>
           <div class="stat-label" id="statRoadmapsLabel">Active Roadmaps</div>
         </div>
         <div class="stat-item">
@@ -347,6 +376,11 @@
           const dataScienceCompleted = dataScienceCourses.filter(status => status === 'completed').length;
           const dataScienceProgress = dataScienceCourses.length > 0 ? Math.round((dataScienceCompleted / dataScienceCourses.length) * 100) : 0;
 
+          // Calculate mobile development progress
+          const mobileCourses = Object.values(progressData.mobile || {});
+          const mobileCompleted = mobileCourses.filter(status => status === 'completed').length;
+          const mobileProgress = mobileCourses.length > 0 ? Math.round((mobileCompleted / mobileCourses.length) * 100) : 0;
+
           // Update frontend progress
           const frontendProgressText = document.getElementById('frontendProgress');
           const frontendProgressFill = document.querySelector('.frontend-card .progress-fill');
@@ -370,6 +404,14 @@
             dataScienceProgressText.textContent = `${dataScienceProgress}% Complete`;
             dataScienceProgressFill.style.width = `${dataScienceProgress}%`;
           }
+
+          // Update mobile development progress
+          const mobileProgressText = document.getElementById('mobileDevProgress');
+          const mobileProgressFill = document.querySelector('.mobile-dev-card .progress-fill');
+          if (mobileProgressText && mobileProgressFill) {
+            mobileProgressText.textContent = `${mobileProgress}% Complete`;
+            mobileProgressFill.style.width = `${mobileProgress}%`;
+          }
         }
       } catch (error) {
         console.error('Error loading progress:', error);
@@ -377,6 +419,7 @@
         const frontendProgress = localStorage.getItem('frontend_progress') || 0;
         const backendProgress = localStorage.getItem('backend_progress') || 0;
         const dataScienceProgress = localStorage.getItem('data_science_progress') || 0;
+        const mobileProgress = localStorage.getItem('mobile_progress') || 0;
 
         // Update frontend progress
         const frontendProgressText = document.getElementById('frontendProgress');
@@ -401,12 +444,219 @@
           dataScienceProgressText.textContent = `${dataScienceProgress}% Complete`;
           dataScienceProgressFill.style.width = `${dataScienceProgress}%`;
         }
+
+        // Update mobile development progress
+        const mobileProgressText = document.getElementById('mobileDevProgress');
+        const mobileProgressFill = document.querySelector('.mobile-dev-card .progress-fill');
+        if (mobileProgressText && mobileProgressFill) {
+          mobileProgressText.textContent = `${mobileProgress}% Complete`;
+          mobileProgressFill.style.width = `${mobileProgress}%`;
+        }
       }
     }
 
     // Initialize page
     document.addEventListener('DOMContentLoaded', function() {
       loadProgress();
+
+      // Beautiful Search Bar Functionality
+      const searchContainer = document.getElementById('search-container');
+      const searchBar = document.getElementById('search-bar');
+      const searchIcon = document.getElementById('search-icon');
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+      const searchDropdown = document.getElementById('search-dropdown');
+      const suggestionItems = document.querySelectorAll('.suggestion-item');
+
+      // Toggle search bar
+      searchIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Search icon clicked'); // Debug log
+        
+        if (!searchBar.classList.contains('active')) {
+          activateSearch();
+        } else {
+          deactivateSearch();
+        }
+      });
+
+      // Activate search function
+      function activateSearch() {
+        console.log('Activating search'); // Debug log
+        searchBar.classList.add('active');
+        searchInput.focus();
+        setTimeout(() => {
+          searchDropdown.classList.add('show');
+        }, 300);
+        
+        // Add searching animation
+        searchBar.classList.add('searching');
+        setTimeout(() => {
+          searchBar.classList.remove('searching');
+        }, 2000);
+      }
+
+      // Deactivate search function
+      function deactivateSearch() {
+        console.log('Deactivating search'); // Debug log
+        searchBar.classList.remove('active');
+        searchDropdown.classList.remove('show');
+        searchInput.value = '';
+        searchInput.blur();
+      }
+
+      // Clear search
+      searchClear.addEventListener('click', function(e) {
+        e.stopPropagation();
+        searchInput.value = '';
+        searchInput.focus();
+      });
+
+      // Search input functionality
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        
+        if (query.length > 0) {
+          searchBar.classList.add('searching');
+          filterSuggestions(query);
+        } else {
+          searchBar.classList.remove('searching');
+          showAllSuggestions();
+        }
+      });
+
+      // Filter suggestions
+      function filterSuggestions(query) {
+        suggestionItems.forEach(item => {
+          const text = item.querySelector('span').textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'flex';
+            item.style.animation = 'searchPulse 0.3s ease-in-out';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      // Show all suggestions
+      function showAllSuggestions() {
+        suggestionItems.forEach(item => {
+          item.style.display = 'flex';
+          item.style.animation = '';
+        });
+      }
+
+      // Handle suggestion clicks
+      suggestionItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const searchTerm = this.getAttribute('data-search');
+          searchInput.value = this.querySelector('span').textContent;
+          
+          // Add found animation
+          searchBar.classList.add('found');
+          setTimeout(() => {
+            searchBar.classList.remove('found');
+          }, 600);
+          
+          // Navigate to specific roadmap
+          navigateToRoadmap(searchTerm);
+          
+          // Close search after a delay
+          setTimeout(() => {
+            deactivateSearch();
+          }, 1000);
+        });
+      });
+
+      // Navigate to specific roadmap
+      function navigateToRoadmap(searchTerm) {
+        switch(searchTerm) {
+          case 'frontend':
+            window.location.href = 'front_end.html';
+            break;
+          case 'backend':
+            window.location.href = 'back_end.html';
+            break;
+          case 'mobile':
+            window.location.href = 'mobile_development.html';
+            break;
+          case 'data':
+            window.location.href = 'data_science.html';
+            break;
+          default:
+            // Default behavior
+            break;
+        }
+      }
+
+      // Close search when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!searchContainer.contains(e.target)) {
+          deactivateSearch();
+        }
+      });
+
+      // Keyboard navigation
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          deactivateSearch();
+        } else if (e.key === 'Enter') {
+          const query = this.value.toLowerCase();
+          if (query.includes('frontend')) {
+            navigateToRoadmap('frontend');
+          } else if (query.includes('backend')) {
+            navigateToRoadmap('backend');
+          } else if (query.includes('mobile')) {
+            navigateToRoadmap('mobile');
+          } else if (query.includes('data')) {
+            navigateToRoadmap('data');
+          }
+          deactivateSearch();
+        }
+      });
+
+      // Add hover effects to search bar
+      searchBar.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1.05)';
+          this.style.boxShadow = '0 8px 25px rgba(0, 184, 148, 0.2)';
+        }
+      });
+
+      searchBar.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = 'none';
+        }
+      });
+
+      // Add ripple effect to search icon
+      searchIcon.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.className = 'search-ripple';
+        ripple.style.cssText = `
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(0, 184, 148, 0.6);
+          transform: scale(0);
+          animation: searchRipple 0.6s ease-out;
+          pointer-events: none;
+          width: 20px;
+          height: 20px;
+          top: 50%;
+          left: 50%;
+          margin-top: -10px;
+          margin-left: -10px;
+          z-index: 1;
+        `;
+        
+        searchBar.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
     });
   </script>
 </body>

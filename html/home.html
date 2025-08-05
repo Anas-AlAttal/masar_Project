@@ -11,6 +11,45 @@
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/home.css">
+  <style>
+    /* Tooltip styles */
+    .tooltip {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      transform: translateY(-10px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 182, 182, 0.3);
+    }
+    
+    .tooltip::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 5px solid rgba(0, 0, 0, 0.9);
+    }
+    
+    .tooltip.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
   <!-- Animated background elements -->
@@ -46,7 +85,35 @@
       </div>
       <div class="nav-item" id="nav-customer-support"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
       <div class="nav-item" id="nav-about-us"><i class="fa-solid fa-info-circle" onclick="window.location.href='about_us.html'"></i> <span onclick="window.location.href='about_us.html'">About us</span></div>
-      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="nav-item search-container" id="search-container">
+        <div class="search-bar" id="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon" id="search-icon"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="Search roadmaps, courses..." />
+          <button class="search-clear" id="search-clear">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <div class="search-dropdown" id="search-dropdown">
+          <div class="search-suggestions">
+            <div class="suggestion-item" data-search="frontend">
+              <i class="fa-solid fa-code"></i>
+              <span>Frontend Development</span>
+            </div>
+            <div class="suggestion-item" data-search="backend">
+              <i class="fa-solid fa-server"></i>
+              <span>Backend Development</span>
+            </div>
+            <div class="suggestion-item" data-search="mobile">
+              <i class="fa-solid fa-mobile-alt"></i>
+              <span>Mobile Development</span>
+            </div>
+            <div class="suggestion-item" data-search="data">
+              <i class="fa-solid fa-chart-line"></i>
+              <span>Data Science</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <span id="user-name" style="display:none; font-weight:600; color:#00b6b6; margin-left:20px;"></span>
     </nav>
   </header>
@@ -87,7 +154,7 @@
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="php">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="matlab">
       </div>
-      <!--<img class="laptop" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="laptop">-->
+    
     </section>
   </main>
   
@@ -152,14 +219,47 @@
 
     // Add hover effects to tech logos
     document.querySelectorAll('.bubble img').forEach(img => {
-      img.addEventListener('mouseenter', function() {
+      // Create tooltip element
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      document.body.appendChild(tooltip);
+      
+      img.addEventListener('mouseenter', function(e) {
+        // Get the image name from alt attribute or src
+        const imageName = this.alt || this.src.split('/').pop().replace('.svg', '').toUpperCase();
+        
+        // Update tooltip content
+        tooltip.textContent = imageName;
+        
+        // Position tooltip
+        const rect = this.getBoundingClientRect();
+        tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
+        tooltip.style.top = rect.bottom + 10 + 'px'; // Position below the image
+        
+        // Show tooltip
+        tooltip.classList.add('show');
+        
+        // Enhanced hover effects
         this.style.transform = 'scale(1.2) rotate(10deg)';
         this.style.filter = 'drop-shadow(0 10px 20px rgba(0, 182, 182, 0.3))';
       });
       
       img.addEventListener('mouseleave', function() {
+        // Hide tooltip
+        tooltip.classList.remove('show');
+        
+        // Reset hover effects
         this.style.transform = 'scale(1) rotate(0deg)';
         this.style.filter = 'drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2))';
+      });
+      
+      // Update tooltip position on mouse move for better positioning
+      img.addEventListener('mousemove', function(e) {
+        if (tooltip.classList.contains('show')) {
+          const rect = this.getBoundingClientRect();
+          tooltip.style.left = rect.left + (rect.width / 2) - (tooltip.offsetWidth / 2) + 'px';
+          tooltip.style.top = rect.bottom + 10 + 'px'; // Position below the image
+        }
       });
     });
 
@@ -399,6 +499,210 @@
       for (let i = 0; i < 5; i++) {
         setTimeout(createFloatingParticle, i * 500);
       }
+
+      // Beautiful Search Bar Functionality
+      const searchContainer = document.getElementById('search-container');
+      const searchBar = document.getElementById('search-bar');
+      const searchIcon = document.getElementById('search-icon');
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+      const searchDropdown = document.getElementById('search-dropdown');
+      const suggestionItems = document.querySelectorAll('.suggestion-item');
+
+      // Toggle search bar
+      searchIcon.addEventListener('click', function() {
+        if (!searchBar.classList.contains('active')) {
+          activateSearch();
+        }
+      });
+
+      // Activate search function
+      function activateSearch() {
+        searchBar.classList.add('active');
+        searchInput.focus();
+        setTimeout(() => {
+          searchDropdown.classList.add('show');
+        }, 300);
+        
+        // Add searching animation
+        searchBar.classList.add('searching');
+        setTimeout(() => {
+          searchBar.classList.remove('searching');
+        }, 2000);
+      }
+
+      // Deactivate search function
+      function deactivateSearch() {
+        searchBar.classList.remove('active');
+        searchDropdown.classList.remove('show');
+        searchInput.value = '';
+        searchInput.blur();
+      }
+
+      // Clear search
+      searchClear.addEventListener('click', function(e) {
+        e.stopPropagation();
+        searchInput.value = '';
+        searchInput.focus();
+      });
+
+      // Search input functionality
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        
+        if (query.length > 0) {
+          searchBar.classList.add('searching');
+          filterSuggestions(query);
+        } else {
+          searchBar.classList.remove('searching');
+          showAllSuggestions();
+        }
+      });
+
+      // Filter suggestions
+      function filterSuggestions(query) {
+        suggestionItems.forEach(item => {
+          const text = item.querySelector('span').textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'flex';
+            item.style.animation = 'searchPulse 0.3s ease-in-out';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      // Show all suggestions
+      function showAllSuggestions() {
+        suggestionItems.forEach(item => {
+          item.style.display = 'flex';
+          item.style.animation = '';
+        });
+      }
+
+      // Handle suggestion clicks
+      suggestionItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const searchTerm = this.getAttribute('data-search');
+          searchInput.value = this.querySelector('span').textContent;
+          
+          // Add found animation
+          searchBar.classList.add('found');
+          setTimeout(() => {
+            searchBar.classList.remove('found');
+          }, 600);
+          
+          // Navigate based on search term
+          navigateToSearchResult(searchTerm);
+          
+          // Close search after a delay
+          setTimeout(() => {
+            deactivateSearch();
+          }, 1000);
+        });
+      });
+
+      // Navigate to search result
+      function navigateToSearchResult(searchTerm) {
+        switch(searchTerm) {
+          case 'frontend':
+            window.location.href = 'front_end.html';
+            break;
+          case 'backend':
+            window.location.href = 'back_end.html';
+            break;
+          case 'mobile':
+            window.location.href = 'mobile_development.html';
+            break;
+          case 'data':
+            window.location.href = 'data_science.html';
+            break;
+          default:
+            // Default behavior
+            break;
+        }
+      }
+
+      // Close search when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!searchContainer.contains(e.target)) {
+          deactivateSearch();
+        }
+      });
+
+      // Keyboard navigation
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          deactivateSearch();
+        } else if (e.key === 'Enter') {
+          const query = this.value.toLowerCase();
+          if (query.includes('frontend')) {
+            navigateToSearchResult('frontend');
+          } else if (query.includes('backend')) {
+            navigateToSearchResult('backend');
+          } else if (query.includes('mobile')) {
+            navigateToSearchResult('mobile');
+          } else if (query.includes('data')) {
+            navigateToSearchResult('data');
+          }
+          deactivateSearch();
+        }
+      });
+
+      // Add hover effects to search bar
+      searchBar.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1.05)';
+          this.style.boxShadow = '0 8px 25px rgba(0, 184, 148, 0.2)';
+        }
+      });
+
+      searchBar.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = 'none';
+        }
+      });
+
+      // Add ripple effect to search icon
+      searchIcon.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.className = 'search-ripple';
+        ripple.style.cssText = `
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(0, 184, 148, 0.6);
+          transform: scale(0);
+          animation: searchRipple 0.6s ease-out;
+          pointer-events: none;
+          width: 20px;
+          height: 20px;
+          top: 50%;
+          left: 50%;
+          margin-top: -10px;
+          margin-left: -10px;
+          z-index: 1;
+        `;
+        
+        searchBar.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
+
+      // Add CSS for search ripple animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes searchRipple {
+          to {
+            transform: scale(4);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(style);
+
     });
   </script>
 </body>

@@ -1,20 +1,30 @@
-/* Data Science Roadmap Styles */
-:root {
-  --primary-color: #6366f1;
-  --secondary-color: #8b5cf6;
-  --accent-color: #06b6d4;
-  --success-color: #10b981;
-  --warning-color: #f59e0b;
-  --error-color: #ef4444;
-  --background-color: #f8fafc;
-  --surface-color: #ffffff;
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --border-color: #e2e8f0;
-  --shadow-color: rgba(99, 102, 241, 0.1);
+/* Modern Beautiful Data Science Roadmap Page Styles - Dark Theme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Animated Background */
+body {
+  margin: 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 25%, #2d3748 50%, #4a5568 75%, #2d3748 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: #e2e8f0;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Enhanced Animated Background */
 .animated-bg {
   position: fixed;
   top: 0;
@@ -28,120 +38,210 @@
 .floating-shape {
   position: absolute;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  opacity: 0.1;
-  animation: float 20s infinite ease-in-out;
+  background: rgba(0, 184, 148, 0.1);
+  backdrop-filter: blur(30px);
+  box-shadow: 
+    0 15px 45px rgba(0, 184, 148, 0.2),
+    inset 0 1px 0 rgba(0, 184, 148, 0.3);
+  animation: float 15s ease-in-out infinite;
+  border: 2px solid rgba(0, 184, 148, 0.3);
 }
 
 .shape-1 {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   top: 10%;
-  left: 10%;
+  left: 5%;
   animation-delay: 0s;
+  background: linear-gradient(135deg, rgba(0, 184, 148, 0.2), rgba(0, 206, 201, 0.2));
 }
 
 .shape-2 {
-  width: 150px;
-  height: 150px;
-  top: 60%;
-  right: 15%;
-  animation-delay: 5s;
+  width: 120px;
+  height: 120px;
+  top: 70%;
+  right: 10%;
+  animation-delay: 2s;
+  background: linear-gradient(135deg, rgba(85, 163, 255, 0.2), rgba(116, 185, 255, 0.2));
 }
 
 .shape-3 {
-  width: 100px;
-  height: 100px;
-  bottom: 20%;
-  left: 20%;
-  animation-delay: 10s;
+  width: 180px;
+  height: 180px;
+  bottom: 15%;
+  left: 15%;
+  animation-delay: 4s;
+  background: linear-gradient(135deg, rgba(9, 132, 227, 0.2), rgba(0, 184, 148, 0.2));
 }
 
 .shape-4 {
-  width: 120px;
-  height: 120px;
-  top: 30%;
-  right: 30%;
-  animation-delay: 15s;
+  width: 100px;
+  height: 100px;
+  top: 20%;
+  right: 25%;
+  animation-delay: 6s;
+  background: linear-gradient(135deg, rgba(0, 206, 201, 0.2), rgba(85, 163, 255, 0.2));
 }
 
 .shape-5 {
-  width: 80px;
-  height: 80px;
-  bottom: 40%;
-  right: 10%;
-  animation-delay: 20s;
+  width: 140px;
+  height: 140px;
+  bottom: 30%;
+  right: 5%;
+  animation-delay: 8s;
+  background: linear-gradient(135deg, rgba(116, 185, 255, 0.2), rgba(9, 132, 227, 0.2));
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) rotate(0deg) scale(1);
+    opacity: 0.7;
   }
-  33% {
-    transform: translateY(-30px) rotate(120deg);
+  25% {
+    transform: translateY(-40px) rotate(90deg) scale(1.15);
+    opacity: 0.9;
   }
-  66% {
-    transform: translateY(20px) rotate(240deg);
+  50% {
+    transform: translateY(-80px) rotate(180deg) scale(0.95);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-40px) rotate(270deg) scale(1.1);
+    opacity: 0.8;
   }
 }
 
-/* Header Styles */
+/* Modern Glassmorphism Header */
 header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: white;
-  padding: 1rem 2rem;
-  box-shadow: 0 4px 20px var(--shadow-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  background: rgba(15, 20, 25, 0.8);
+  backdrop-filter: blur(40px);
+  box-shadow: 
+    0 15px 45px rgba(0, 184, 148, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(0, 184, 148, 0.2);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 10000;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInDown 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header:hover {
+  background: rgba(15, 20, 25, 0.9);
+  box-shadow: 
+    0 20px 60px rgba(0, 184, 148, 0.4),
+    0 12px 35px rgba(0, 0, 0, 0.5);
+  transform: translateY(-3px);
+}
+
+/* Enhanced Logo */
 .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo:hover {
-  transform: scale(1.05);
+  transform: translateY(-8px) scale(1.05);
 }
 
 .masar-logo {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 25%, #55a3ff 50%, #74b9ff 75%, #0984e3 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  cursor: pointer;
+  text-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
+}
+
+.masar-logo:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
 }
 
 .subtitle {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-top: 0.2rem;
+  font-size: 1rem;
+  color: #e2e8f0;
+  margin-top: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6);
 }
 
-/* Navigation */
+.logo:hover .subtitle {
+  color: #00b894;
+  transform: translateX(12px);
+}
+
 nav {
   display: flex;
+  gap: 36px;
   align-items: center;
-  gap: 2rem;
-  margin-left: auto;
 }
 
 .nav-item {
+  font-size: 1.1rem;
+  color: #e2e8f0;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  gap: 8px;
   position: relative;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+  background: rgba(0, 184, 148, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 184, 148, 0.2);
 }
 
 .nav-item:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
+  background: rgba(0, 184, 148, 0.2);
+  color: #ffffff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 
+    0 8px 25px rgba(0, 184, 148, 0.4),
+    0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Dropdown Styles */
+.nav-item i {
+  font-size: 1.2rem;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-item:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Dropdown styles */
 .dropdown {
   position: relative;
 }
@@ -150,41 +250,90 @@ nav {
   position: absolute;
   top: 100%;
   left: 0;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  min-width: 150px;
+  background: rgba(15, 20, 25, 0.95);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(0, 184, 148, 0.3);
+  border-radius: 16px;
+  box-shadow: 
+    0 15px 45px rgba(0, 184, 148, 0.3),
+    0 8px 25px rgba(0, 0, 0, 0.4);
+  min-width: 160px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
-  transition: all 0.3s ease;
+  transform: translateY(-10px) scale(0.95);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 1000;
+  margin-top: 12px;
 }
 
 .dropdown.active .dropdown-menu {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 .dropdown-item {
-  padding: 0.75rem 1rem;
-  color: var(--text-primary);
+  padding: 14px 20px;
+  font-size: 1rem;
+  color: #e2e8f0;
   cursor: pointer;
-  transition: background 0.3s ease;
-  border-radius: 8px;
-  margin: 0.25rem;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid rgba(0, 184, 148, 0.2);
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.dropdown-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 184, 148, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.dropdown-item:hover::before {
+  left: 100%;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
 }
 
 .dropdown-item:hover {
-  background: var(--background-color);
-  color: var(--primary-color);
+  background: rgba(0, 184, 148, 0.2);
+  color: #00b894;
+  transform: translateX(8px);
 }
 
-.dropdown-item[data-lang] {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+.dropdown .fa-chevron-down {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #e2e8f0;
+}
+
+.dropdown:hover .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+#user-name {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 184, 148, 0.3);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#user-name:hover {
+  border-color: #00b894;
+  box-shadow: 0 8px 25px rgba(0, 184, 148, 0.4);
+  transform: translateY(-2px);
 }
 
 /* Main Content */
@@ -197,17 +346,17 @@ nav {
 .roadmap-header {
   text-align: center;
   margin-bottom: 3rem;
-  background: var(--surface-color);
+  background: #1a202c;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 4px 20px var(--shadow-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .roadmap-header h1 {
   font-size: 2.5rem;
-  color: var(--text-primary);
+  color: #e2e8f0;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, #4299e1, #60a5fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -215,7 +364,7 @@ nav {
 
 .roadmap-header p {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: #a0aec0;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
@@ -223,10 +372,10 @@ nav {
 
 /* Progress Container */
 .progress-container {
-  background: var(--surface-color);
+  background: #1a202c;
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 4px 15px var(--shadow-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   margin: 2rem 0;
 }
 
@@ -238,7 +387,7 @@ nav {
 }
 
 .progress-header h3 {
-  color: var(--text-primary);
+  color: #e2e8f0;
   font-size: 1.2rem;
   margin: 0;
 }
@@ -252,11 +401,11 @@ nav {
 .progress-percentage {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: #4299e1;
 }
 
 .reset-progress-btn {
-  background: var(--error-color);
+  background: #ef4444;
   color: white;
   border: none;
   padding: 0.5rem;
@@ -273,7 +422,7 @@ nav {
 .progress-bar {
   width: 100%;
   height: 12px;
-  background: var(--border-color);
+  background: #374151;
   border-radius: 6px;
   overflow: hidden;
   margin-bottom: 1rem;
@@ -281,7 +430,7 @@ nav {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(90deg, #4299e1, #60a5fa);
   border-radius: 6px;
   transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
@@ -309,27 +458,27 @@ nav {
 
 .progress-stats {
   text-align: center;
-  color: var(--text-secondary);
+  color: #a0aec0;
   font-size: 0.9rem;
 }
 
 .completed-count {
-  color: var(--success-color);
+  color: #10b981;
   font-weight: 600;
 }
 
 .total-count {
-  color: var(--primary-color);
+  color: #4299e1;
   font-weight: 600;
 }
 
 /* Data Science Explanation */
 .data-science-explanation {
-  background: var(--surface-color);
+  background: #1a202c;
   border-radius: 16px;
   padding: 2rem;
   margin: 2rem 0;
-  box-shadow: 0 4px 20px var(--shadow-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -339,7 +488,7 @@ nav {
 
 .data-science-explanation:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px var(--shadow-color);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
 }
 
 .data-science-explanation.flipped {
@@ -357,7 +506,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, #4299e1, #60a5fa);
   color: white;
   padding: 2rem;
   border-radius: 16px;
@@ -376,7 +525,7 @@ nav {
 }
 
 .front-content h2 {
-  color: var(--text-primary);
+  color: #e2e8f0;
   font-size: 1.5rem;
   margin-bottom: 1rem;
   display: flex;
@@ -456,10 +605,10 @@ nav {
 
 /* Roadmap Flow */
 .roadmap-flow {
-  background: var(--surface-color);
+  background: #1a202c;
   border-radius: 16px;
   padding: 2rem;
-  box-shadow: 0 4px 20px var(--shadow-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
   margin: 2rem 0;
 }
 
@@ -472,8 +621,8 @@ nav {
 }
 
 .roadmap-node {
-  background: var(--background-color);
-  border: 2px solid var(--border-color);
+  background: #2d3748;
+  border: 2px solid #374151;
   border-radius: 12px;
   padding: 1rem 1.5rem;
   cursor: pointer;
@@ -481,7 +630,7 @@ nav {
   text-align: center;
   min-width: 200px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #e2e8f0;
   position: relative;
   overflow: hidden;
 }
@@ -503,8 +652,8 @@ nav {
 
 .roadmap-node:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px var(--shadow-color);
-  border-color: var(--primary-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border-color: #4299e1;
 }
 
 .roadmap-node.level1 {
@@ -525,25 +674,25 @@ nav {
 
 /* Node Status Styles */
 .roadmap-node.not-started {
-  background: var(--background-color);
-  color: var(--text-secondary);
+  background: #2d3748;
+  color: #a0aec0;
 }
 
 .roadmap-node.in-progress {
   background: linear-gradient(135deg, #fef3c7, #fde68a);
-  border-color: var(--warning-color);
+  border-color: #f59e0b;
   color: #92400e;
 }
 
 .roadmap-node.completed {
   background: linear-gradient(135deg, #d1fae5, #a7f3d0);
-  border-color: var(--success-color);
+  border-color: #10b981;
   color: #065f46;
 }
 
 .level-separator {
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+  background: linear-gradient(90deg, transparent, #4299e1, transparent);
   margin: 2rem 0;
   border-radius: 1px;
 }
@@ -555,7 +704,7 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -564,7 +713,7 @@ nav {
 }
 
 .modal-content {
-  background: var(--surface-color);
+  background: #1a202c;
   border-radius: 16px;
   padding: 2rem;
   max-width: 500px;
@@ -572,7 +721,7 @@ nav {
   max-height: 80vh;
   overflow-y: auto;
   position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 .close-modal {
@@ -581,24 +730,24 @@ nav {
   right: 1rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: var(--text-secondary);
+  color: #a0aec0;
   transition: color 0.3s ease;
 }
 
 .close-modal:hover {
-  color: var(--error-color);
+  color: #ef4444;
 }
 
 .modal-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #e2e8f0;
   margin-bottom: 1rem;
   padding-right: 2rem;
 }
 
 .modal-description {
-  color: var(--text-secondary);
+  color: #a0aec0;
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -617,24 +766,24 @@ nav {
 }
 
 .modal-resources a {
-  color: var(--primary-color);
+  color: #4299e1;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .modal-resources a:hover {
-  color: var(--secondary-color);
+  color: #60a5fa;
   text-decoration: underline;
 }
 
 /* Course Status Section */
 .course-status-section {
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid #374151;
   padding-top: 1.5rem;
 }
 
 .course-status-section h4 {
-  color: var(--text-primary);
+  color: #e2e8f0;
   margin-bottom: 1rem;
   font-size: 1.1rem;
 }
@@ -650,10 +799,10 @@ nav {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1rem;
-  border: 2px solid var(--border-color);
+  border: 2px solid #374151;
   border-radius: 8px;
-  background: var(--surface-color);
-  color: var(--text-secondary);
+  background: #1a202c;
+  color: #a0aec0;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 0.9rem;
@@ -661,33 +810,33 @@ nav {
 
 .status-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px var(--shadow-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .status-btn.active {
-  border-color: var(--primary-color);
-  background: var(--primary-color);
+  border-color: #4299e1;
+  background: #4299e1;
   color: white;
 }
 
 .status-btn.not-started.active {
-  border-color: var(--text-secondary);
-  background: var(--text-secondary);
+  border-color: #a0aec0;
+  background: #a0aec0;
 }
 
 .status-btn.in-progress.active {
-  border-color: var(--warning-color);
-  background: var(--warning-color);
+  border-color: #f59e0b;
+  background: #f59e0b;
 }
 
 .status-btn.completed.active {
-  border-color: var(--success-color);
-  background: var(--success-color);
+  border-color: #10b981;
+  background: #10b981;
 }
 
 /* Footer Styles */
 footer {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, #4299e1, #60a5fa);
   color: white;
   padding: 2rem;
   margin-top: 4rem;
@@ -756,7 +905,7 @@ footer {
   position: fixed;
   top: 20px;
   right: 20px;
-  background: linear-gradient(135deg, var(--success-color), #059669);
+  background: linear-gradient(135deg, #10b981, #059669);
   color: white;
   padding: 1rem 1.5rem;
   border-radius: 12px;

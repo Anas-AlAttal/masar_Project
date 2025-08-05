@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   
   <link rel="stylesheet" href="../css/about.css">
+  <style>
+    
+   
+  </style>
 </head>
 <body>
   <!-- Animated background elements -->
@@ -44,8 +48,40 @@
         </div>
       </div>
       <div class="nav-item" id="customerSupport"><i class="fa-solid fa-user-group" onclick="window.location.href='contact_us.html'"></i> <span onclick="window.location.href='contact_us.html'">Customer support</span></div>
-      <div class="nav-item active" id="aboutUs"><i class="fa-solid fa-info-circle"></i> <span>About us</span></div>
-      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="nav-item active" id="aboutUs"><i class="fa-solid fa-info-circle" onclick="window.location.href='about_us.html'"></i> <span>About us</span></div>
+      <div class="nav-item search-container" id="search-container">
+        <div class="search-bar" id="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon" id="search-icon"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="Search..." />
+          <button class="search-clear" id="search-clear">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <div class="search-dropdown" id="search-dropdown">
+          <div class="search-suggestions">
+            <div class="suggestion-item" data-search="mission">
+              <i class="fa-solid fa-bullseye"></i>
+              <span>Our Mission</span>
+            </div>
+            <div class="suggestion-item" data-search="vision">
+              <i class="fa-solid fa-eye"></i>
+              <span>Our Vision</span>
+            </div>
+            <div class="suggestion-item" data-search="team">
+              <i class="fa-solid fa-users-gear"></i>
+              <span>Our Team</span>
+            </div>
+            <div class="suggestion-item" data-search="values">
+              <i class="fa-solid fa-star"></i>
+              <span>Our Values</span>
+            </div>
+            <div class="suggestion-item" data-search="roadmaps">
+              <i class="fa-solid fa-route"></i>
+              <span>Learning Roadmaps</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -389,6 +425,225 @@
           }
         });
       }
+    });
+
+    // Beautiful Search Bar Functionality - Independent of language system
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchContainer = document.getElementById('search-container');
+      const searchBar = document.getElementById('search-bar');
+      const searchIcon = document.getElementById('search-icon');
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+      const searchDropdown = document.getElementById('search-dropdown');
+      const suggestionItems = document.querySelectorAll('.suggestion-item');
+
+      // Check if elements exist
+      if (!searchContainer || !searchBar || !searchIcon || !searchInput || !searchClear || !searchDropdown) {
+        console.error('Search bar elements not found');
+        return;
+      }
+
+      // Toggle search bar
+      searchIcon.addEventListener('click', function() {
+        if (!searchBar.classList.contains('active')) {
+          activateSearch();
+        }
+      });
+
+      // Activate search function
+      function activateSearch() {
+        searchBar.classList.add('active');
+        searchInput.focus();
+        setTimeout(() => {
+          searchDropdown.classList.add('show');
+        }, 300);
+        
+        // Add searching animation
+        searchBar.classList.add('searching');
+        setTimeout(() => {
+          searchBar.classList.remove('searching');
+        }, 2000);
+      }
+
+      // Deactivate search function
+      function deactivateSearch() {
+        searchBar.classList.remove('active');
+        searchDropdown.classList.remove('show');
+        searchInput.value = '';
+        searchInput.blur();
+      }
+
+      // Clear search
+      searchClear.addEventListener('click', function(e) {
+        e.stopPropagation();
+        searchInput.value = '';
+        searchInput.focus();
+      });
+
+      // Search input functionality
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        
+        if (query.length > 0) {
+          searchBar.classList.add('searching');
+          filterSuggestions(query);
+        } else {
+          searchBar.classList.remove('searching');
+          showAllSuggestions();
+        }
+      });
+
+      // Filter suggestions
+      function filterSuggestions(query) {
+        suggestionItems.forEach(item => {
+          const text = item.querySelector('span').textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'flex';
+            item.style.animation = 'searchPulse 0.3s ease-in-out';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      // Show all suggestions
+      function showAllSuggestions() {
+        suggestionItems.forEach(item => {
+          item.style.display = 'flex';
+          item.style.animation = '';
+        });
+      }
+
+      // Handle suggestion clicks
+      suggestionItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const searchTerm = this.getAttribute('data-search');
+          searchInput.value = this.querySelector('span').textContent;
+          
+          // Add found animation
+          searchBar.classList.add('found');
+          setTimeout(() => {
+            searchBar.classList.remove('found');
+          }, 600);
+          
+          // Navigate to specific section
+          navigateToSection(searchTerm);
+          
+          // Close search after a delay
+          setTimeout(() => {
+            deactivateSearch();
+          }, 1000);
+        });
+      });
+
+      // Navigate to specific section
+      function navigateToSection(searchTerm) {
+        let targetElement = null;
+        
+        switch(searchTerm) {
+          case 'mission':
+            targetElement = document.querySelector('.mission-card');
+            break;
+          case 'vision':
+            targetElement = document.querySelector('.vision-card');
+            break;
+          case 'team':
+            targetElement = document.querySelector('.team-section');
+            break;
+          case 'values':
+            targetElement = document.querySelector('.our-values');
+            break;
+          case 'roadmaps':
+            window.location.href = 'all_roadmaps.html';
+            return;
+          default:
+            return;
+        }
+        
+        if (targetElement) {
+          // Smooth scroll to the target element
+          targetElement.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+          });
+          
+          // Add highlight effect
+          targetElement.style.animation = 'searchPulse 1s ease-in-out';
+          setTimeout(() => {
+            targetElement.style.animation = '';
+          }, 1000);
+        }
+      }
+
+      // Close search when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!searchContainer.contains(e.target)) {
+          deactivateSearch();
+        }
+      });
+
+      // Keyboard navigation
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          deactivateSearch();
+        } else if (e.key === 'Enter') {
+          const query = this.value.toLowerCase();
+          if (query.includes('mission')) {
+            navigateToSection('mission');
+          } else if (query.includes('vision')) {
+            navigateToSection('vision');
+          } else if (query.includes('team')) {
+            navigateToSection('team');
+          } else if (query.includes('values')) {
+            navigateToSection('values');
+          } else if (query.includes('roadmap')) {
+            navigateToSection('roadmaps');
+          }
+          deactivateSearch();
+        }
+      });
+
+      // Add hover effects to search bar
+      searchBar.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1.05)';
+          this.style.boxShadow = '0 8px 25px rgba(0, 184, 148, 0.2)';
+        }
+      });
+
+      searchBar.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = 'none';
+        }
+      });
+
+      // Add ripple effect to search icon
+      searchIcon.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.className = 'search-ripple';
+        ripple.style.cssText = `
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(0, 184, 148, 0.6);
+          transform: scale(0);
+          animation: searchRipple 0.6s ease-out;
+          pointer-events: none;
+          width: 20px;
+          height: 20px;
+          top: 50%;
+          left: 50%;
+          margin-top: -10px;
+          margin-left: -10px;
+          z-index: 1;
+        `;
+        
+        searchBar.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
     });
   </script>
 </body>

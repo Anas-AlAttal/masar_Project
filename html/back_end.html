@@ -12,6 +12,283 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/back_end.css">
   <link rel="stylesheet" href="../css/progress_tracking.css">
+  <style>
+    /* Beautiful Animated Search Bar */
+    .search-container {
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      border-radius: 25px;
+      padding: 0.5rem 1rem;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      min-width: 50px;
+      max-width: 50px;
+    }
+
+    .search-bar.active {
+      max-width: 300px;
+      min-width: 300px;
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(0, 184, 148, 0.4);
+      box-shadow: 
+        0 10px 30px rgba(0, 184, 148, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.3);
+    }
+
+    .search-bar::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .search-bar:hover::before {
+      left: 100%;
+    }
+
+    .search-icon {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
+
+    .search-bar.active .search-icon {
+      color: #00b894;
+      transform: scale(1.1);
+    }
+
+    .search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: white;
+      font-size: 0.95rem;
+      font-weight: 500;
+      width: 0;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      margin-left: 0.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .search-bar.active .search-input {
+      width: 200px;
+      opacity: 1;
+      margin-left: 0.8rem;
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      font-weight: 400;
+    }
+
+    .search-clear {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+      font-size: 0.9rem;
+      padding: 0.2rem;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: scale(0);
+      position: relative;
+      z-index: 2;
+    }
+
+    .search-bar.active .search-clear {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .search-clear:hover {
+      color: #e74c3c;
+      background: rgba(231, 76, 60, 0.1);
+      transform: scale(1.1);
+    }
+
+    /* Search Dropdown */
+    .search-dropdown {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 15px;
+      box-shadow: 
+        0 15px 40px rgba(0, 184, 148, 0.3),
+        0 8px 25px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 184, 148, 0.2);
+      margin-top: 0.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px) scale(0.95);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    .search-dropdown.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .search-suggestions {
+      padding: 0.5rem 0;
+    }
+
+    .suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.8rem 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #2d3748;
+      font-weight: 500;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .suggestion-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(135deg, #00b894, #00cec9);
+      transform: scaleY(0);
+      transition: transform 0.3s ease;
+    }
+
+    .suggestion-item:hover::before {
+      transform: scaleY(1);
+    }
+
+    .suggestion-item:hover {
+      background: rgba(0, 184, 148, 0.1);
+      color: #00b894;
+      transform: translateX(5px);
+    }
+
+    .suggestion-item i {
+      font-size: 1.1rem;
+      color: #00b894;
+      transition: all 0.3s ease;
+    }
+
+    .suggestion-item:hover i {
+      transform: scale(1.2) rotate(5deg);
+      color: #00cec9;
+    }
+
+    .suggestion-item span {
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .suggestion-item:hover span {
+      font-weight: 600;
+    }
+
+    /* Search Animation Keyframes */
+    @keyframes searchPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 184, 148, 0.4);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 184, 148, 0);
+      }
+    }
+
+    @keyframes searchGlow {
+      0%, 100% {
+        border-color: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      50% {
+        border-color: rgba(0, 184, 148, 0.6);
+        box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+      }
+    }
+
+    .search-bar.searching {
+      animation: searchGlow 2s ease-in-out infinite;
+    }
+
+    .search-bar.found {
+      animation: searchPulse 0.6s ease-in-out;
+    }
+
+    /* Responsive Search */
+    @media (max-width: 768px) {
+      .search-bar.active {
+        max-width: 250px;
+        min-width: 250px;
+      }
+      
+      .search-bar.active .search-input {
+        width: 150px;
+      }
+      
+      .search-dropdown {
+        min-width: 280px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .search-bar.active {
+        max-width: 200px;
+        min-width: 200px;
+      }
+      
+      .search-bar.active .search-input {
+        width: 120px;
+      }
+      
+      .search-dropdown {
+        min-width: 250px;
+      }
+      
+      .suggestion-item {
+        padding: 0.6rem 1rem;
+      }
+      
+      .suggestion-item span {
+        font-size: 0.9rem;
+      }
+    }
+
+    @keyframes searchRipple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Animated background elements -->
@@ -47,7 +324,39 @@
       </div>
       <div class="nav-item" id="customerSupport" onclick="window.location.href='contact_us.html'"><i class="fa-solid fa-user-group"></i> <span id="customerSupport-text">Customer support</span></div>
       <div class="nav-item" id="aboutUs" onclick="window.location.href='about_us.html'"><b>!</b> <span id="aboutUs-text">About us</span></div>
-      <div class="nav-item"><i class="fa-solid fa-magnifying-glass"></i></div>
+      <div class="nav-item search-container" id="search-container">
+        <div class="search-bar" id="search-bar">
+          <i class="fa-solid fa-magnifying-glass search-icon" id="search-icon"></i>
+          <input type="text" class="search-input" id="search-input" placeholder="Search courses..." />
+          <button class="search-clear" id="search-clear">
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <div class="search-dropdown" id="search-dropdown">
+          <div class="search-suggestions">
+            <div class="suggestion-item" data-search="node">
+              <i class="fa-brands fa-node-js"></i>
+              <span>Node.js</span>
+            </div>
+            <div class="suggestion-item" data-search="express">
+              <i class="fa-solid fa-server"></i>
+              <span>Express.js</span>
+            </div>
+            <div class="suggestion-item" data-search="database">
+              <i class="fa-solid fa-database"></i>
+              <span>Database</span>
+            </div>
+            <div class="suggestion-item" data-search="api">
+              <i class="fa-solid fa-code"></i>
+              <span>REST API</span>
+            </div>
+            <div class="suggestion-item" data-search="authentication">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Authentication</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
 
@@ -695,6 +1004,181 @@
         if (event.key === 'Escape' && modal.style.display === 'block') {
           modal.style.display = 'none';
         }
+      });
+
+      // Beautiful Search Bar Functionality
+      const searchContainer = document.getElementById('search-container');
+      const searchBar = document.getElementById('search-bar');
+      const searchIcon = document.getElementById('search-icon');
+      const searchInput = document.getElementById('search-input');
+      const searchClear = document.getElementById('search-clear');
+      const searchDropdown = document.getElementById('search-dropdown');
+      const suggestionItems = document.querySelectorAll('.suggestion-item');
+
+      // Toggle search bar
+      searchIcon.addEventListener('click', function() {
+        if (!searchBar.classList.contains('active')) {
+          activateSearch();
+        }
+      });
+
+      // Activate search function
+      function activateSearch() {
+        searchBar.classList.add('active');
+        searchInput.focus();
+        setTimeout(() => {
+          searchDropdown.classList.add('show');
+        }, 300);
+        
+        // Add searching animation
+        searchBar.classList.add('searching');
+        setTimeout(() => {
+          searchBar.classList.remove('searching');
+        }, 2000);
+      }
+
+      // Deactivate search function
+      function deactivateSearch() {
+        searchBar.classList.remove('active');
+        searchDropdown.classList.remove('show');
+        searchInput.value = '';
+        searchInput.blur();
+      }
+
+      // Clear search
+      searchClear.addEventListener('click', function(e) {
+        e.stopPropagation();
+        searchInput.value = '';
+        searchInput.focus();
+      });
+
+      // Search input functionality
+      searchInput.addEventListener('input', function() {
+        const query = this.value.toLowerCase();
+        
+        if (query.length > 0) {
+          searchBar.classList.add('searching');
+          filterSuggestions(query);
+        } else {
+          searchBar.classList.remove('searching');
+          showAllSuggestions();
+        }
+      });
+
+      // Filter suggestions
+      function filterSuggestions(query) {
+        suggestionItems.forEach(item => {
+          const text = item.querySelector('span').textContent.toLowerCase();
+          if (text.includes(query)) {
+            item.style.display = 'flex';
+            item.style.animation = 'searchPulse 0.3s ease-in-out';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      }
+
+      // Show all suggestions
+      function showAllSuggestions() {
+        suggestionItems.forEach(item => {
+          item.style.display = 'flex';
+          item.style.animation = '';
+        });
+      }
+
+      // Handle suggestion clicks
+      suggestionItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const searchTerm = this.getAttribute('data-search');
+          searchInput.value = this.querySelector('span').textContent;
+          
+          // Add found animation
+          searchBar.classList.add('found');
+          setTimeout(() => {
+            searchBar.classList.remove('found');
+          }, 600);
+          
+          // Navigate to specific course
+          navigateToCourse(searchTerm);
+          
+          // Close search after a delay
+          setTimeout(() => {
+            deactivateSearch();
+          }, 1000);
+        });
+      });
+
+      // Navigate to specific course
+      function navigateToCourse(searchTerm) {
+        // Find the course node and trigger click
+        const courseNodes = document.querySelectorAll('.roadmap-node');
+        courseNodes.forEach(node => {
+          const nodeText = node.textContent.trim().toLowerCase();
+          if (nodeText.includes(searchTerm.toLowerCase())) {
+            node.click();
+            return;
+          }
+        });
+      }
+
+      // Close search when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!searchContainer.contains(e.target)) {
+          deactivateSearch();
+        }
+      });
+
+      // Keyboard navigation
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          deactivateSearch();
+        } else if (e.key === 'Enter') {
+          const query = this.value.toLowerCase();
+          navigateToCourse(query);
+          deactivateSearch();
+        }
+      });
+
+      // Add hover effects to search bar
+      searchBar.addEventListener('mouseenter', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1.05)';
+          this.style.boxShadow = '0 8px 25px rgba(0, 184, 148, 0.2)';
+        }
+      });
+
+      searchBar.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = 'none';
+        }
+      });
+
+      // Add ripple effect to search icon
+      searchIcon.addEventListener('click', function(e) {
+        const ripple = document.createElement('span');
+        ripple.className = 'search-ripple';
+        ripple.style.cssText = `
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(0, 184, 148, 0.6);
+          transform: scale(0);
+          animation: searchRipple 0.6s ease-out;
+          pointer-events: none;
+          width: 20px;
+          height: 20px;
+          top: 50%;
+          left: 50%;
+          margin-top: -10px;
+          margin-left: -10px;
+          z-index: 1;
+        `;
+        
+        searchBar.appendChild(ripple);
+        
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
       });
     });
   </script>
