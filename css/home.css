@@ -180,6 +180,18 @@ header:hover {
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.5));
 }
 
+/* When the logo is an image, size it explicitly */
+img.masar-logo {
+  height: 100px;
+  width: auto;
+  display: inline-block;
+  background: none;
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: initial;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
 .masar-logo:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
@@ -1107,6 +1119,11 @@ footer::before {
   .masar-logo {
     font-size: 2.5rem;
   }
+
+  /* Smaller image logo on tablets */
+  img.masar-logo {
+    height: 40px;
+  }
   
   .subtitle {
     font-size: 1.2rem;
@@ -1153,6 +1170,11 @@ footer::before {
   
   .masar-logo {
     font-size: 2rem;
+  }
+
+  /* Smallest image logo on phones */
+  img.masar-logo {
+    height: 36px;
   }
   
   nav {

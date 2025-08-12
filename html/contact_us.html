@@ -301,8 +301,7 @@
 
   <header>
     <div class="logo">
-      <span class="masar-logo" id="logoTitle" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" id="logoSubtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <img id="logo-img" class="masar-logo" src="../logo_en.png" alt="Masar logo" onclick="window.location.href='home.html'" />
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
@@ -513,8 +512,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footerLogoTitle">Masar</h3>
-        <p id="footerLogoSubtitle">From vision to destination</p>
+        <img id="footer-logo-img" src="../logo_en.png" alt="Masar logo" style="height:80px;width:auto;" />
       </div>
       <div class="footer-section">
         <h4 id="footerQuickLinks">Quick Links</h4>
@@ -702,17 +700,30 @@
         if (!translations[lang]) return;
         const t = translations[lang];
         
-        // Set document direction and language
+        // Update document direction and language
         document.documentElement.lang = lang;
         document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
         
         // Update all elements with translations
         Object.keys(t).forEach(key => {
-          const element = document.getElementById(key);
-          if (element) {
-            element.innerHTML = t[key];
-          }
+          const el = document.getElementById(key);
+          if (el) el.innerHTML = t[key];
         });
+        
+        // Title
+        if (t.pageTitle) document.title = t.pageTitle;
+        
+        // Header and footer logo image switching
+        const headerLogoImg = document.getElementById('logo-img');
+        if (headerLogoImg) {
+          headerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+          headerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+        }
+        const footerLogoImg = document.getElementById('footer-logo-img');
+        if (footerLogoImg) {
+          footerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+          footerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+        }
       }
     });
 

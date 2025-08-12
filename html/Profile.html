@@ -21,8 +21,7 @@
 
   <header>
     <div class="logo">
-      <span class="masar-logo" onclick="window.location.href='home.html'" data-translate="logoTitle">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" onclick="window.location.href='home.html'" data-translate="logoSubtitle">From vision to destination</div>
+      <img id="logo-img" class="masar-logo" src="../logo_en.png" alt="Masar logo" onclick="window.location.href='home.html'" />
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
@@ -336,8 +335,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 data-translate="footerLogoTitle">Masar</h3>
-        <p data-translate="footerLogoSubtitle">From vision to destination</p>
+        <img id="footer-logo-img" src="../logo_en.png" alt="Masar logo" style="height:80px;width:auto;" />
       </div>
       <div class="footer-section">
         <h4 data-translate="footerQuickLinks">Quick Links</h4>
@@ -406,6 +404,18 @@
       const titleKey = document.title.getAttribute('data-translate');
       if (titleKey && translations[lang] && translations[lang][titleKey]) {
         document.title = translations[lang][titleKey];
+      }
+
+      // Header and footer logos
+      const headerLogoImg = document.getElementById('logo-img');
+      if (headerLogoImg) {
+        headerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+        headerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+      }
+      const footerLogoImg = document.getElementById('footer-logo-img');
+      if (footerLogoImg) {
+        footerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+        footerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
       }
     }
 

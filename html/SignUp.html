@@ -167,6 +167,18 @@
       if (titleKey && translations[lang] && translations[lang][titleKey]) {
         document.title = translations[lang][titleKey];
       }
+
+      // Header and footer logos
+      const headerLogoImg = document.getElementById('logo-img');
+      if (headerLogoImg) {
+        headerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+        headerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+      }
+      const footerLogoImg = document.getElementById('footer-logo-img');
+      if (footerLogoImg) {
+        footerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+        footerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+      }
     }
 
     // Toggle dropdown

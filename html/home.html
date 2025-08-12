@@ -63,8 +63,8 @@
 
   <header>
     <div class="logo">
-      <span class="masar-logo" id="logo-title" onclick="window.location.href='home.html'">Masar <i class="fa-solid fa-arrow-up-right"></i><span style="color:#00b6b6;">&#8599;</span></span>
-      <div class="subtitle" id="logo-subtitle" onclick="window.location.href='home.html'">From vision to destination</div>
+      <img id="logo-img" class="masar-logo" src="../logo_en.png" alt="Masar logo" onclick="window.location.href='home.html'" />
+      
     </div>
     <nav>
       <div class="nav-item dropdown" id="lang-dropdown">
@@ -161,8 +161,7 @@
   <footer>
     <div class="footer-content">
       <div class="footer-section">
-        <h3 id="footer-logo-title">Masar</h3>
-        <p id="footer-logo-subtitle">From vision to destination</p>
+        <img id="footer-logo-img" src="../logo_en.png" alt="Masar logo" style="height:80px;width:auto;" />
       </div>
       <div class="footer-section">
         <h4 id="footer-quick-links">Quick Links</h4>
@@ -328,8 +327,11 @@
         // Title
         document.title = lang === 'ar' ? 'مسار - من الرؤية إلى الوجهة' : 'Masar - From vision to destination';
         // Header
-        document.getElementById('logo-title').innerHTML = t.logoTitle;
-        document.getElementById('logo-subtitle').textContent = t.logoSubtitle;
+        const logoImgEl = document.getElementById('logo-img');
+        if (logoImgEl) {
+          logoImgEl.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+          logoImgEl.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+        }
         // Main
         document.getElementById('main-title').innerHTML = t.mainTitle;
         document.getElementById('main-desc').innerHTML = t.mainDesc;
@@ -353,9 +355,11 @@
         document.getElementById('footer-home').textContent = t.footerHome;
         document.getElementById('footer-roadmap').textContent = t.footerRoadmap;
         document.getElementById('footer-contact').textContent = t.footerContact;
-        document.getElementById('footer-about').textContent = t.footerAbout;
-        document.getElementById('footer-logo-title').innerHTML = t.footerLogoTitle;
-        document.getElementById('footer-logo-subtitle').textContent = t.footerLogoSubtitle;
+        const footerLogoImg = document.getElementById('footer-logo-img');
+        if (footerLogoImg) {
+          footerLogoImg.src = lang === 'ar' ? '../logo_ar.png' : '../logo_en.png';
+          footerLogoImg.alt = lang === 'ar' ? 'شعار مسار' : 'Masar logo';
+        }
        
       }
     });
@@ -485,6 +489,7 @@
           animation: particleFloat ${Math.random() * 10 + 5}s ease-in-out infinite;
         `;
         
+        const footer = document.querySelector('footer');
         footer.appendChild(particle);
         
         setTimeout(() => {

@@ -1631,3 +1631,23 @@ html {
     opacity: 0;
   }
 }
+
+/* Shared Masar image logo sizing (match home page) */
+img.masar-logo {
+  height: 100px;
+  width: auto;
+  display: inline-block;
+  background: none;
+  -webkit-text-fill-color: initial;
+  -webkit-background-clip: initial;
+  text-shadow: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.25));
+}
+
+@media (max-width: 768px) {
+  img.masar-logo { height: 40px; }
+}
+
+@media (max-width: 480px) {
+  img.masar-logo { height: 36px; }
+}
